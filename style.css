@@ -1,0 +1,1071 @@
+@import url(reset.css);
+
+html{
+    font-size: 62.5%;
+      
+}
+body{
+    font-family: 'Catamaran', sans-serif;
+    background: black;
+}
+.rollButton {
+    display: block;
+    width: 16rem;
+    height: 6rem;
+    background: green;
+    border-radius: 1rem;
+    position: absolute;
+    left: 98rem;
+    top: 20rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    line-height: 6rem;
+    cursor: pointer;
+    border-color:greenyellow;
+}
+.endGame{
+    display: block;
+    width: 16rem;
+    height: 6rem;
+    background: darkred;
+    border-radius: 1rem;
+    position: absolute;
+    left: 98rem;
+    top: 20rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    line-height: 6rem;
+    cursor: pointer;
+    border-color: red;
+}
+.buy{
+    display: block;
+    width: 16rem;
+    height: 4rem;
+    background: grey;
+    border-radius: 1rem;
+    position: absolute;
+    left: 98rem;
+    top: 55rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    line-height: 4rem;
+    cursor: pointer;
+    border-color:lightgray;
+}
+.cube, .cube2{
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: white;
+    border-radius: 1rem;
+    position: absolute;
+}
+.cube{
+    left: 100rem;
+    top: 30rem;
+}
+.cube2{
+    left: 106rem;
+    top: 37rem;
+}
+figure{
+    display: block;
+    background: black;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    position: absolute;
+}
+/* one */
+.show-one .one{
+ margin: 2.4rem;
+}
+.show-one .two{
+ display: none;
+}
+.show-one .three{
+ display: none;
+}
+.show-one .four{
+ display: none;
+}
+.show-one .five{
+ display: none;
+}
+.show-one .six{
+ display: none;
+}
+/* two */
+.show-two .one{
+ margin: 1rem 0rem 0rem 1rem;
+}
+.show-two .two{
+ margin: 4rem 0rem 0rem 4rem;
+}
+.show-two .three{
+ display: none;
+}
+.show-two .four{
+ display: none;
+}
+.show-two .five{
+ display: none;
+}
+.show-two .six{
+ display: none;
+}
+/* three */
+.show-three .one{
+ margin: 1rem 0rem 0rem 1rem;
+}
+.show-three .two{
+ margin: 4rem 0rem 0rem 4rem;
+}
+.show-three .three{
+ margin: 2.5rem 0rem 0rem 2.5rem;
+}
+.show-three .four{
+ display: none;
+}
+.show-three .five{
+ display: none;
+}
+.show-three .six{
+ display: none;
+}
+/* four */
+.show-four .one{
+ margin: 1rem 0rem 0rem 1rem;
+}
+.show-four .two{
+ margin: 4rem 0rem 0rem 4rem;
+}
+.show-four .three{
+ margin: 4rem 0rem 0rem 1rem;
+}
+.show-four .four{
+ margin: 1rem 0rem 0rem 4rem;
+}
+.show-four .five{
+ display: none;
+}
+.show-four .six{
+ display: none;
+}
+/* five */
+.show-five .one{
+ margin: 1rem 0rem 0rem 1rem;
+}
+.show-five .two{
+ margin: 4rem 0rem 0rem 4rem;
+}
+.show-five .three{
+ margin: 4rem 0rem 0rem 1rem;
+}
+.show-five .four{
+ margin: 1rem 0rem 0rem 4rem;
+}
+.show-five .five{
+margin: 2.5rem 0rem 0rem 2.5rem;
+}
+.show-five .six{
+display: none;
+}
+/* six */
+.show-six .one{
+ margin: 1rem 0rem 0rem 1rem;
+}
+.show-six .two{
+ margin: 4rem 0rem 0rem 4rem;
+}
+.show-six .three{
+ margin: 4rem 0rem 0rem 1rem;
+}
+.show-six .four{
+ margin: 1rem 0rem 0rem 4rem;
+}
+.show-six .five{
+ margin: 2.5rem 0rem 0rem 1em;
+}
+.show-six .six{
+ margin: 2.5rem 0rem 0rem 4rem;
+}
+/* gamearea */
+/* BIG CARD */
+.gameArea{
+    display: block;
+    height: 83.835rem;
+    width: 83.835rem;
+    background-color: lightgray;
+    left: 7.5rem;
+    top: 3rem;
+    position: relative;
+    
+}
+.hide2{
+    display: none;
+}
+.magnification{
+    position: absolute;
+    height: 40.5rem;
+    width: 27rem;
+    border: 0.3rem black solid;
+    top: 22rem;
+    left: 28.5rem;
+    box-sizing: border-box;
+    background: white;
+    line-height: 1.8rem;
+}
+.card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9, .card10, .card11, .card12, .card13, .card14, .card15, .card16, .card17{ 
+    position: absolute;
+    left: 0.75rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.oatput1, .oatput2, .oatput3, .oatput4, .oatput5, .oatput6, .oatput7, .oatput8, .oatput9, .oatput10, .oatput11, .oatput12, .oatput13, .oatput14, .oatput15, .oatput16{
+    position: absolute;
+    right: 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}  
+.card1, .oatput1{
+    top: 6.45rem;
+}
+.oatput1::after, .oatput3::after, .oatput4::after, .oatput5::after, .oatput6::after, .oatput7::after, .oatput8::after, .oatput9::after, .oatput10::after, 
+.oatput11::after, .oatput12::after, .oatput13::after, .oatput14::after, .oatput15::after, .oatput16::after{
+    content: " $"
+}
+.card2, .oatput2{
+    top: 8.4rem;
+}
+.oatput2{
+    right: 2.3rem;
+}
+.card3, .oatput3{
+    top: 11.4rem;
+}
+.card4{
+    top: 13.35rem;
+}
+.oatput4{
+    top: 15.3rem;
+}
+.card5, .oatput5{
+    top: 18.45rem;
+}
+.card6, .oatput6{
+    top: 20.4rem;
+}
+.card7, .oatput7{
+    top: 22.35rem;
+}
+.card8, .oatput8{
+    top: 24.3rem;
+}
+.card9, .oatput9{
+    top: 26.25rem;
+}
+.card10, .oatput10{
+    top: 29.25rem;
+}
+.card11, .oatput11{
+    top: 31.35rem;
+}
+.card12, .oatput12{
+    top: 35.4rem;
+}
+.card13, .oatput13{
+    top: 37.35rem;
+}
+.card14, .oatput14{
+    top: 14.5rem;
+}
+.card15, .oatput15{
+    top: 17.5rem;
+}
+.card16, .oatput16{
+    top: 20.5rem;
+}
+.card17{
+    top: 15rem;
+}
+.line{
+    position: absolute;
+    width: 100%;
+    height: 0.15rem;
+    background: black;
+    top: 34.5rem;
+}
+.bigfield2, .bigfield4, .bigfield7, .bigfield9, .bigfield10, .bigfield12, .bigfield14, .bigfield15, .bigfield17, 
+.bigfield19, .bigfield20, .bigfield22, .bigfield24, .bigfield25, .bigfield27, .bigfield28, .bigfield30, .bigfield32, 
+.bigfield33, .bigfield35, .bigfield38, .bigfield40, .bigfield6, .bigfield16, .bigfield26, .bigfield36, .bigfield13, .bigfield29{
+    box-sizing: border-box;
+    display: block;
+}
+.bigfield2::after, .bigfield4::after, .bigfield7::after, .bigfield9::after, .bigfield10::after, .bigfield12::after, 
+.bigfield14::after, .bigfield15::after, .bigfield17::after, .bigfield19::after, .bigfield20::after, .bigfield22::after, 
+.bigfield24::after, .bigfield25::after, .bigfield27::after, .bigfield28::after, .bigfield30::after, .bigfield32::after, 
+.bigfield33::after, .bigfield35::after, .bigfield38::after, .bigfield40::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+    display: block;
+    border-bottom: 0.3rem black solid;
+    top: 0;
+}
+.bigfield2::before, .bigfield4::before, .bigfield7::before, .bigfield9::before, .bigfield10::before, .bigfield12::before, 
+.bigfield14::before, .bigfield15::before, .bigfield17::before, .bigfield19::before, .bigfield20::before, .bigfield22::before, 
+.bigfield24::before, .bigfield25::before, .bigfield27::before, .bigfield28::before, .bigfield30::before, .bigfield32::before, 
+.bigfield33::before, .bigfield35::before, .bigfield38::before, .bigfield40::before, .bigfield6::before, .bigfield16::before, .bigfield26::before, .bigfield36::before, 
+.bigfield13::before, .bigfield29::before{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    z-index: 100;
+}
+.bigfield2::before{ content: "2";}
+.bigfield4::before{ content: "4";}
+.bigfield7::before{ content: "7";}
+.bigfield9::before{ content: "9";}
+.bigfield10::before{ content: "10";}
+.bigfield12::before{ content: "12";}
+.bigfield14::before{ content: "14";}
+.bigfield15::before{ content: "15";}
+.bigfield17::before{ content: "17";}
+.bigfield19::before{ content: "19";}
+.bigfield20::before{ content: "20";}
+.bigfield22::before{ content: "22";}
+.bigfield24::before{ content: "24";}
+.bigfield25::before{ content: "25";}
+.bigfield27::before{ content: "27";}
+.bigfield28::before{ content: "28";}
+.bigfield30::before{ content: "30";}
+.bigfield32::before{ content: "32";}
+.bigfield33::before{ content: "33";}
+.bigfield35::before{ content: "35";}
+.bigfield38::before{ content: "38";}
+.bigfield40::before{ content: "40";}
+.bigfield6::before{ content: "6"; color: black;}
+.bigfield16::before{ content: "16"; color: black;}
+.bigfield26::before{ content: "26"; color: black;}
+.bigfield36::before{ content: "36"; color: black;}
+.bigfield13::before{ content: "13"; color: black;}
+.bigfield29::before{ content: "29"; color: black;}
+
+
+
+
+.bigfield6::after, .bigfield16::after, .bigfield26::after, .bigfield36::after{
+    content: "";
+    background: url(img/train.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    top: 0.5rem;
+    left: 10.5rem;
+}   
+.bigfield13::after{
+    content: "";  
+    background: url(img/light.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    top: 0.5rem;
+    left: 10.5rem;
+}
+.bigfield29::after{
+    content: "";  
+    background: url(img/water.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    display: block;
+    top: 0.5rem;
+    left: 10.5rem;
+}
+.bigfield2::after, .bigfield4::after{
+    background: #4700FF; 
+}
+.bigfield7::after, .bigfield9::after, .bigfield10::after{
+    background: #00CBFF; 
+}
+.bigfield12::after, .bigfield14::after, .bigfield15::after{
+    background: #5FFFA2; 
+}
+.bigfield17::after, .bigfield19::after, .bigfield20::after{
+    background: #33FF00; 
+}
+.bigfield22::after, .bigfield24::after, .bigfield25::after{
+    background: #F8FF00; 
+}
+.bigfield27::after, .bigfield28::after, .bigfield30::after{
+   background: #E89112; 
+}
+.bigfield32::after, .bigfield33::after, .bigfield35::after{
+    background: #FF0000; 
+}
+.bigfield38::after, .bigfield40::after{
+    background: black;
+}
+
+.field1, .field2, .field3, .field4, .field5, .field6, .field7, .field8, .field9, .field10, .field11, .field12, .field13, 
+.field14, .field15, .field16, .field17, .field18, .field19, .field20, .field21, .field22, .field23, .field24, .field25, 
+.field26, .field27, .field28, .field29, .field30, .field31, .field32, .field33, .field34, .field35, .field36, .field37, 
+.field38, .field39, .field40{
+    display: block;
+    width: 6.495rem;
+    height: 12.69rem;
+    background: white;
+    position: absolute;
+    border: 0.075rem black solid;
+    border-top: 0.15rem black solid;
+    border-bottom: 0.15rem black solid;
+    box-sizing: border-box;
+}
+.field1, .field11, .field31{
+    border-top: 0.075rem black solid;
+}
+.field2::after, .field4::after, .field7::after, .field9::after, .field10::after, .field12::after, .field14::after, 
+.field15::after, .field17::after, .field19::after, .field20::after, .field22::after, .field24::after, .field25::after, 
+.field27::after, .field28::after, .field30::after, .field32::after, .field33::after, .field35::after, .field38::after, 
+.field40::after{
+    content: "";
+    width: 100%;
+    height: 3rem;
+    display: block;
+    border-bottom: 0.075rem black solid;
+    box-sizing: border-box;
+}
+.field1{
+    width: 12.69rem;
+    height: 12.69rem;
+    right: 0rem;
+    bottom: 0;
+}
+.field1::after{
+    content: "START";
+    display: block;
+    position: relative;
+    color: black;
+    font-size: 2.25rem;
+    font-weight: 500;
+    top: 7.5rem;
+    left: 3rem;
+}
+.field2{
+    right: 12.69rem;
+    bottom: 0;
+}
+.field2::after, .field4::after{
+    background: #4700FF;
+}
+.field3{
+    right: 19.185rem;
+    bottom: 0;
+}
+.field3::after, .field18::after, .field34::after{
+    content: "?";
+    color: darkblue;
+    font-weight: 500;
+    font-size: 10.5rem;
+    position: absolute;
+    top: 3.3rem;
+    left: 1.2rem; 
+}
+.field4{
+    right: 25.68rem;
+    bottom: 0;
+}
+.field5{
+    right: 32.175rem;
+    bottom: 0;
+}
+.field5::after{
+    content: "PODATEK DOCHODOWY 200$";
+    font-weight: 800;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+}
+.field5::before, .field39::before{
+    content: "$";
+    font-weight: 500;
+    font-size: 4.8rem;
+    position: absolute;
+    top: 7.2rem;
+    left: 2rem; 
+}
+.field6{
+    right: 38.67rem;
+    bottom: 0;
+}
+.field6::after{
+    content: "DWORZEC POŁUDNIE";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+}
+.train{
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: url(img/train.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 1.02rem;
+    bottom: 1.5rem;
+}
+.field7{
+    right: 45.165rem;
+    bottom: 0;
+}
+.field7::after, .field9::after, .field10::after{
+    background: #00CBFF;
+}
+.field8{
+    right: 51.66rem;
+    bottom: 0;
+}
+.field8::after, .field23::after, .field37::after{
+    content: "?";
+    color: darkred;
+    font-weight: 500;
+    font-size: 10.5rem;
+    position: absolute;
+    top: 3.3rem;
+    left: 1.2rem; 
+}
+.field9{
+    right: 58.155rem;
+    bottom: 0;
+}
+.field10{
+    right: 64.65rem;
+    bottom: 0;
+}
+.field11{
+    width: 12.69rem;
+    height: 12.69rem;
+    right: 71.145rem;
+    bottom: 0;
+}
+.field11::after{
+    content: "";
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    background: url(img/jail.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 4.6rem;
+    bottom: 4.6rem;
+}
+.field11::before{
+    content: "";
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    background: orange;
+    position: absolute;
+    left: 3.54rem;
+    bottom: 3.555rem;
+    border-left: 0.075rem black solid;
+    border-bottom: 0.075rem black solid;
+}
+.field12{
+    left: 3.105rem;
+    bottom: 9.585rem;
+    transform: rotate(90deg);
+}
+.field12::after, .field14::after, .field15::after{
+    background: #5FFFA2;
+}
+.field13{
+    left: 3.105rem;
+    bottom: 16.08rem;
+    transform: rotate(90deg);
+}
+.field13::after{
+    content: "ELEKTROWNIA";
+    font-weight: 900;
+    font-size: 0.795rem;
+    position: absolute;
+    top: 3.9rem;
+    left: 0.15rem;    
+    text-align: center;
+}
+.field13::before{
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: url(img/light.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 0.45rem;
+    bottom: 1.5rem;
+}
+.field14{
+    left: 3.105rem;
+    bottom: 22.575rem;
+    transform: rotate(90deg);
+}
+.field15{
+    left: 3.105rem;
+    bottom: 29.07rem;
+    transform: rotate(90deg);
+}
+.field16{
+    left: 3.105rem;
+    bottom: 35.565rem;
+    transform: rotate(90deg);
+}
+.field16::after{
+    content: "DWORZEC ZACHÓD";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+}
+.field17{
+    left: 3.105rem;
+    bottom: 42.06rem;
+    transform: rotate(90deg);
+}
+.field17::after, .field19::after, .field20::after{
+    background: #33FF00;
+}
+.field18{
+    left: 3.105rem;
+    bottom: 48.555rem;
+    transform: rotate(90deg);
+}
+.field19{
+    left: 3.105rem;
+    bottom: 55.05rem;
+    transform: rotate(90deg);
+}
+.field20{
+    left: 3.105rem;
+    bottom: 61.545rem;
+    transform: rotate(90deg);
+}
+.field21{
+    width: 12.69rem;
+    width: 12.69rem;
+    left: 0rem;
+    top: 0rem;
+}
+.field21::after{
+    content: "DARMOW PARKING";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+    transform: rotate(135deg)
+}
+.field21::before{
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: url(img/car.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 4.5rem;
+    bottom: 2.25rem;
+    transform: rotate(135deg);
+}
+.field22{
+    left: 12.69rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field22::after, .field24::after, .field25::after{
+    background: #F8FF00;
+}
+.field23{
+    left: 19.185rem;
+    top: 0;
+    transform: rotate(180deg);
+}
+.field24{
+    left: 25.68rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field25{
+    left: 32.175rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field26{
+    left: 38.67rem;
+    top: 0rem;
+    transform: rotate(180deg);   
+}
+.field26::after{
+    content: "DWORZEC PÓŁNOC";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    top: 3.09rem;
+    text-align: center;
+}
+.field27{
+    left: 45.165rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field27::after, .field28::after, .field30::after{
+    background: #E89112;
+}
+.field28{
+    left: 51.66rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field29{
+    left: 58.155rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field29::after{
+    content: "WODOCIĄGI";
+    font-weight: 900;
+    font-size: 0.825rem;
+    position: absolute;
+    top: 3.9rem;
+    left: 0.75rem;    
+    text-align: center;
+}
+.field29::before{
+    content: "";
+    display: block;
+    width: 5.25rem;
+    height: 5.25rem;
+    background: url(img/water.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 0.69rem;
+    bottom: 1.5rem;
+}
+.field30{
+    left: 64.65rem;
+    top: 0rem;
+    transform: rotate(180deg);
+}
+.field31{
+    width: 12.69rem;
+    height: 12.69rem;
+    right: 0;
+    top: 0rem;
+}
+.field31::after{
+    content: "IDZ DO WIĘZIENIA";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    right: -0.6rem;
+    top: 3rem;
+    text-align: center;
+    transform: rotate(225deg)
+}
+.field31::before{
+    content: "";
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    background: url(img/police.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 2.1rem;
+    top: 4.5rem;
+    transform: rotate(225deg);
+}
+.field32{
+    right: 3.06rem;
+    top: 9.555rem;
+    transform: rotate(270deg);
+}
+.field32::after, .field33::after, .field35::after{
+    background: #FF0000;
+}
+.field33{
+    right: 3.06rem;
+    top: 16.05rem;
+    transform: rotate(270deg);
+}
+.field34{
+    right: 3.06rem;
+    top: 22.545rem;
+    transform: rotate(270deg);
+}
+.field35{
+    right: 3.06rem;
+    top: 29.04rem;
+    transform: rotate(270deg);
+}
+.field36{
+    right: 3.06rem;
+    top: 35.535rem;
+    transform: rotate(270deg);
+}
+.field36::after{
+    content: "DWORZEC WSCHÓD";
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+}
+.field37{
+    right: 3.06rem;
+    top: 42.03rem;
+    transform: rotate(270deg);
+}
+.field38{
+    right: 3.06rem;
+    top: 48.525rem;
+    transform: rotate(270deg);
+}
+.field38::after, .field40::after{
+    background: black;
+}
+.field39{
+    right: 3.06rem;
+    top: 55.02rem;
+    transform: rotate(270deg);
+}
+.field39::after{
+    content: "PODATEK DOCHODOWY 100$";
+    font-weight: 800;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 3.9rem;
+    text-align: center;
+}
+.field40{
+    right: 3.06rem;
+    top: 61.515rem;
+    transform: rotate(270deg);
+}
+/* MONEY */
+.Player1Money, .Player2Money, .Player3Money{
+    position: absolute;
+    display: block;
+    width: 22.5rem;
+    height: 10.05rem;
+    background: green;
+    left: 97.5rem;
+    top: 3rem;
+}
+.Player1Money::before, .Player2Money::before, .Player3Money::before{
+    content: "$$";
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: 3rem;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+.player1, .player2, .player3{
+    position: absolute;
+    display: block;
+    top: 3.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 9rem;
+    color: black; 
+    text-align: center;
+}
+.wheel1, .wheel2, .wheel3{
+    position: relative;
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    background: white;
+    border-radius: 50%;
+    left: 6.75rem;
+    top: 0.6rem;
+}
+.player1::before, .player2:before, .player3:before{
+    content: "$$";
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: 3rem;
+    top: 1.5rem;
+    left: 11.2rem;
+}
+
+.Player2Money{
+    background: red;
+    left: 124.5rem;
+}
+
+.Player3Money{
+    background: blue;
+    left: 151.5rem;
+}
+
+/* pionki */
+.p1{
+    position: absolute;
+    display: block;
+    background: green;
+    border: 0.01rem black solid;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 0.1rem;
+    left: 0.1rem;
+}
+.p2::after{
+    content: "";
+    position: absolute;
+    display: block;
+    background: red;
+    border: 0.01rem black solid;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 0.1rem;
+    left: 2.2rem;
+}
+.p3::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background: blue;
+    border: 0.01rem black solid;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 0.1rem;
+    left: 4.3rem;
+}
+/* katy szansy */
+.question{
+    display: block;
+    position: absolute;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    z-index: 500;
+}
+.questionText{
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    background: lightgray;
+    left: 19.5rem;
+    top: 20rem;
+    padding: 1rem;
+    z-index: 500;
+}
+.questionOatput{
+    display: block;
+    position: relative;
+    font-size: 2rem;
+    text-align: center;
+    top: 3rem;
+}
+.ok{
+    display: block;
+    position: absolute;
+    width: 6rem;
+    height: 4rem;
+    left: 18rem;
+    top: 18rem;
+    color: white;
+    font-size: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.red{
+    border: 0.3rem darkred solid;
+    color: darkred;
+}
+.blue{
+    border: 0.3rem darkblue solid;
+    color: darkblue;
+}
+.blueok{
+    background:  darkblue;
+}
+.redok{
+    background: darkred;
+}
+.consol{
+    width: 51rem;
+    height: 63.6rem;
+    display: block;
+    position: absolute;
+    background: transparent;
+    border: 0.4rem #bfc1bc solid;
+    left: 120rem; 
+    top: 20rem;
+    color: white;
+    text-align: left;
+    font-size: 2rem;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+.green{
+color: greenyellow;
+}
+.red2{
+    color:red;
+}
+.blue3{
+    color: blue;
+}
+/* własność */
+.owner2, .owner4, .owner6, .owner7, .owner9, .owner10, .owner12, .owner13, .owner14, .owner15, .owner16, .owner17, .owner19, .owner20, .owner22, .owner24, .owner25,
+.owner26, .owner27, .owner28, .owner29, .owner30, .owner32, .owner33, .owner35, .owner36, .owner38, .owner40{
+    display: block;
+    position: absolute;
+    background:transparent;
+    width: 100%;
+    height: 1rem;
+    bottom: 0;
+
+}
+.ownerp1{
+    background: green;
+}
+.ownerp2{
+    background: red;
+}
+.ownerp3{
+    background: blue;
+}
+
+.hide{
+    display: none;
+}
