@@ -681,6 +681,8 @@ let f13 = {
     owner: 0
 };
 let f29 = {
+    style: document.querySelector(".field29"),
+    ownerstyle: document.querySelector(".owner29"),
     price: 150,
     
     mortgage: 75,
@@ -718,14 +720,7 @@ function resetStyle(){
     oatput10.classList.add('hide');
     oatput11.classList.add('hide');
 }
-
-document.addEventListener("mouseout", function(e) { 
-    magnification.classList.add('hide');
-},false);      
-
-f2.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
-    magnification.classList.add('bigfield2');
+function styleStreet(){
     oatput3.classList.remove('hide');
     card3.classList.remove('hide');
     card4.classList.remove('hide');
@@ -744,6 +739,26 @@ f2.style.addEventListener("mouseover", function(e) {
     oatput9.classList.remove('hide');
     oatput10.classList.remove('hide');
     oatput11.classList.remove('hide');
+}
+function styleTrain(){
+    card14.classList.remove('hide');
+    card15.classList.remove('hide');
+    card16.classList.remove('hide');
+    oatput14.classList.remove('hide');
+    oatput15.classList.remove('hide');
+    oatput16.classList.remove('hide');
+    oatput3.classList.remove('hide');
+    card3.classList.remove('hide');
+}
+
+document.addEventListener("mouseout", function(e) { 
+    magnification.classList.add('hide');
+},false);      
+
+f2.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
+    magnification.classList.add('bigfield2');
     
     oatput1.textContent = f2.price;
     oatput3.textContent = f2.rent;
@@ -775,26 +790,9 @@ f2.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f4.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield4');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f4.price;
     oatput3.textContent = f4.rent;
@@ -826,26 +824,9 @@ f4.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f7.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield7');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f7.price;
     oatput3.textContent = f7.rent;
@@ -877,26 +858,9 @@ f7.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f9.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield9');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f9.price;
     oatput3.textContent = f9.rent;
@@ -928,26 +892,9 @@ f9.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f10.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield10');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f10.price;
     oatput3.textContent = f10.rent;
@@ -979,27 +926,10 @@ f10.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f12.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield12');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-    
+
     oatput1.textContent = f12.price;
     oatput3.textContent = f12.rent;
     oatput4.textContent = f12.rentAll;
@@ -1030,26 +960,9 @@ f12.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f14.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();
     magnification.classList.add('bigfield14');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f14.price;
     oatput3.textContent = f14.rent;
@@ -1081,26 +994,9 @@ f14.style.addEventListener("mouseover", function(e) {
     }
 },false);
 f15.style.addEventListener("mouseover", function(e) {
-    resetStyle(); 
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield15');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
     oatput1.textContent = f15.price;
     oatput3.textContent = f15.rent;
@@ -1131,868 +1027,477 @@ f15.style.addEventListener("mouseover", function(e) {
         oatput2.classList.remove('blue3');
     }
 },false);
-field17.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30','bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f17.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield17');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
-    document.querySelector('.oatput1').textContent = cena17;
-    document.querySelector('.oatput3').textContent = czynsz17;
-    document.querySelector('.oatput4').textContent = czynsz17all;
-    document.querySelector('.oatput5').textContent = czynsz17dom1;
-    document.querySelector('.oatput6').textContent = czynsz17dom2;
-    document.querySelector('.oatput7').textContent = czynsz17dom3;
-    document.querySelector('.oatput8').textContent = czynsz17dom4;
-    document.querySelector('.oatput9').textContent = czynsz17hotel;
-    document.querySelector('.oatput10').textContent = kosztdom17;
-    document.querySelector('.oatput11').textContent = koszthotel17;
-    document.querySelector('.oatput12').textContent = hipoteka17;
-    document.querySelector('.oatput13').textContent = splata17;    
-    
-    if(owner17 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    oatput1.textContent = f17.price;
+    oatput3.textContent = f17.rent;
+    oatput4.textContent = f17rentAll;
+    oatput5.textContent = f17.rent1house;
+    oatput6.textContent = f17.rent2house;
+    oatput7.textContent = f17.rent3house;
+    oatput8.textContent = f17.rent4house;
+    oatput9.textContent = f17.rentHotel;
+    oatput10.textContent = f17.priceHome;
+    oatput11.textContent = f17.priceHotel;
+    oatput12.textContent = f17.mortgage;
+    oatput13.textContent = f17.mortgageRepayment;
+
+    if(f17.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner17 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f17.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner17 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f17.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner17 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f17.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field19.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f19.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield19');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
-    document.querySelector('.oatput1').textContent = cena19;
-    document.querySelector('.oatput3').textContent = czynsz19;
-    document.querySelector('.oatput4').textContent = czynsz19all;
-    document.querySelector('.oatput5').textContent = czynsz19dom1;
-    document.querySelector('.oatput6').textContent = czynsz19dom2;
-    document.querySelector('.oatput7').textContent = czynsz19dom3;
-    document.querySelector('.oatput8').textContent = czynsz19dom4;
-    document.querySelector('.oatput9').textContent = czynsz19hotel;
-    document.querySelector('.oatput10').textContent = kosztdom19;
-    document.querySelector('.oatput11').textContent = koszthotel19;
-    document.querySelector('.oatput12').textContent = hipoteka19;
-    document.querySelector('.oatput13').textContent = splata19; 
+    oatput1.textContent = f19.price;
+    oatput3.textContent = f19.rent;
+    oatput4.textContent = f19.rentAll;
+    oatput5.textContent = f19.rent1house;
+    oatput6.textContent = f19.rent2house;
+    oatput7.textContent = f19.rent3house;
+    oatput8.textContent = f19.rent4house;
+    oatput9.textContent = f19.rentHotel;
+    oatput10.textContent = f19.priceHome;
+    oatput11.textContent = f19.priceHotel;
+    oatput12.textContent = f19.mortgage;
+    oatput13.textContent = f19.mortgageRepayment;
 
-    if(owner19 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f19.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner19 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f19.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner19 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f19.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner19 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f19.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field20.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33','bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f20.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield20');
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
+    oatput1.textContent = f20.price;
+    oatput3.textContent = f20.rent;
+    oatput4.textContent = f20.rentAll;
+    oatput5.textContent = f20.rent1house;
+    oatput6.textContent = f20.rent2house;
+    oatput7.textContent = f20.rent3house;
+    oatput8.textContent = f20.rent4house;
+    oatput9.textContent = f20.rentHotel;
+    oatput10.textContent = f20.priceHome;
+    oatput11.textContent = f20.priceHotel;
+    oatput12.textContent = f20.mortgage;
+    oatput13.textContent = f20.mortgageRepayment;
 
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-    
-    document.querySelector('.oatput1').textContent = f2.price0;
-    document.querySelector('.oatput3').textContent = czynsz20;
-    document.querySelector('.oatput4').textContent = czynsz20all;
-    document.querySelector('.oatput5').textContent = czynsz20dom1;
-    document.querySelector('.oatput6').textContent = czynsz20dom2;
-    document.querySelector('.oatput7').textContent = czynsz20dom3;
-    document.querySelector('.oatput8').textContent = czynsz20dom4;
-    document.querySelector('.oatput9').textContent = czynsz20hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome0;
-    document.querySelector('.oatput11').textContent = f2.priceHotel0;
-    document.querySelector('.oatput12').textContent = f2.mortgage0;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment0; 
-
-    if(f2.owner0 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f20.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner0 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f20.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner0 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f20.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner0 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f20.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
-    }    
+    }
 },false);
-field22.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f22.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet();
     magnification.classList.add('bigfield22');
+    
+    oatput1.textContent = f22.price;
+    oatput3.textContent = f22.rent;
+    oatput4.textContent = f22.rentAll;
+    oatput5.textContent = f22.rent1house;
+    oatput6.textContent = f22.rent2house;
+    oatput7.textContent = f22.rent3house;
+    oatput8.textContent = f22.rent4house;
+    oatput9.textContent = f22.rentHotel;
+    oatput10.textContent = f22.priceHome;
+    oatput11.textContent = f22.priceHotel;
+    oatput12.textContent = f22.mortgage;
+    oatput13.textContent = f22.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = f2.price2;
-    document.querySelector('.oatput3').textContent = czynsz22;
-    document.querySelector('.oatput4').textContent = czynsz22all;
-    document.querySelector('.oatput5').textContent = czynsz22dom1;
-    document.querySelector('.oatput6').textContent = czynsz22dom2;
-    document.querySelector('.oatput7').textContent = czynsz22dom3;
-    document.querySelector('.oatput8').textContent = czynsz22dom4;
-    document.querySelector('.oatput9').textContent = czynsz22hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome2;
-    document.querySelector('.oatput11').textContent = f2.pricef2.hotel;
-    document.querySelector('.oatput12').textContent = f2.mortgage2;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment2; 
-
-    if(f2.owner2 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f22.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner2 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f22.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner2 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f22.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner2 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f22.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field24.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33','bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
-    magnification.classList.add('bigfield24')
+f24.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet();  
+    magnification.classList.add('bigfield24');
+    
+    oatput1.textContent = f24.price;
+    oatput3.textContent = f24.rent;
+    oatput4.textContent = f24.rentAll;
+    oatput5.textContent = f24.rent1house;
+    oatput6.textContent = f24.rent2house;
+    oatput7.textContent = f24.rent3house;
+    oatput8.textContent = f24.rent4house;
+    oatput9.textContent = f24.rentHotel;
+    oatput10.textContent = f24.priceHome;
+    oatput11.textContent = f24.priceHotel;
+    oatput12.textContent = f24.mortgage;
+    oatput13.textContent = f24.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = f2.price4;
-    document.querySelector('.oatput3').textContent = czynsz24;
-    document.querySelector('.oatput4').textContent = czynsz24all;
-    document.querySelector('.oatput5').textContent = czynsz24dom1;
-    document.querySelector('.oatput6').textContent = czynsz24dom2;
-    document.querySelector('.oatput7').textContent = czynsz24dom3;
-    document.querySelector('.oatput8').textContent = czynsz24dom4;
-    document.querySelector('.oatput9').textContent = czynsz24hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome4;
-    document.querySelector('.oatput11').textContent = f2.priceHotel4;
-    document.querySelector('.oatput12').textContent = f2.mortgage4;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment4; 
-
-    if(f2.owner4 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f24.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner4 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f24.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner4 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f24.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner4 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f24.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field25.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
-    magnification.classList.add('bigfield25')
+f25.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
+    magnification.classList.add('bigfield25');
+    
+    oatput1.textContent = f25.price;
+    oatput3.textContent = f25.rent;
+    oatput4.textContent = f25.rentAll;
+    oatput5.textContent = f25.rent1house;
+    oatput6.textContent = f25.rent2house;
+    oatput7.textContent = f25.rent3house;
+    oatput8.textContent = f25.rent4house;
+    oatput9.textContent = f25.rentHotel;
+    oatput10.textContent = f25.priceHome;
+    oatput11.textContent = f25.priceHotel;
+    oatput12.textContent = f25.mortgage;
+    oatput13.textContent = f25.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = f2.price5;
-    document.querySelector('.oatput3').textContent = czynsz25;
-    document.querySelector('.oatput4').textContent = czynsz25all;
-    document.querySelector('.oatput5').textContent = czynsz25dom1;
-    document.querySelector('.oatput6').textContent = czynsz25dom2;
-    document.querySelector('.oatput7').textContent = czynsz25dom3;
-    document.querySelector('.oatput8').textContent = czynsz25dom4;
-    document.querySelector('.oatput9').textContent = czynsz25hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome5;
-    document.querySelector('.oatput11').textContent = f2.priceHotel5;
-    document.querySelector('.oatput12').textContent = f2.mortgage5;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment5; 
-
-    if(f2.owner5 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f25.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner5 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f25.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner5 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f25.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner5 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f25.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field27.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
-    magnification.classList.add('bigfield27')
+f27.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
+    magnification.classList.add('bigfield27');
+    
+    oatput1.textContent = f27.price;
+    oatput3.textContent = f27.rent;
+    oatput4.textContent = f27.rentAll;
+    oatput5.textContent = f27.rent1house;
+    oatput6.textContent = f27.rent2house;
+    oatput7.textContent = f27.rent3house;
+    oatput8.textContent = f27.rent4house;
+    oatput9.textContent = f27.rentHotel;
+    oatput10.textContent = f27.priceHome;
+    oatput11.textContent = f27.priceHotel;
+    oatput12.textContent = f27.mortgage;
+    oatput13.textContent = f27.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = f2.price7;
-    document.querySelector('.oatput3').textContent = czynsz27;
-    document.querySelector('.oatput4').textContent = czynsz27all;
-    document.querySelector('.oatput5').textContent = czynsz27dom1;
-    document.querySelector('.oatput6').textContent = czynsz27dom2;
-    document.querySelector('.oatput7').textContent = czynsz27dom3;
-    document.querySelector('.oatput8').textContent = czynsz27dom4;
-    document.querySelector('.oatput9').textContent = czynsz27hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome7;
-    document.querySelector('.oatput11').textContent = f2.priceHotel7;
-    document.querySelector('.oatput12').textContent = f2.mortgage7;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment7; 
-
-    if(f2.owner7 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f27.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner7 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f27.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner7 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f27.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner7 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f27.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field28.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f28.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield28');
+    
+    oatput1.textContent = f28.price;
+    oatput3.textContent = f28.rent;
+    oatput4.textContent = f28.rentAll;
+    oatput5.textContent = f28.rent1house;
+    oatput6.textContent = f28.rent2house;
+    oatput7.textContent = f28.rent3house;
+    oatput8.textContent = f28.rent4house;
+    oatput9.textContent = f28.rentHotel;
+    oatput10.textContent = f28.priceHome;
+    oatput11.textContent = f28.priceHotel;
+    oatput12.textContent = f28.mortgage;
+    oatput13.textContent = f28.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = f2.price8;
-    document.querySelector('.oatput3').textContent = czynsz28;
-    document.querySelector('.oatput4').textContent = czynsz28all;
-    document.querySelector('.oatput5').textContent = czynsz28dom1;
-    document.querySelector('.oatput6').textContent = czynsz28dom2;
-    document.querySelector('.oatput7').textContent = czynsz28dom3;
-    document.querySelector('.oatput8').textContent = czynsz28dom4;
-    document.querySelector('.oatput9').textContent = czynsz28hotel;
-    document.querySelector('.oatput10').textContent = f2.priceHome8;
-    document.querySelector('.oatput11').textContent = f2.priceHotel8;
-    document.querySelector('.oatput12').textContent = f2.mortgage8;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment8; 
-   
-    if(f2.owner8 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f28.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner8 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f28.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner8 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f28.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner8 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f28.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field30.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f30.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet();
     magnification.classList.add('bigfield30');
+    
+    oatput1.textContent = f30.price;
+    oatput3.textContent = f30.rent;
+    oatput4.textContent = f30.rentAll;
+    oatput5.textContent = f30.rent1house;
+    oatput6.textContent = f30.rent2house;
+    oatput7.textContent = f30.rent3house;
+    oatput8.textContent = f30.rent4house;
+    oatput9.textContent = f30.rentHotel;
+    oatput10.textContent = f30.priceHome;
+    oatput11.textContent = f30.priceHotel;
+    oatput12.textContent = f30.mortgage;
+    oatput13.textContent = f30.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = cena30;
-    document.querySelector('.oatput3').textContent = czynsz30;
-    document.querySelector('.oatput4').textContent = czynsz30all;
-    document.querySelector('.oatput5').textContent = czynsz30dom1;
-    document.querySelector('.oatput6').textContent = czynsz30dom2;
-    document.querySelector('.oatput7').textContent = czynsz30dom3;
-    document.querySelector('.oatput8').textContent = czynsz30dom4;
-    document.querySelector('.oatput9').textContent = czynsz30hotel;
-    document.querySelector('.oatput10').textContent = kosztdom30;
-    document.querySelector('.oatput11').textContent = koszthotel30;
-    document.querySelector('.oatput12').textContent = hipoteka30;
-    document.querySelector('.oatput13').textContent = splata30; 
-
-    if(owner30 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f30.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner30 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f30.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner30 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f30.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner30 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f30.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field32.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield33','bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f32.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield32');
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
+    oatput1.textContent = f32.price;
+    oatput3.textContent = f32.rent;
+    oatput4.textContent = f32.rentAll;
+    oatput5.textContent = f32.rent1house;
+    oatput6.textContent = f32.rent2house;
+    oatput7.textContent = f32.rent3house;
+    oatput8.textContent = f32.rent4house;
+    oatput9.textContent = f32.rentHotel;
+    oatput10.textContent = f32.priceHome;
+    oatput11.textContent = f32.priceHotel;
+    oatput12.textContent = f32.mortgage;
+    oatput13.textContent = f32.mortgageRepayment;
 
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = cena32;
-    document.querySelector('.oatput3').textContent = czynsz32;
-    document.querySelector('.oatput4').textContent = czynsz32all;
-    document.querySelector('.oatput5').textContent = czynsz32dom1;
-    document.querySelector('.oatput6').textContent = czynsz32dom2;
-    document.querySelector('.oatput7').textContent = czynsz32dom3;
-    document.querySelector('.oatput8').textContent = czynsz32dom4;
-    document.querySelector('.oatput9').textContent = czynsz32hotel;
-    document.querySelector('.oatput10').textContent = kosztdom32;
-    document.querySelector('.oatput11').textContent = koszthotel32;
-    document.querySelector('.oatput12').textContent = hipoteka32;
-    document.querySelector('.oatput13').textContent = splata32; 
-
-    if(owner32 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f32.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner32 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f32.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner32 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f32.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner32 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f32.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field33.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f33.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet();
     magnification.classList.add('bigfield33');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = cena33;
-    document.querySelector('.oatput3').textContent = czynsz33;
-    document.querySelector('.oatput4').textContent = czynsz33all;
-    document.querySelector('.oatput5').textContent = czynsz33dom1;
-    document.querySelector('.oatput6').textContent = czynsz33dom2;
-    document.querySelector('.oatput7').textContent = czynsz33dom3;
-    document.querySelector('.oatput8').textContent = czynsz33dom4;
-    document.querySelector('.oatput9').textContent = czynsz33hotel;
-    document.querySelector('.oatput10').textContent = kosztdom33;
-    document.querySelector('.oatput11').textContent = koszthotel33;
-    document.querySelector('.oatput12').textContent = hipoteka33;
-    document.querySelector('.oatput13').textContent = splata33; 
     
-    if(owner33 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    oatput1.textContent = f33.price;
+    oatput3.textContent = f33.rent;
+    oatput4.textContent = f33.rentAll;
+    oatput5.textContent = f33.rent1house;
+    oatput6.textContent = f33.rent2house;
+    oatput7.textContent = f33.rent3house;
+    oatput8.textContent = f33.rent4house;
+    oatput9.textContent = f33.rentHotel;
+    oatput10.textContent = f33.priceHome;
+    oatput11.textContent = f33.priceHotel;
+    oatput12.textContent = f33.mortgage;
+    oatput13.textContent = f33.mortgageRepayment;
+
+    if(f33.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner33 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f33.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner33 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f33.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner33 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f33.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field35.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f35.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield35');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
-    document.querySelector('.oatput1').textContent = cena35;
-    document.querySelector('.oatput3').textContent = czynsz35;
-    document.querySelector('.oatput4').textContent = czynsz35all;
-    document.querySelector('.oatput5').textContent = czynsz35dom1;
-    document.querySelector('.oatput6').textContent = czynsz35dom2;
-    document.querySelector('.oatput7').textContent = czynsz35dom3;
-    document.querySelector('.oatput8').textContent = czynsz35dom4;
-    document.querySelector('.oatput9').textContent = czynsz35hotel;
-    document.querySelector('.oatput10').textContent = kosztdom35;
-    document.querySelector('.oatput11').textContent = koszthotel35;
-    document.querySelector('.oatput12').textContent = hipoteka35;
-    document.querySelector('.oatput13').textContent = splata35; 
+    oatput1.textContent = f35.price;
+    oatput3.textContent = f35.rent;
+    oatput4.textContent = f35.rentAll;
+    oatput5.textContent = f35.rent1house;
+    oatput6.textContent = f35.rent2house;
+    oatput7.textContent = f35.rent3house;
+    oatput8.textContent = f35.rent4house;
+    oatput9.textContent = f35.rentHotel;
+    oatput10.textContent = f35.priceHome;
+    oatput11.textContent = f35.priceHotel;
+    oatput12.textContent = f35.mortgage;
+    oatput13.textContent = f35.mortgageRepayment;
 
-    if(owner35 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f35.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner35 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f35.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner35 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f35.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner35 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f35.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field38.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15','bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f38.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet();  
     magnification.classList.add('bigfield38');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
     
-    document.querySelector('.oatput1').textContent = cena38;
-    document.querySelector('.oatput3').textContent = czynsz38;
-    document.querySelector('.oatput4').textContent = czynsz38all;
-    document.querySelector('.oatput5').textContent = czynsz38dom1;
-    document.querySelector('.oatput6').textContent = czynsz38dom2;
-    document.querySelector('.oatput7').textContent = czynsz38dom3;
-    document.querySelector('.oatput8').textContent = czynsz38dom4;
-    document.querySelector('.oatput9').textContent = czynsz38hotel;
-    document.querySelector('.oatput10').textContent = kosztdom38;
-    document.querySelector('.oatput11').textContent = koszthotel38;
-    document.querySelector('.oatput12').textContent = hipoteka38;
-    document.querySelector('.oatput13').textContent = splata38; 
-   
-    if(owner38 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    oatput1.textContent = f38.price;
+    oatput3.textContent = f38.rent;
+    oatput4.textContent = f38.rentAll;
+    oatput5.textContent = f38.rent1house;
+    oatput6.textContent = f38.rent2house;
+    oatput7.textContent = f38.rent3house;
+    oatput8.textContent = f38.rent4house;
+    oatput9.textContent = f38.rentHotel;
+    oatput10.textContent = f38.priceHome;
+    oatput11.textContent = f38.priceHotel;
+    oatput12.textContent = f38.mortgage;
+    oatput13.textContent = f38.mortgageRepayment;
+
+    if(f38.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner38 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f38.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner38 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f38.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner38 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f38.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field40.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f40.style.addEventListener("mouseover", function(e) {
+    resetStyle();
+    styleStreet(); 
     magnification.classList.add('bigfield40');
+    
+    oatput1.textContent = f40.price;
+    oatput3.textContent = f40.rent;
+    oatput4.textContent = f40.rentAll;
+    oatput5.textContent = f40.rent1house;
+    oatput6.textContent = f40.rent2house;
+    oatput7.textContent = f40.rent3house;
+    oatput8.textContent = f40.rent4house;
+    oatput9.textContent = f40.rentHotel;
+    oatput10.textContent = f40.priceHome;
+    oatput11.textContent = f40.priceHotel;
+    oatput12.textContent = f40.mortgage;
+    oatput13.textContent = f40.mortgageRepayment;
 
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-        
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-
-    document.querySelector('.oatput1').textContent = cena40;
-    document.querySelector('.oatput3').textContent = czynsz40;
-    document.querySelector('.oatput4').textContent = czynsz40all;
-    document.querySelector('.oatput5').textContent = czynsz40dom1;
-    document.querySelector('.oatput6').textContent = czynsz40dom2;
-    document.querySelector('.oatput7').textContent = czynsz40dom3;
-    document.querySelector('.oatput8').textContent = czynsz40dom4;
-    document.querySelector('.oatput9').textContent = czynsz40hotel;
-    document.querySelector('.oatput10').textContent = kosztdom40;
-    document.querySelector('.oatput11').textContent = koszthotel40;
-    document.querySelector('.oatput12').textContent = hipoteka40;
-    document.querySelector('.oatput13').textContent = splata40; 
-    if(owner40 == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
+    if(f40.owner == 1){
+        oatput2.textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner40 == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
+    } else if (f40.owner == 2){
+        oatput2.textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner40 == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
+    } else if (f40.owner == 3){
+        oatput2.textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner40 == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
+    } else if (f40.owner == 0){
+        oatput2.textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
@@ -2000,331 +1505,166 @@ field40.addEventListener("mouseover", function(e) {
 },false);
 
 //train
-field6.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f6.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
+    styleTrain();
     magnification.classList.add('bigfield6');
 
-    card14.classList.remove('hide');
-    card15.classList.remove('hide');
-    card16.classList.remove('hide');
-    oatput14.classList.remove('hide');
-    oatput15.classList.remove('hide');
-    oatput16.classList.remove('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
+    oatput1.textContent = f6.price;
+    oatput3.textContent = f6.rent;
+    oatput12.textContent = f6.mortgage;
+    oatput13.textContent = f6.mortgageRepayment;
+    oatput14.textContent = f6.rent2;
+    oatput15.textContent = f6.rent3;
+    oatput16.textContent = f6.rent4;
 
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-
-    document.querySelector('.oatput1').textContent = cena6;
-    document.querySelector('.oatput3').textContent = czynsz6;
-    document.querySelector('.oatput12').textContent = hipoteka6;
-    document.querySelector('.oatput13').textContent = splata6;
-    document.querySelector('.oatput14').textContent = stacje26;
-    document.querySelector('.oatput15').textContent = stacje36;
-    document.querySelector('.oatput16').textContent = stacje46;
-    if(owner6 == 1){
+    if(f6.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner6 == 2){
+    } else if (f6.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner6 == 3){
+    } else if (f6.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner6 == 0){
+    } else if (f6.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field16.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
-    magnification.classList.add('bigfield16'); 
+f16.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
+    styleTrain();
+    magnification.classList.add('bigfield16');
 
-    card14.classList.remove('hide');
-    card15.classList.remove('hide');
-    card16.classList.remove('hide');
-    oatput14.classList.remove('hide');
-    oatput15.classList.remove('hide');
-    oatput16.classList.remove('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
+    oatput1.textContent = f16.price;
+    oatput3.textContent = f16.rent;
+    oatput12.textContent = f16.mortgage;
+    oatput13.textContent = f16.mortgageRepayment;
+    oatput14.textContent = f16.rent2;
+    oatput15.textContent = f16.rent3;
+    oatput16.textContent = f16.rent4;
 
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-
-    document.querySelector('.oatput1').textContent = cena16;
-    document.querySelector('.oatput3').textContent = czynsz16;
-    document.querySelector('.oatput12').textContent = hipoteka16;
-    document.querySelector('.oatput13').textContent = splata16;
-    document.querySelector('.oatput14').textContent = stacje216;
-    document.querySelector('.oatput15').textContent = stacje316;
-    document.querySelector('.oatput16').textContent = stacje416;
-    if(owner16 == 1){
+    if(f16.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner16 == 2){
+    } else if (f16.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner16 == 3){
+    } else if (f16.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner16 == 0){
+    } else if (f16.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field26.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield36', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f26.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
+    styleTrain();
     magnification.classList.add('bigfield26');
 
-    card14.classList.remove('hide');
-    card15.classList.remove('hide');
-    card16.classList.remove('hide');
-    oatput14.classList.remove('hide');
-    oatput15.classList.remove('hide');
-    oatput16.classList.remove('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
+    oatput1.textContent = f26.price;
+    oatput3.textContent = f26.rent;
+    oatput12.textContent = f26.mortgage;
+    oatput13.textContent = f26.mortgageRepayment;
+    oatput14.textContent = f26.rent2;
+    oatput15.textContent = f26.rent3;
+    oatput16.textContent = f26.rent4;
 
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-    
-
-    document.querySelector('.oatput1').textContent = f2.price6;
-    document.querySelector('.oatput3').textContent = czynsz26;
-    document.querySelector('.oatput12').textContent = f2.mortgage6;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment6;
-    document.querySelector('.oatput14').textContent = stacje226;
-    document.querySelector('.oatput15').textContent = stacje326;
-    document.querySelector('.oatput16').textContent = stacje426;
-    if(f2.owner6 == 1){
+    if(f26.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner6 == 2){
+    } else if (f26.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner6 == 3){
+    } else if (f26.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner6 == 0){
+    } else if (f26.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field36.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield13', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f36.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
+    styleTrain();
     magnification.classList.add('bigfield36');
 
-    card14.classList.remove('hide');
-    card15.classList.remove('hide');
-    card16.classList.remove('hide');
-    oatput14.classList.remove('hide');
-    oatput15.classList.remove('hide');
-    oatput16.classList.remove('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
+    oatput1.textContent = f36.price;
+    oatput3.textContent = f36.rent;
+    oatput12.textContent = f36.mortgage;
+    oatput13.textContent = f36.mortgageRepayment;
+    oatput14.textContent = f36.rent2;
+    oatput15.textContent = f36.rent3;
+    oatput16.textContent = f36.rent4;
 
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-    card17.classList.add('hide');
-
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-
-    document.querySelector('.oatput1').textContent = cena36;
-    document.querySelector('.oatput3').textContent = czynsz36;
-    document.querySelector('.oatput12').textContent = hipoteka36;
-    document.querySelector('.oatput13').textContent = splata36;
-    document.querySelector('.oatput14').textContent = stacje236;
-    document.querySelector('.oatput15').textContent = stacje336;
-    document.querySelector('.oatput16').textContent = stacje436;
-    if(owner36 == 1){
+    if(f36.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner36 == 2){
+    } else if (f36.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner36 == 3){
+    } else if (f36.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner36 == 0){
+    } else if (f36.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field13.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield26', 'bigfield29'); 
-    magnification.classList.remove('hide');
+f13.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
     magnification.classList.add('bigfield13');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-
-    card3.classList.add('hide');
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-
-    oatput3.classList.add('hide');
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-
     card17.classList.remove('hide');
 
-    document.querySelector('.oatput1').textContent = cena13;
-    document.querySelector('.oatput12').textContent = hipoteka13;
-    document.querySelector('.oatput13').textContent = splata13;
-    if(owner13 == 1){
+    oatput1.textContent = f13.price;
+    oatput12.textContent = f13.mortgage;
+    oatput13.textContent = f13.mortgageRepayment;
+
+    if(f13.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (owner13 == 2){
+    } else if (f13.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (owner13 == 3){
+    } else if (f13.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (owner13 == 0){
+    } else if (f13.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
         oatput2.classList.remove('blue3');
     }
 },false);
-field29.addEventListener("mouseover", function(e) { 
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17', 'bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield26', 'bigfield13'); 
-    magnification.classList.remove('hide');
+f29.style.addEventListener("mouseover", function(e) { 
+    resetStyle();
     magnification.classList.add('bigfield29');
-
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-
-    card3.classList.add('hide');
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-
-    oatput3.classList.add('hide');
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-
     card17.classList.remove('hide');
 
-    document.querySelector('.oatput1').textContent = f2.price9;
-    document.querySelector('.oatput12').textContent = f2.mortgage9;
-    document.querySelector('.oatput13').textContent = f2.mortgageRepayment9;
-    if(f2.owner9 == 1){
+    oatput1.textContent = f29.price;
+    oatput12.textContent = f29.mortgage;
+    oatput13.textContent = f29.mortgageRepayment;
+
+    if(f29.owner == 1){
         document.querySelector('.oatput2').textContent = 'Gracz 1';
         oatput2.classList.add('green');
-    } else if (f2.owner9 == 2){
+    } else if (f29.owner == 2){
         document.querySelector('.oatput2').textContent = 'Gracz 2';
         oatput2.classList.add('red2');
-    } else if (f2.owner9 == 3){
+    } else if (f29.owner == 3){
         document.querySelector('.oatput2').textContent = 'Gracz 3';
         oatput2.classList.add('blue3');
-    } else if (f2.owner9 == 0){
+    } else if (f29.owner == 0){
         document.querySelector('.oatput2').textContent = 'Brak';
         oatput2.classList.remove('green');
         oatput2.classList.remove('red2');
@@ -3865,59 +3205,59 @@ const buy = document.querySelector('.buy');
 function CanIBuy() {
     if(p1loc == 2 && f2.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 4 && owner4 == 0){
+    } else if(p1loc == 4 && f4.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 6 && owner6 == 0){
+    } else if(p1loc == 6 && f6.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 7 && owner7 == 0){
+    } else if(p1loc == 7 && f7.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 9 && owner9 == 0){
+    } else if(p1loc == 9 && f9.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 10 && owner10 == 0){
+    } else if(p1loc == 10 && f10.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 12 && owner12 == 0){
+    } else if(p1loc == 12 && f12.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 13 && owner13 == 0){
+    } else if(p1loc == 13 && f13.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 14 && owner14 == 0){
+    } else if(p1loc == 14 && f14.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 15 && owner15 == 0){
+    } else if(p1loc == 15 && f15.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 16 && owner16 == 0){
+    } else if(p1loc == 16 && f16.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 17 && owner17 == 0){
+    } else if(p1loc == 17 && f17.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 19 && owner19 == 0){
+    } else if(p1loc == 19 && f19.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 20 && f2.owner0 == 0){
+    } else if(p1loc == 20 && f20.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 22 && f2.owner2 == 0){
+    } else if(p1loc == 22 && f22.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 24 && f2.owner4 == 0){
+    } else if(p1loc == 24 && f24.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 25 && f2.owner5 == 0){
+    } else if(p1loc == 25 && f25.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 26 && f2.owner6 == 0){
+    } else if(p1loc == 26 && f26.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 27 && f2.owner7 == 0){
+    } else if(p1loc == 27 && f27.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 28 && f2.owner8 == 0){
+    } else if(p1loc == 28 && f28.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 29 && f2.owner9 == 0){
+    } else if(p1loc == 29 && f29.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 30 && owner30 == 0){
+    } else if(p1loc == 30 && f30.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 32 && owner32 == 0){
+    } else if(p1loc == 32 && f32.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 33 && owner33 == 0){
+    } else if(p1loc == 33 && f33.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 35 && owner35 == 0){
+    } else if(p1loc == 35 && f35.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 36 && owner36 == 0){
+    } else if(p1loc == 36 && f36.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 38 && owner38 == 0){
+    } else if(p1loc == 38 && f38.owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 40 && owner40 == 0){
+    } else if(p1loc == 40 && f40.owner == 0){
         buy.classList.remove('hide');
     }
 }
@@ -3925,255 +3265,255 @@ function whoOwn() {
     if(f2.owner == 1){
         ownerfield2.classList.add('ownerp1');
     }
-    if(owner4 == 1){
+    if(f4.owner == 1){
         ownerfield4.classList.add('ownerp1');
     }
-    if(owner6 == 1){
+    if(f6.owner == 1){
         ownerfield6.classList.add('ownerp1');
     }
-    if(owner7 == 1){
+    if(f7.owner == 1){
         ownerfield7.classList.add('ownerp1');
     }
-    if(owner9 == 1){
+    if(f9.owner == 1){
         ownerfield9.classList.add('ownerp1');
     }
-    if(owner10 == 1){
+    if(f10.owner == 1){
         ownerfield10.classList.add('ownerp1');
     }
-    if(owner12 == 1){
+    if(f12.owner == 1){
         ownerfield12.classList.add('ownerp1');
     }
-    if(owner13 == 1){
+    if(f13.owner == 1){
         ownerfield13.classList.add('ownerp1');
     }
-    if(owner14 == 1){
+    if(f14.owner == 1){
         ownerfield14.classList.add('ownerp1');
     }
-    if(owner15 == 1){
+    if(f15.owner == 1){
         ownerfield15.classList.add('ownerp1');
     }
-    if(owner16 == 1){
+    if(f16.owner == 1){
         ownerfield16.classList.add('ownerp1');
     }    
-    if(owner17 == 1){
+    if(f17.owner == 1){
         ownerfield17.classList.add('ownerp1');
     }    
-    if(owner19 == 1){
+    if(f19.owner == 1){
         ownerfield19.classList.add('ownerp1');
     }    
-    if(f2.owner0 == 1){
+    if(f20.owner == 1){
         ownerfield20.classList.add('ownerp1');
     }
-    if(f2.owner2 == 1){
+    if(f22.owner == 1){
         ownerfield22.classList.add('ownerp1');
     }   
-    if(f2.owner4 == 1){
+    if(f24.owner == 1){
         ownerfield24.classList.add('ownerp1');
     }
-    if(f2.owner5 == 1){
+    if(f25.owner == 1){
         ownerfield25.classList.add('ownerp1');
     }
-    if(f2.owner6 == 1){
+    if(f26.owner == 1){
         ownerfield26.classList.add('ownerp1');
     }    
-    if(f2.owner7 == 1){
+    if(f27.owner == 1){
         ownerfield27.classList.add('ownerp1');
     }
-    if(f2.owner8 == 1){
+    if(f28.owner == 1){
         ownerfield28.classList.add('ownerp1');
     }
-    if(f2.owner9 == 1){
+    if(f29.owner == 1){
         ownerfield29.classList.add('ownerp1');
     }        
-    if(owner30 == 1){
+    if(f30.owner == 1){
         ownerfield30.classList.add('ownerp1');
     }
-    if(owner32 == 1){
+    if(f32.owner == 1){
         ownerfield32.classList.add('ownerp1');
     }
-    if(owner33 == 1){
+    if(f33.owner == 1){
         ownerfield33.classList.add('ownerp1');
     }
-    if(owner35 == 1){
+    if(f35.owner == 1){
         ownerfield35.classList.add('ownerp1');
     }    
-    if(owner36 == 1){
+    if(f36.owner == 1){
         ownerfield36.classList.add('ownerp1');
     }
-    if(owner38 == 1){
+    if(f38.owner == 1){
         ownerfield38.classList.add('ownerp1');
     }
-    if(owner40 == 1){
+    if(f40.owner == 1){
         ownerfield40.classList.add('ownerp1');
     }
 
     if(f2.owner == 2){
         ownerfield2.classList.add('ownerp2');
     }
-    if(owner4 == 2){
+    if(f4.owner == 2){
         ownerfield4.classList.add('ownerp2');
     }
-    if(owner6 == 2){
+    if(f6.owner == 2){
         ownerfield6.classList.add('ownerp2');
     }
-    if(owner7 == 2){
+    if(f7.owner == 2){
         ownerfield7.classList.add('ownerp2');
     }
-    if(owner9 == 2){
+    if(f9.owner == 2){
         ownerfield9.classList.add('ownerp2');
     }
-    if(owner10 == 2){
+    if(f10.owner == 2){
         ownerfield10.classList.add('ownerp2');
     }
-    if(owner12 == 2){
+    if(f12.owner == 2){
         ownerfield12.classList.add('ownerp2');
     }
-    if(owner13 == 2){
+    if(f13.owner == 2){
         ownerfield13.classList.add('ownerp2');
     }
-    if(owner14 == 2){
+    if(f14.owner == 2){
         ownerfield14.classList.add('ownerp2');
     }
-    if(owner15 == 2){
+    if(f15.owner == 2){
         ownerfield15.classList.add('ownerp2');
     }
-    if(owner16 == 2){
+    if(f16.owner == 2){
         ownerfield16.classList.add('ownerp2');
     }    
-    if(owner17 == 2){
+    if(f17.owner == 2){
         ownerfield17.classList.add('ownerp2');
     }    
-    if(owner19 == 2){
+    if(f19.owner == 2){
         ownerfield19.classList.add('ownerp2');
     }    
-    if(f2.owner0 == 2){
+    if(f20.owner == 2){
         ownerfield20.classList.add('ownerp2');
     }
-    if(f2.owner2 == 2){
+    if(f22.owner == 2){
         ownerfield22.classList.add('ownerp2');
     }   
-    if(f2.owner4 == 2){
+    if(f24.owner == 2){
         ownerfield24.classList.add('ownerp2');
     }
-    if(f2.owner5 == 2){
+    if(f25.owner == 2){
         ownerfield25.classList.add('ownerp2');
     }
-    if(f2.owner6 == 2){
+    if(f26.owner == 2){
         ownerfield26.classList.add('ownerp2');
     }    
-    if(f2.owner7 == 2){
+    if(f27.owner == 2){
         ownerfield27.classList.add('ownerp2');
     }
-    if(f2.owner8 == 2){
+    if(f28.owner == 2){
         ownerfield28.classList.add('ownerp2');
     }
-    if(f2.owner9 == 2){
+    if(f29.owner == 2){
         ownerfield29.classList.add('ownerp2');
     }    
-    if(owner30 == 2){
+    if(f30.owner == 2){
         ownerfield30.classList.add('ownerp2');
     }
-    if(owner32 == 2){
+    if(f32.owner == 2){
         ownerfield32.classList.add('ownerp2');
     }
-    if(owner33 == 2){
+    if(f33.owner == 2){
         ownerfield33.classList.add('ownerp2');
     }
-    if(owner35 == 2){
+    if(f35.owner == 2){
         ownerfield35.classList.add('ownerp2');
     }    
-    if(owner36 == 2){
+    if(f36.owner == 2){
         ownerfield36.classList.add('ownerp2');
     }
-    if(owner38 == 2){
+    if(f38.owner == 2){
         ownerfield38.classList.add('ownerp2');
     }
-    if(owner40 == 2){
+    if(f40.owner == 2){
         ownerfield40.classList.add('ownerp2');
     }
 
     if(f2.owner == 3){
         ownerfield2.classList.add('ownerp3');
     }
-    if(owner4 == 3){
+    if(f4.owner == 3){
         ownerfield4.classList.add('ownerp3');
     }
-    if(owner6 == 3){
+    if(f6.owner == 3){
         ownerfield6.classList.add('ownerp3');
     }
-    if(owner7 == 3){
+    if(f7.owner == 3){
         ownerfield7.classList.add('ownerp3');
     }
-    if(owner9 == 3){
+    if(f9.owner == 3){
         ownerfield9.classList.add('ownerp3');
     }
-    if(owner10 == 3){
+    if(f10.owner == 3){
         ownerfield10.classList.add('ownerp3');
     }
-    if(owner12 == 3){
+    if(f12.owner == 3){
         ownerfield12.classList.add('ownerp3');
     }
-    if(owner13 == 3){
+    if(f13.owner == 3){
         ownerfield13.classList.add('ownerp3');
     }
-    if(owner14 == 3){
+    if(f14.owner == 3){
         ownerfield14.classList.add('ownerp3');
     }
-    if(owner15 == 3){
+    if(f15.owner == 3){
         ownerfield15.classList.add('ownerp3');
     }
-    if(owner16 == 3){
+    if(f16.owner == 3){
         ownerfield16.classList.add('ownerp3');
     }    
-    if(owner17 == 3){
+    if(f17.owner == 3){
         ownerfield17.classList.add('ownerp3');
     }    
-    if(owner19 == 3){
+    if(f19.owner == 3){
         ownerfield19.classList.add('ownerp3');
     }    
-    if(f2.owner0 == 3){
+    if(f20.owner == 3){
         ownerfield20.classList.add('ownerp3');
     }
-    if(f2.owner2 == 3){
+    if(f22.owner == 3){
         ownerfield22.classList.add('ownerp3');
     }   
-    if(f2.owner4 == 3){
+    if(f24.owner == 3){
         ownerfield24.classList.add('ownerp3');
     }
-    if(f2.owner5 == 3){
+    if(f25.owner == 3){
         ownerfield25.classList.add('ownerp3');
     }
-    if(f2.owner6 == 3){
+    if(f26.owner == 3){
         ownerfield26.classList.add('ownerp3');
     }    
-    if(f2.owner7 == 3){
+    if(f27.owner == 3){
         ownerfield27.classList.add('ownerp3');
     }
-    if(f2.owner8 == 3){
+    if(f28.owner == 3){
         ownerfield28.classList.add('ownerp3');
     }
-    if(f2.owner9 == 3){
+    if(f29.owner == 3){
         ownerfield29.classList.add('ownerp3');
     }    
-    if(owner30 == 3){
+    if(f30.owner == 3){
         ownerfield30.classList.add('ownerp3');
     }
-    if(owner32 == 3){
+    if(f32.owner == 3){
         ownerfield32.classList.add('ownerp3');
     }
-    if(owner33 == 3){
+    if(f33.owner == 3){
         ownerfield33.classList.add('ownerp3');
     }
-    if(owner35 == 3){
+    if(f35.owner == 3){
         ownerfield35.classList.add('ownerp3');
     }    
-    if(owner36 == 3){
+    if(f36.owner == 3){
         ownerfield36.classList.add('ownerp3');
     }
-    if(owner38 == 3){
+    if(f38.owner == 3){
         ownerfield38.classList.add('ownerp3');
     }
-    if(owner40 == 3){
+    if(f40.owner == 3){
         ownerfield40.classList.add('ownerp3');
     }
 }

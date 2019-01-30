@@ -1046,8 +1046,7 @@ color: greenyellow;
     color: blue;
 }
 /* własność */
-.owner2, .owner4, .owner6, .owner7, .owner9, .owner10, .owner12, .owner13, .owner14, .owner15, .owner16, .owner17, .owner19, .owner20, .owner22, .owner24, .owner25,
-.owner26, .owner27, .owner28, .owner29, .owner30, .owner32, .owner33, .owner35, .owner36, .owner38, .owner40{
+.owner2, .owner4, .owner6, .owner7, .owner9, .owner10, .owner12, .owner13, .owner14, .owner15, .owner16, .owner17, .owner19, .owner20, .owner22, .owner24, .owner25, .owner26, .owner27, .owner28, .owner29, .owner30, .owner32, .owner33, .owner35, .owner36, .owner38, .owner40{
     display: block;
     position: absolute;
     background:transparent;
