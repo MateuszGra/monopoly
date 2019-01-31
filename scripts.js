@@ -101,1577 +101,755 @@ const play1 = document.querySelector(".play1"),
   
 const consol = document.querySelector('.consol');
 
-//// fields   
-let f2 = {
-    style: document.querySelector(".field2"),
-    ownerstyle: document.querySelector(".owner2"),
-    price: 60,
-    
-    rent: 2,
-    rentAll: 4,
-    rent1house: 10,
-    rent2house: 30,
-    rent3house: 90,
-    rent4house: 160,
-    rentHotel: 250,
-
-    priceHome: 50,
-    priceHotel: 50,
-
-    mortgage: 30,
-    mortgageRepayment: 33,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f4 = {
-    style: document.querySelector(".field4"),
-    ownerstyle: document.querySelector(".owner4"),
-    price: 60,
-    
-    rent: 4,
-    rentAll: 8,
-    rent1house: 20,
-    rent2house: 60,
-    rent3house: 180,
-    rent4house: 320,
-    rentHotel: 450,
-
-    priceHome: 50,
-    priceHotel: 50,
-
-    mortgage: 30,
-    mortgageRepayment: 33,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f7 = {
-    style: document.querySelector(".field7"),
-    ownerstyle: document.querySelector(".owner7"),
-    price: 100,
-    
-    rent: 6,
-    rentAll: 12,
-    rent1house: 30,
-    rent2house: 90,
-    rent3house: 270,
-    rent4house: 400,
-    rentHotel: 550,
-
-    priceHome: 50,
-    priceHotel: 50,
-
-    mortgage: 50,
-    mortgageRepayment: 55,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f9 = {
-    style: document.querySelector(".field9"),
-    ownerstyle: document.querySelector(".owner9"),
-    price: 100,
-    
-    rent: 6,
-    rentAll: 12,
-    rent1house: 30,
-    rent2house: 90,
-    rent3house: 270,
-    rent4house: 400,
-    rentHotel: 550,
-
-    priceHome: 50,
-    priceHotel: 50,
-
-    mortgage: 50,
-    mortgageRepayment: 55,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f10 = {
-    style: document.querySelector(".field10"),
-    ownerstyle: document.querySelector(".owner10"),
-    price: 120,
-    
-    rent: 8,
-    rentAll: 16,
-    rent1house: 40,
-    rent2house: 100,
-    rent3house: 300,
-    rent4house: 450,
-    rentHotel: 600,
-
-    priceHome: 50,
-    priceHotel: 50,
-
-    mortgage: 60,
-    mortgageRepayment: 66,
-
-    owner10: 0,
-    hotel: 0,
-    house: 0
-};
-let f12 = {
-    style: document.querySelector(".field12"),
-    ownerstyle: document.querySelector(".owner12"),
-    price: 140,
-    
-    rent: 10,
-    rentAll: 20,
-    rent1house: 50,
-    rent2house: 150,
-    rent3house: 450,
-    rent4house: 625,
-    rentHotel: 750,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 70,
-    mortgageRepayment: 77,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f14 = {
-    style: document.querySelector(".field14"),
-    ownerstyle: document.querySelector(".owner14"),
-    price: 140,
-    
-    rent: 10,
-    rentAll: 20,
-    rent1house: 50,
-    rent2house: 150,
-    rent3house: 450,
-    rent4house: 625,
-    rentHotel: 750,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 70,
-    mortgageRepayment: 77,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};    
-let f15 = {
-    style: document.querySelector(".field15"),
-    ownerstyle: document.querySelector(".owner15"),
-    price: 160,
-    
-    rent: 12,
-    rentAll: 24,
-    rent1house: 60,
-    rent2house: 180,
-    rent3house: 500,
-    rent4house: 700,
-    rentHotel: 900,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 80,
-    mortgageRepayment: 88,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};   
-let f17 = {
-    style: document.querySelector(".field17"),
-    ownerstyle: document.querySelector(".owner17"),
-    price: 180,
-    
-    rent: 14,
-    rentAll: 28,
-    rent1house: 70,
-    rent2house: 200,
-    rent3house: 550,
-    rent4house: 750,
-    rentHotel: 950,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 90,
-    mortgageRepayment: 99,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};   
-let f19 = {
-    style: document.querySelector(".field19"),
-    ownerstyle: document.querySelector(".owner19"),
-    price: 180,
-    
-    rent: 14,
-    rentAll: 28,
-    rent1house: 70,
-    rent2house: 200,
-    rent3house: 550,
-    rent4house: 750,
-    rentHotel: 950,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 90,
-    mortgageRepayment: 99,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};   
-let f20 = {
-    style: document.querySelector(".field20"),
-    ownerstyle: document.querySelector(".owner20"),
-    price: 200,
-    
-    rent: 16,
-    rentAll: 32,
-    rent1house: 80,
-    rent2house: 220,
-    rent3house: 600,
-    rent4house: 800,
-    rentHotel: 1000,
-
-    priceHome: 100,
-    priceHotel: 100,
-
-    mortgage: 100,
-    mortgageRepayment: 110,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f22 = {
-    style: document.querySelector(".field22"),
-    ownerstyle: document.querySelector(".owner22"),
-    price: 220,
-    
-    rent: 18,
-    rentAll: 36,
-    rent1house: 90,
-    rent2house: 250,
-    rent3house: 700,
-    rent4house: 875,
-    rentHotel: 1050,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 110,
-    mortgageRepayment: 121,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f24 = {
-    style: document.querySelector(".field24"),
-    ownerstyle: document.querySelector(".owner24"),
-    price: 220,
-    
-    rent: 18,
-    rentAll: 36,
-    rent1house: 90,
-    rent2house: 250,
-    rent3house: 700,
-    rent4house: 875,
-    rentHotel: 1050,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 110,
-    mortgageRepayment: 121,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f25 = {
-    style: document.querySelector(".field25"),
-    ownerstyle: document.querySelector(".owner25"),
-    price: 240,
-    
-    rent: 20,
-    rentAll: 40,
-    rent1house: 100,
-    rent2house: 300,
-    rent3house: 750,
-    rent4house: 925,
-    rentHotel: 1100,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 120,
-    mortgageRepayment: 132,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f27 = {
-    style: document.querySelector(".field27"),
-    ownerstyle: document.querySelector(".owner27"),
-    price: 260,
-    
-    rent: 22,
-    rentAll: 44,
-    rent1house: 110,
-    rent2house: 330,
-    rent3house: 800,
-    rent4house: 975,
-    rentHotel: 1150,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 130,
-    mortgageRepayment: 143,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f28 = {
-    style: document.querySelector(".field28"),
-    ownerstyle: document.querySelector(".owner28"),
-    price: 260,
-    
-    rent: 22,
-    rentAll: 44,
-    rent1house: 110,
-    rent2house: 330,
-    rent3house: 800,
-    rent4house: 975,
-    rentHotel: 1150,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 130,
-    mortgageRepayment: 143,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f30 = {
-    style: document.querySelector(".field30"),
-    ownerstyle: document.querySelector(".owner30"),
-    price: 280,
-    
-    rent: 24,
-    rentAll: 48,
-    rent1house: 120,
-    rent2house: 360,
-    rent3house: 850,
-    rent4house: 1025,
-    rentHotel: 1200,
-
-    priceHome: 150,
-    priceHotel: 150,
-
-    mortgage: 140,
-    mortgageRepayment: 154,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f32 = {
-    style: document.querySelector(".field32"),
-    ownerstyle: document.querySelector(".owner32"),
-    price: 300,
-    
-    rent: 26,
-    rentAll: 52,
-    rent1house: 130,
-    rent2house: 390,
-    rent3house: 900,
-    rent4house: 1100,
-    rentHotel: 1275,
-
-    priceHome: 200,
-    priceHotel: 200,
-
-    mortgage: 150,
-    mortgageRepayment: 165,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f33 = {
-    style: document.querySelector(".field33"),
-    ownerstyle: document.querySelector(".owner33"),
-    price: 300,
-    
-    rent: 26,
-    rentAll: 52,
-    rent1house: 130,
-    rent2house: 390,
-    rent3house: 900,
-    rent4house: 1100,
-    rentHotel: 1275,
-
-    priceHome: 200,
-    priceHotel: 200,
-
-    mortgage: 150,
-    mortgageRepayment: 165,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f35 = {
-    style: document.querySelector(".field35"),
-    ownerstyle: document.querySelector(".owner35"),
-    price: 320,
-    
-    rent: 28,
-    rentAll: 56,
-    rent1house: 150,
-    rent2house: 450,
-    rent3house: 1000,
-    rent4house: 1200,
-    rentHotel: 1400,
-
-    priceHome: 200,
-    priceHotel: 200,
-
-    mortgage: 160,
-    mortgageRepayment: 176,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f38 = {
-    style: document.querySelector(".field38"),
-    ownerstyle: document.querySelector(".owner38"),
-    price: 350,
-    
-    rent: 35,
-    rentAll: 70,
-    rent1house: 175,
-    rent2house: 500,
-    rent3house: 1100,
-    rent4house: 1300,
-    rentHotel: 1500,
-
-    priceHome: 200,
-    priceHotel: 200,
-
-    mortgage: 175,
-    mortgageRepayment: 193,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-let f40 = {
-    style: document.querySelector(".field40"),
-    ownerstyle: document.querySelector(".owner40"),
-    price: 400,
-    
-    rent: 50,
-    rentAll: 100,
-    rent1house: 200,
-    rent2house: 600,
-    rent3house: 1400,
-    rent4house: 1700,
-    rentHotel: 2000,
-
-    priceHome: 200,
-    priceHotel: 200,
-
-    mortgage: 200,
-    mortgageRepayment: 220,
-
-    owner: 0,
-    hotel: 0,
-    house: 0
-};
-// trains
-let f6 = {
-    style: document.querySelector(".field6"),
-    ownerstyle: document.querySelector(".owner6"),
-    price: 200,
-    
-    rent: 25,
-    rent2: 50,
-    rent3: 100,
-    rent4: 200,
-
-    mortgage: 100,
-    mortgageRepayment: 110,
-
-    owner: 0
-};
-let f16 = {
-    style: document.querySelector(".field16"),
-    ownerstyle: document.querySelector(".owner16"),
-    price: 200,
-    
-    rent: 25,
-    rent2: 50,
-    rent3: 100,
-    rent4: 200,
-
-    mortgage: 100,
-    mortgageRepayment: 110,
-
-    owner: 0
-};
-let f26 = {
-    style: document.querySelector(".field26"),
-    ownerstyle: document.querySelector(".owner26"),
-    price: 200,
-    
-    rent: 25,
-    rent2: 50,
-    rent3: 100,
-    rent4: 200,
-
-    mortgage: 100,
-    mortgageRepayment: 110,
-
-    owner: 0
-};
-let f36 = {
-    style: document.querySelector(".field36"),
-    ownerstyle: document.querySelector(".owner36"),
-    price: 200,
-    
-    rent: 25,
-    rent2: 50,
-    rent3: 100,
-    rent4: 200,
-
-    mortgage: 100,
-    mortgageRepayment: 110,
-
-    owner: 0
-};
-//special
-let f13 = {
-    style: document.querySelector(".field13"),
-    ownerstyle: document.querySelector(".owner13"),
-    price: 150,
-    
-    mortgage: 75,
-    mortgageRepayment: 83,
-
-    owner: 0
-};
-let f29 = {
-    style: document.querySelector(".field29"),
-    ownerstyle: document.querySelector(".owner29"),
-    price: 150,
-    
-    mortgage: 75,
-    mortgageRepayment: 83,
-
-    owner: 0
-};
-
-function resetStyle(){
-    magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17','bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29');
-    magnification.classList.remove('hide');
-    card14.classList.add('hide');
-    card15.classList.add('hide');
-    card16.classList.add('hide');
-    oatput14.classList.add('hide');
-    oatput15.classList.add('hide');
-    oatput16.classList.add('hide');
-    oatput3.classList.add('hide');
-    card3.classList.add('hide');
-    card4.classList.add('hide');
-    card5.classList.add('hide');
-    card6.classList.add('hide');
-    card7.classList.add('hide');
-    card8.classList.add('hide');
-    card9.classList.add('hide');
-    card10.classList.add('hide');
-    card11.classList.add('hide');
-    card17.classList.add('hide');
-    oatput4.classList.add('hide');
-    oatput5.classList.add('hide');
-    oatput6.classList.add('hide');
-    oatput7.classList.add('hide');
-    oatput8.classList.add('hide');
-    oatput9.classList.add('hide');
-    oatput10.classList.add('hide');
-    oatput11.classList.add('hide');
-}
-function styleStreet(){
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-    card4.classList.remove('hide');
-    card5.classList.remove('hide');
-    card6.classList.remove('hide');
-    card7.classList.remove('hide');
-    card8.classList.remove('hide');
-    card9.classList.remove('hide');
-    card10.classList.remove('hide');
-    card11.classList.remove('hide');
-    oatput4.classList.remove('hide');
-    oatput5.classList.remove('hide');
-    oatput6.classList.remove('hide');
-    oatput7.classList.remove('hide');
-    oatput8.classList.remove('hide');
-    oatput9.classList.remove('hide');
-    oatput10.classList.remove('hide');
-    oatput11.classList.remove('hide');
-}
-function styleTrain(){
-    card14.classList.remove('hide');
-    card15.classList.remove('hide');
-    card16.classList.remove('hide');
-    oatput14.classList.remove('hide');
-    oatput15.classList.remove('hide');
-    oatput16.classList.remove('hide');
-    oatput3.classList.remove('hide');
-    card3.classList.remove('hide');
-}
+//// fields
+let fields = [
+    {
+        style: document.querySelector(".field2"),
+        ownerstyle: document.querySelector(".owner2"),
+        price: 60,
+        
+        rent: 2,
+        rentAll: 4,
+        rent1house: 10,
+        rent2house: 30,
+        rent3house: 90,
+        rent4house: 160,
+        rentHotel: 250,
+
+        priceHome: 50,
+        priceHotel: 50,
+
+        mortgage: 30,
+        mortgageRepayment: 33,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field4"),
+        ownerstyle: document.querySelector(".owner4"),
+        price: 60,
+        
+        rent: 4,
+        rentAll: 8,
+        rent1house: 20,
+        rent2house: 60,
+        rent3house: 180,
+        rent4house: 320,
+        rentHotel: 450,
+
+        priceHome: 50,
+        priceHotel: 50,
+
+        mortgage: 30,
+        mortgageRepayment: 33,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field7"),
+        ownerstyle: document.querySelector(".owner7"),
+        price: 100,
+        
+        rent: 6,
+        rentAll: 12,
+        rent1house: 30,
+        rent2house: 90,
+        rent3house: 270,
+        rent4house: 400,
+        rentHotel: 550,
+
+        priceHome: 50,
+        priceHotel: 50,
+
+        mortgage: 50,
+        mortgageRepayment: 55,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field9"),
+        ownerstyle: document.querySelector(".owner9"),
+        price: 100,
+        
+        rent: 6,
+        rentAll: 12,
+        rent1house: 30,
+        rent2house: 90,
+        rent3house: 270,
+        rent4house: 400,
+        rentHotel: 550,
+
+        priceHome: 50,
+        priceHotel: 50,
+
+        mortgage: 50,
+        mortgageRepayment: 55,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field10"),
+        ownerstyle: document.querySelector(".owner10"),
+        price: 120,
+        
+        rent: 8,
+        rentAll: 16,
+        rent1house: 40,
+        rent2house: 100,
+        rent3house: 300,
+        rent4house: 450,
+        rentHotel: 600,
+
+        priceHome: 50,
+        priceHotel: 50,
+
+        mortgage: 60,
+        mortgageRepayment: 66,
+
+        owner10: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field12"),
+        ownerstyle: document.querySelector(".owner12"),
+        price: 140,
+        
+        rent: 10,
+        rentAll: 20,
+        rent1house: 50,
+        rent2house: 150,
+        rent3house: 450,
+        rent4house: 625,
+        rentHotel: 750,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 70,
+        mortgageRepayment: 77,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field14"),
+        ownerstyle: document.querySelector(".owner14"),
+        price: 140,
+        
+        rent: 10,
+        rentAll: 20,
+        rent1house: 50,
+        rent2house: 150,
+        rent3house: 450,
+        rent4house: 625,
+        rentHotel: 750,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 70,
+        mortgageRepayment: 77,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },   
+    {
+        style: document.querySelector(".field15"),
+        ownerstyle: document.querySelector(".owner15"),
+        price: 160,
+        
+        rent: 12,
+        rentAll: 24,
+        rent1house: 60,
+        rent2house: 180,
+        rent3house: 500,
+        rent4house: 700,
+        rentHotel: 900,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 80,
+        mortgageRepayment: 88,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },  
+    {
+        style: document.querySelector(".field17"),
+        ownerstyle: document.querySelector(".owner17"),
+        price: 180,
+        
+        rent: 14,
+        rentAll: 28,
+        rent1house: 70,
+        rent2house: 200,
+        rent3house: 550,
+        rent4house: 750,
+        rentHotel: 950,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 90,
+        mortgageRepayment: 99,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },   
+    {
+        style: document.querySelector(".field19"),
+        ownerstyle: document.querySelector(".owner19"),
+        price: 180,
+        
+        rent: 14,
+        rentAll: 28,
+        rent1house: 70,
+        rent2house: 200,
+        rent3house: 550,
+        rent4house: 750,
+        rentHotel: 950,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 90,
+        mortgageRepayment: 99,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },  
+    {
+        style: document.querySelector(".field20"),
+        ownerstyle: document.querySelector(".owner20"),
+        price: 200,
+        
+        rent: 16,
+        rentAll: 32,
+        rent1house: 80,
+        rent2house: 220,
+        rent3house: 600,
+        rent4house: 800,
+        rentHotel: 1000,
+
+        priceHome: 100,
+        priceHotel: 100,
+
+        mortgage: 100,
+        mortgageRepayment: 110,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field22"),
+        ownerstyle: document.querySelector(".owner22"),
+        price: 220,
+        
+        rent: 18,
+        rentAll: 36,
+        rent1house: 90,
+        rent2house: 250,
+        rent3house: 700,
+        rent4house: 875,
+        rentHotel: 1050,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 110,
+        mortgageRepayment: 121,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field24"),
+        ownerstyle: document.querySelector(".owner24"),
+        price: 220,
+        
+        rent: 18,
+        rentAll: 36,
+        rent1house: 90,
+        rent2house: 250,
+        rent3house: 700,
+        rent4house: 875,
+        rentHotel: 1050,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 110,
+        mortgageRepayment: 121,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field25"),
+        ownerstyle: document.querySelector(".owner25"),
+        price: 240,
+        
+        rent: 20,
+        rentAll: 40,
+        rent1house: 100,
+        rent2house: 300,
+        rent3house: 750,
+        rent4house: 925,
+        rentHotel: 1100,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 120,
+        mortgageRepayment: 132,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field27"),
+        ownerstyle: document.querySelector(".owner27"),
+        price: 260,
+        
+        rent: 22,
+        rentAll: 44,
+        rent1house: 110,
+        rent2house: 330,
+        rent3house: 800,
+        rent4house: 975,
+        rentHotel: 1150,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 130,
+        mortgageRepayment: 143,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field28"),
+        ownerstyle: document.querySelector(".owner28"),
+        price: 260,
+        
+        rent: 22,
+        rentAll: 44,
+        rent1house: 110,
+        rent2house: 330,
+        rent3house: 800,
+        rent4house: 975,
+        rentHotel: 1150,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 130,
+        mortgageRepayment: 143,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field30"),
+        ownerstyle: document.querySelector(".owner30"),
+        price: 280,
+        
+        rent: 24,
+        rentAll: 48,
+        rent1house: 120,
+        rent2house: 360,
+        rent3house: 850,
+        rent4house: 1025,
+        rentHotel: 1200,
+
+        priceHome: 150,
+        priceHotel: 150,
+
+        mortgage: 140,
+        mortgageRepayment: 154,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field32"),
+        ownerstyle: document.querySelector(".owner32"),
+        price: 300,
+        
+        rent: 26,
+        rentAll: 52,
+        rent1house: 130,
+        rent2house: 390,
+        rent3house: 900,
+        rent4house: 1100,
+        rentHotel: 1275,
+
+        priceHome: 200,
+        priceHotel: 200,
+
+        mortgage: 150,
+        mortgageRepayment: 165,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field33"),
+        ownerstyle: document.querySelector(".owner33"),
+        price: 300,
+        
+        rent: 26,
+        rentAll: 52,
+        rent1house: 130,
+        rent2house: 390,
+        rent3house: 900,
+        rent4house: 1100,
+        rentHotel: 1275,
+
+        priceHome: 200,
+        priceHotel: 200,
+
+        mortgage: 150,
+        mortgageRepayment: 165,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field35"),
+        ownerstyle: document.querySelector(".owner35"),
+        price: 320,
+        
+        rent: 28,
+        rentAll: 56,
+        rent1house: 150,
+        rent2house: 450,
+        rent3house: 1000,
+        rent4house: 1200,
+        rentHotel: 1400,
+
+        priceHome: 200,
+        priceHotel: 200,
+
+        mortgage: 160,
+        mortgageRepayment: 176,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field38"),
+        ownerstyle: document.querySelector(".owner38"),
+        price: 350,
+        
+        rent: 35,
+        rentAll: 70,
+        rent1house: 175,
+        rent2house: 500,
+        rent3house: 1100,
+        rent4house: 1300,
+        rentHotel: 1500,
+
+        priceHome: 200,
+        priceHotel: 200,
+
+        mortgage: 175,
+        mortgageRepayment: 193,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    {
+        style: document.querySelector(".field40"),
+        ownerstyle: document.querySelector(".owner40"),
+        price: 400,
+        
+        rent: 50,
+        rentAll: 100,
+        rent1house: 200,
+        rent2house: 600,
+        rent3house: 1400,
+        rent4house: 1700,
+        rentHotel: 2000,
+
+        priceHome: 200,
+        priceHotel: 200,
+
+        mortgage: 200,
+        mortgageRepayment: 220,
+
+        owner: 0,
+        hotel: 0,
+        house: 0
+    },
+    // trains
+    {
+        style: document.querySelector(".field6"),
+        ownerstyle: document.querySelector(".owner6"),
+        price: 200,
+        
+        rent: 25,
+        rent2: 50,
+        rent3: 100,
+        rent4: 200,
+
+        mortgage: 100,
+        mortgageRepayment: 110,
+
+        owner: 0
+    },
+    {
+        style: document.querySelector(".field16"),
+        ownerstyle: document.querySelector(".owner16"),
+        price: 200,
+        
+        rent: 25,
+        rent2: 50,
+        rent3: 100,
+        rent4: 200,
+
+        mortgage: 100,
+        mortgageRepayment: 110,
+
+        owner: 0
+    },
+    {
+        style: document.querySelector(".field26"),
+        ownerstyle: document.querySelector(".owner26"),
+        price: 200,
+        
+        rent: 25,
+        rent2: 50,
+        rent3: 100,
+        rent4: 200,
+
+        mortgage: 100,
+        mortgageRepayment: 110,
+
+        owner: 0
+    },
+    {
+        style: document.querySelector(".field36"),
+        ownerstyle: document.querySelector(".owner36"),
+        price: 200,
+        
+        rent: 25,
+        rent2: 50,
+        rent3: 100,
+        rent4: 200,
+
+        mortgage: 100,
+        mortgageRepayment: 110,
+
+        owner: 0
+    },
+    //special
+    {
+        style: document.querySelector(".field13"),
+        ownerstyle: document.querySelector(".owner13"),
+        price: 150,
+        
+        mortgage: 75,
+        mortgageRepayment: 83,
+
+        owner: 0
+    },
+    {
+        style: document.querySelector(".field29"),
+        ownerstyle: document.querySelector(".owner29"),
+        price: 150,
+        
+        mortgage: 75,
+        mortgageRepayment: 83,
+
+        owner: 0
+    }
+];
 
 document.addEventListener("mouseout", function(e) { 
     magnification.classList.add('hide');
-},false);      
+},false);    
 
-f2.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield2');
-    
-    oatput1.textContent = f2.price;
-    oatput3.textContent = f2.rent;
-    oatput4.textContent = f2.rentAll;
-    oatput5.textContent = f2.rent1house;
-    oatput6.textContent = f2.rent2house;
-    oatput7.textContent = f2.rent3house;
-    oatput8.textContent = f2.rent4house;
-    oatput9.textContent = f2.rentHotel;
-    oatput10.textContent = f2.priceHome;
-    oatput11.textContent = f2.priceHotel;
-    oatput12.textContent = f2.mortgage;
-    oatput13.textContent = f2.mortgageRepayment;
 
-    if(f2.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f2.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f2.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f2.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f4.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield4');
-    
-    oatput1.textContent = f4.price;
-    oatput3.textContent = f4.rent;
-    oatput4.textContent = f4.rentAll;
-    oatput5.textContent = f4.rent1house;
-    oatput6.textContent = f4.rent2house;
-    oatput7.textContent = f4.rent3house;
-    oatput8.textContent = f4.rent4house;
-    oatput9.textContent = f4.rentHotel;
-    oatput10.textContent = f4.priceHome;
-    oatput11.textContent = f4.priceHotel;
-    oatput12.textContent = f4.mortgage;
-    oatput13.textContent = f4.mortgageRepayment;
+for (let i=0; i<fields.length; i++) {
+    fields[i].style.addEventListener("mouseover", function(e) {
+        magnification.classList.remove('bigfield2', 'bigfield4', 'bigfield7', 'bigfield9', 'bigfield10', 'bigfield12', 'bigfield14', 'bigfield15', 'bigfield17','bigfield19', 'bigfield20', 'bigfield22', 'bigfield24', 'bigfield25', 'bigfield27', 'bigfield28', 'bigfield30', 'bigfield32', 'bigfield33', 'bigfield35', 'bigfield38', 'bigfield40', 'bigfield6', 'bigfield16', 'bigfield26', 'bigfield36', 'bigfield13', 'bigfield29');
+        magnification.classList.remove('hide');
+        card14.classList.add('hide');
+        card15.classList.add('hide');
+        card16.classList.add('hide');
+        oatput14.classList.add('hide');
+        oatput15.classList.add('hide');
+        oatput16.classList.add('hide');
+        card17.classList.add('hide');
 
-    if(f4.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f4.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f4.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f4.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f7.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield7');
-    
-    oatput1.textContent = f7.price;
-    oatput3.textContent = f7.rent;
-    oatput4.textContent = f7.rentAll;
-    oatput5.textContent = f7.rent1house;
-    oatput6.textContent = f7.rent2house;
-    oatput7.textContent = f7.rent3house;
-    oatput8.textContent = f7.rent4house;
-    oatput9.textContent = f7.rentHotel;
-    oatput10.textContent = f7.priceHome;
-    oatput11.textContent = f7.priceHotel;
-    oatput12.textContent = f7.mortgage;
-    oatput13.textContent = f7.mortgageRepayment;
+        oatput3.classList.remove('hide');
+        card3.classList.remove('hide');
+        card4.classList.remove('hide');
+        card5.classList.remove('hide');
+        card6.classList.remove('hide');
+        card7.classList.remove('hide');
+        card8.classList.remove('hide');
+        card9.classList.remove('hide');
+        card10.classList.remove('hide');
+        card11.classList.remove('hide');
+        oatput4.classList.remove('hide');
+        oatput5.classList.remove('hide');
+        oatput6.classList.remove('hide');
+        oatput7.classList.remove('hide');
+        oatput8.classList.remove('hide');
+        oatput9.classList.remove('hide');
+        oatput10.classList.remove('hide');
+        oatput11.classList.remove('hide');
 
-    if(f7.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f7.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f7.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f7.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f9.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield9');
-    
-    oatput1.textContent = f9.price;
-    oatput3.textContent = f9.rent;
-    oatput4.textContent = f9.rentAll;
-    oatput5.textContent = f9.rent1house;
-    oatput6.textContent = f9.rent2house;
-    oatput7.textContent = f9.rent3house;
-    oatput8.textContent = f9.rent4house;
-    oatput9.textContent = f9.rentHotel;
-    oatput10.textContent = f9.priceHome;
-    oatput11.textContent = f9.priceHotel;
-    oatput12.textContent = f9.mortgage;
-    oatput13.textContent = f9.mortgageRepayment;
+        if(i == 0){ magnification.classList.add('bigfield2'); }
+        if(i == 1){ magnification.classList.add('bigfield4'); }
+        if(i == 2){ magnification.classList.add('bigfield7'); }
+        if(i == 3){ magnification.classList.add('bigfield9'); }
+        if(i == 4){ magnification.classList.add('bigfield10'); }
+        if(i == 5){ magnification.classList.add('bigfield12'); }
+        if(i == 6){ magnification.classList.add('bigfield14'); }
+        if(i == 7){ magnification.classList.add('bigfield15'); }
+        if(i == 8){ magnification.classList.add('bigfield17'); }
+        if(i == 9){ magnification.classList.add('bigfield19'); }
+        if(i == 10){ magnification.classList.add('bigfield20'); }
+        if(i == 11){ magnification.classList.add('bigfield22'); }
+        if(i == 12){ magnification.classList.add('bigfield24'); }
+        if(i == 13){ magnification.classList.add('bigfield25'); }
+        if(i == 14){ magnification.classList.add('bigfield27'); }
+        if(i == 15){ magnification.classList.add('bigfield28'); }
+        if(i == 16){ magnification.classList.add('bigfield30'); }
+        if(i == 17){ magnification.classList.add('bigfield32'); }
+        if(i == 18){ magnification.classList.add('bigfield33'); }
+        if(i == 19){ magnification.classList.add('bigfield35'); }
+        if(i == 20){ magnification.classList.add('bigfield38'); }
+        if(i == 21){ magnification.classList.add('bigfield40'); }
+        if(i == 22){ magnification.classList.add('bigfield6'); }
+        if(i == 23){ magnification.classList.add('bigfield16'); }
+        if(i == 24){ magnification.classList.add('bigfield26'); }
+        if(i == 25){ magnification.classList.add('bigfield36'); }
+        if(i == 26){ magnification.classList.add('bigfield13'); }
+        if(i == 27){ magnification.classList.add('bigfield29'); }
 
-    if(f9.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f9.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f9.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f9.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f10.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield10');
-    
-    oatput1.textContent = f10.price;
-    oatput3.textContent = f10.rent;
-    oatput4.textContent = f10.rentAll;
-    oatput5.textContent = f10.rent1house;
-    oatput6.textContent = f10.rent2house;
-    oatput7.textContent = f10.rent3house;
-    oatput8.textContent = f10.rent4house;
-    oatput9.textContent = f10.rentHotel;
-    oatput10.textContent = f10.priceHome;
-    oatput11.textContent = f10.priceHotel;
-    oatput12.textContent = f10.mortgage;
-    oatput13.textContent = f10.mortgageRepayment;
+        if(i == 22 || i == 23 || i == 24 || i == 25) {
+            card4.classList.add('hide');
+            card5.classList.add('hide');
+            card6.classList.add('hide');
+            card7.classList.add('hide');
+            card8.classList.add('hide');
+            card9.classList.add('hide');
+            card10.classList.add('hide');
+            card11.classList.add('hide');
+            oatput4.classList.add('hide');
+            oatput5.classList.add('hide');
+            oatput6.classList.add('hide');
+            oatput7.classList.add('hide');
+            oatput8.classList.add('hide');
+            oatput9.classList.add('hide');
+            oatput10.classList.add('hide');
+            oatput11.classList.add('hide');
+            
+            card14.classList.remove('hide');
+            card15.classList.remove('hide');
+            card16.classList.remove('hide');
+            oatput14.classList.remove('hide');
+            oatput15.classList.remove('hide');
+            oatput16.classList.remove('hide');
+            oatput3.classList.remove('hide');
+            card3.classList.remove('hide');
+        }
 
-    if(f10.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f10.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f10.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f10.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f12.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield12');
+        if(i == 26 || i == 27) {
+            card14.classList.add('hide');
+            card15.classList.add('hide');
+            card16.classList.add('hide');
+            oatput14.classList.add('hide');
+            oatput15.classList.add('hide');
+            oatput16.classList.add('hide');
+            oatput3.classList.add('hide');
+            card3.classList.add('hide');
+            card4.classList.add('hide');
+            card5.classList.add('hide');
+            card6.classList.add('hide');
+            card7.classList.add('hide');
+            card8.classList.add('hide');
+            card9.classList.add('hide');
+            card10.classList.add('hide');
+            card11.classList.add('hide');
+            oatput4.classList.add('hide');
+            oatput5.classList.add('hide');
+            oatput6.classList.add('hide');
+            oatput7.classList.add('hide');
+            oatput8.classList.add('hide');
+            oatput9.classList.add('hide');
+            oatput10.classList.add('hide');
+            oatput11.classList.add('hide');
 
-    oatput1.textContent = f12.price;
-    oatput3.textContent = f12.rent;
-    oatput4.textContent = f12.rentAll;
-    oatput5.textContent = f12.rent1house;
-    oatput6.textContent = f12.rent2house;
-    oatput7.textContent = f12.rent3house;
-    oatput8.textContent = f12.rent4house;
-    oatput9.textContent = f12.rentHotel;
-    oatput10.textContent = f12.priceHome;
-    oatput11.textContent = f12.priceHotel;
-    oatput12.textContent = f12.mortgage;
-    oatput13.textContent = f12.mortgageRepayment;
+            card17.classList.remove('hide');
+        }
 
-    if(f12.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f12.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f12.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f12.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f14.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();
-    magnification.classList.add('bigfield14');
-    
-    oatput1.textContent = f14.price;
-    oatput3.textContent = f14.rent;
-    oatput4.textContent = f14.rentAll;
-    oatput5.textContent = f14.rent1house;
-    oatput6.textContent = f14.rent2house;
-    oatput7.textContent = f14.rent3house;
-    oatput8.textContent = f14.rent4house;
-    oatput9.textContent = f14.rentHotel;
-    oatput10.textContent = f14.priceHome;
-    oatput11.textContent = f14.priceHotel;
-    oatput12.textContent = f14.mortgage;
-    oatput13.textContent = f14.mortgageRepayment;
+        oatput1.textContent = fields[i].price;
+        oatput3.textContent = fields[i].rent;
+        oatput4.textContent = fields[i].rentAll;
+        oatput5.textContent = fields[i].rent1house;
+        oatput6.textContent = fields[i].rent2house;
+        oatput7.textContent = fields[i].rent3house;
+        oatput8.textContent = fields[i].rent4house;
+        oatput9.textContent = fields[i].rentHotel;
+        oatput10.textContent = fields[i].priceHome;
+        oatput11.textContent = fields[i].priceHotel;
+        oatput12.textContent = fields[i].mortgage;
+        oatput13.textContent = fields[i].mortgageRepayment;
+        oatput14.textContent = fields[i].rent2;
+        oatput15.textContent = fields[i].rent3;
+        oatput16.textContent = fields[i].rent4;
 
-    if(f14.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f14.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f14.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f14.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f15.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield15');
-    
-    oatput1.textContent = f15.price;
-    oatput3.textContent = f15.rent;
-    oatput4.textContent = f15.rentAll;
-    oatput5.textContent = f15.rent1house;
-    oatput6.textContent = f15.rent2house;
-    oatput7.textContent = f15.rent3house;
-    oatput8.textContent = f15.rent4house;
-    oatput9.textContent = f15.rentHotel;
-    oatput10.textContent = f15.priceHome;
-    oatput11.textContent = f15.priceHotel;
-    oatput12.textContent = f15.mortgage;
-    oatput13.textContent = f15.mortgageRepayment;
+        if(fields[i].owner == 1){
+            document.querySelector('.oatput2').textContent = 'Gracz 1';
+            oatput2.classList.add('green');
+        } else if (fields[i].owner == 2){
+            document.querySelector('.oatput2').textContent = 'Gracz 2';
+             oatput2.classList.add('red2');
+         } else if (fields[i].owner == 3){
+            document.querySelector('.oatput2').textContent = 'Gracz 3';
+            oatput2.classList.add('blue3');
+        } else if (fields[i].owner == 0){
+            document.querySelector('.oatput2').textContent = 'Brak';
+            oatput2.classList.remove('green');
+            oatput2.classList.remove('red2');
+            oatput2.classList.remove('blue3');
+        }
+    },false);
+};
 
-    if(f15.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f15.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f15.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f15.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f17.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield17');
-    
-    oatput1.textContent = f17.price;
-    oatput3.textContent = f17.rent;
-    oatput4.textContent = f17rentAll;
-    oatput5.textContent = f17.rent1house;
-    oatput6.textContent = f17.rent2house;
-    oatput7.textContent = f17.rent3house;
-    oatput8.textContent = f17.rent4house;
-    oatput9.textContent = f17.rentHotel;
-    oatput10.textContent = f17.priceHome;
-    oatput11.textContent = f17.priceHotel;
-    oatput12.textContent = f17.mortgage;
-    oatput13.textContent = f17.mortgageRepayment;
-
-    if(f17.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f17.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f17.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f17.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f19.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield19');
-    
-    oatput1.textContent = f19.price;
-    oatput3.textContent = f19.rent;
-    oatput4.textContent = f19.rentAll;
-    oatput5.textContent = f19.rent1house;
-    oatput6.textContent = f19.rent2house;
-    oatput7.textContent = f19.rent3house;
-    oatput8.textContent = f19.rent4house;
-    oatput9.textContent = f19.rentHotel;
-    oatput10.textContent = f19.priceHome;
-    oatput11.textContent = f19.priceHotel;
-    oatput12.textContent = f19.mortgage;
-    oatput13.textContent = f19.mortgageRepayment;
-
-    if(f19.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f19.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f19.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f19.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f20.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield20');
-
-    oatput1.textContent = f20.price;
-    oatput3.textContent = f20.rent;
-    oatput4.textContent = f20.rentAll;
-    oatput5.textContent = f20.rent1house;
-    oatput6.textContent = f20.rent2house;
-    oatput7.textContent = f20.rent3house;
-    oatput8.textContent = f20.rent4house;
-    oatput9.textContent = f20.rentHotel;
-    oatput10.textContent = f20.priceHome;
-    oatput11.textContent = f20.priceHotel;
-    oatput12.textContent = f20.mortgage;
-    oatput13.textContent = f20.mortgageRepayment;
-
-    if(f20.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f20.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f20.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f20.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f22.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();
-    magnification.classList.add('bigfield22');
-    
-    oatput1.textContent = f22.price;
-    oatput3.textContent = f22.rent;
-    oatput4.textContent = f22.rentAll;
-    oatput5.textContent = f22.rent1house;
-    oatput6.textContent = f22.rent2house;
-    oatput7.textContent = f22.rent3house;
-    oatput8.textContent = f22.rent4house;
-    oatput9.textContent = f22.rentHotel;
-    oatput10.textContent = f22.priceHome;
-    oatput11.textContent = f22.priceHotel;
-    oatput12.textContent = f22.mortgage;
-    oatput13.textContent = f22.mortgageRepayment;
-
-    if(f22.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f22.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f22.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f22.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f24.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield24');
-    
-    oatput1.textContent = f24.price;
-    oatput3.textContent = f24.rent;
-    oatput4.textContent = f24.rentAll;
-    oatput5.textContent = f24.rent1house;
-    oatput6.textContent = f24.rent2house;
-    oatput7.textContent = f24.rent3house;
-    oatput8.textContent = f24.rent4house;
-    oatput9.textContent = f24.rentHotel;
-    oatput10.textContent = f24.priceHome;
-    oatput11.textContent = f24.priceHotel;
-    oatput12.textContent = f24.mortgage;
-    oatput13.textContent = f24.mortgageRepayment;
-
-    if(f24.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f24.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f24.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f24.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f25.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield25');
-    
-    oatput1.textContent = f25.price;
-    oatput3.textContent = f25.rent;
-    oatput4.textContent = f25.rentAll;
-    oatput5.textContent = f25.rent1house;
-    oatput6.textContent = f25.rent2house;
-    oatput7.textContent = f25.rent3house;
-    oatput8.textContent = f25.rent4house;
-    oatput9.textContent = f25.rentHotel;
-    oatput10.textContent = f25.priceHome;
-    oatput11.textContent = f25.priceHotel;
-    oatput12.textContent = f25.mortgage;
-    oatput13.textContent = f25.mortgageRepayment;
-
-    if(f25.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f25.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f25.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f25.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f27.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield27');
-    
-    oatput1.textContent = f27.price;
-    oatput3.textContent = f27.rent;
-    oatput4.textContent = f27.rentAll;
-    oatput5.textContent = f27.rent1house;
-    oatput6.textContent = f27.rent2house;
-    oatput7.textContent = f27.rent3house;
-    oatput8.textContent = f27.rent4house;
-    oatput9.textContent = f27.rentHotel;
-    oatput10.textContent = f27.priceHome;
-    oatput11.textContent = f27.priceHotel;
-    oatput12.textContent = f27.mortgage;
-    oatput13.textContent = f27.mortgageRepayment;
-
-    if(f27.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f27.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f27.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f27.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f28.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield28');
-    
-    oatput1.textContent = f28.price;
-    oatput3.textContent = f28.rent;
-    oatput4.textContent = f28.rentAll;
-    oatput5.textContent = f28.rent1house;
-    oatput6.textContent = f28.rent2house;
-    oatput7.textContent = f28.rent3house;
-    oatput8.textContent = f28.rent4house;
-    oatput9.textContent = f28.rentHotel;
-    oatput10.textContent = f28.priceHome;
-    oatput11.textContent = f28.priceHotel;
-    oatput12.textContent = f28.mortgage;
-    oatput13.textContent = f28.mortgageRepayment;
-
-    if(f28.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f28.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f28.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f28.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f30.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();
-    magnification.classList.add('bigfield30');
-    
-    oatput1.textContent = f30.price;
-    oatput3.textContent = f30.rent;
-    oatput4.textContent = f30.rentAll;
-    oatput5.textContent = f30.rent1house;
-    oatput6.textContent = f30.rent2house;
-    oatput7.textContent = f30.rent3house;
-    oatput8.textContent = f30.rent4house;
-    oatput9.textContent = f30.rentHotel;
-    oatput10.textContent = f30.priceHome;
-    oatput11.textContent = f30.priceHotel;
-    oatput12.textContent = f30.mortgage;
-    oatput13.textContent = f30.mortgageRepayment;
-
-    if(f30.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f30.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f30.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f30.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f32.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield32');
-
-    oatput1.textContent = f32.price;
-    oatput3.textContent = f32.rent;
-    oatput4.textContent = f32.rentAll;
-    oatput5.textContent = f32.rent1house;
-    oatput6.textContent = f32.rent2house;
-    oatput7.textContent = f32.rent3house;
-    oatput8.textContent = f32.rent4house;
-    oatput9.textContent = f32.rentHotel;
-    oatput10.textContent = f32.priceHome;
-    oatput11.textContent = f32.priceHotel;
-    oatput12.textContent = f32.mortgage;
-    oatput13.textContent = f32.mortgageRepayment;
-
-    if(f32.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f32.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f32.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f32.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f33.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();
-    magnification.classList.add('bigfield33');
-    
-    oatput1.textContent = f33.price;
-    oatput3.textContent = f33.rent;
-    oatput4.textContent = f33.rentAll;
-    oatput5.textContent = f33.rent1house;
-    oatput6.textContent = f33.rent2house;
-    oatput7.textContent = f33.rent3house;
-    oatput8.textContent = f33.rent4house;
-    oatput9.textContent = f33.rentHotel;
-    oatput10.textContent = f33.priceHome;
-    oatput11.textContent = f33.priceHotel;
-    oatput12.textContent = f33.mortgage;
-    oatput13.textContent = f33.mortgageRepayment;
-
-    if(f33.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f33.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f33.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f33.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f35.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield35');
-    
-    oatput1.textContent = f35.price;
-    oatput3.textContent = f35.rent;
-    oatput4.textContent = f35.rentAll;
-    oatput5.textContent = f35.rent1house;
-    oatput6.textContent = f35.rent2house;
-    oatput7.textContent = f35.rent3house;
-    oatput8.textContent = f35.rent4house;
-    oatput9.textContent = f35.rentHotel;
-    oatput10.textContent = f35.priceHome;
-    oatput11.textContent = f35.priceHotel;
-    oatput12.textContent = f35.mortgage;
-    oatput13.textContent = f35.mortgageRepayment;
-
-    if(f35.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f35.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f35.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f35.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f38.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet();  
-    magnification.classList.add('bigfield38');
-    
-    oatput1.textContent = f38.price;
-    oatput3.textContent = f38.rent;
-    oatput4.textContent = f38.rentAll;
-    oatput5.textContent = f38.rent1house;
-    oatput6.textContent = f38.rent2house;
-    oatput7.textContent = f38.rent3house;
-    oatput8.textContent = f38.rent4house;
-    oatput9.textContent = f38.rentHotel;
-    oatput10.textContent = f38.priceHome;
-    oatput11.textContent = f38.priceHotel;
-    oatput12.textContent = f38.mortgage;
-    oatput13.textContent = f38.mortgageRepayment;
-
-    if(f38.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f38.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f38.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f38.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f40.style.addEventListener("mouseover", function(e) {
-    resetStyle();
-    styleStreet(); 
-    magnification.classList.add('bigfield40');
-    
-    oatput1.textContent = f40.price;
-    oatput3.textContent = f40.rent;
-    oatput4.textContent = f40.rentAll;
-    oatput5.textContent = f40.rent1house;
-    oatput6.textContent = f40.rent2house;
-    oatput7.textContent = f40.rent3house;
-    oatput8.textContent = f40.rent4house;
-    oatput9.textContent = f40.rentHotel;
-    oatput10.textContent = f40.priceHome;
-    oatput11.textContent = f40.priceHotel;
-    oatput12.textContent = f40.mortgage;
-    oatput13.textContent = f40.mortgageRepayment;
-
-    if(f40.owner == 1){
-        oatput2.textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f40.owner == 2){
-        oatput2.textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f40.owner == 3){
-        oatput2.textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f40.owner == 0){
-        oatput2.textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-
-//train
-f6.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    styleTrain();
-    magnification.classList.add('bigfield6');
-
-    oatput1.textContent = f6.price;
-    oatput3.textContent = f6.rent;
-    oatput12.textContent = f6.mortgage;
-    oatput13.textContent = f6.mortgageRepayment;
-    oatput14.textContent = f6.rent2;
-    oatput15.textContent = f6.rent3;
-    oatput16.textContent = f6.rent4;
-
-    if(f6.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f6.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f6.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f6.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f16.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    styleTrain();
-    magnification.classList.add('bigfield16');
-
-    oatput1.textContent = f16.price;
-    oatput3.textContent = f16.rent;
-    oatput12.textContent = f16.mortgage;
-    oatput13.textContent = f16.mortgageRepayment;
-    oatput14.textContent = f16.rent2;
-    oatput15.textContent = f16.rent3;
-    oatput16.textContent = f16.rent4;
-
-    if(f16.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f16.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f16.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f16.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f26.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    styleTrain();
-    magnification.classList.add('bigfield26');
-
-    oatput1.textContent = f26.price;
-    oatput3.textContent = f26.rent;
-    oatput12.textContent = f26.mortgage;
-    oatput13.textContent = f26.mortgageRepayment;
-    oatput14.textContent = f26.rent2;
-    oatput15.textContent = f26.rent3;
-    oatput16.textContent = f26.rent4;
-
-    if(f26.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f26.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f26.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f26.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f36.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    styleTrain();
-    magnification.classList.add('bigfield36');
-
-    oatput1.textContent = f36.price;
-    oatput3.textContent = f36.rent;
-    oatput12.textContent = f36.mortgage;
-    oatput13.textContent = f36.mortgageRepayment;
-    oatput14.textContent = f36.rent2;
-    oatput15.textContent = f36.rent3;
-    oatput16.textContent = f36.rent4;
-
-    if(f36.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f36.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f36.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f36.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f13.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    magnification.classList.add('bigfield13');
-    card17.classList.remove('hide');
-
-    oatput1.textContent = f13.price;
-    oatput12.textContent = f13.mortgage;
-    oatput13.textContent = f13.mortgageRepayment;
-
-    if(f13.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f13.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f13.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f13.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-f29.style.addEventListener("mouseover", function(e) { 
-    resetStyle();
-    magnification.classList.add('bigfield29');
-    card17.classList.remove('hide');
-
-    oatput1.textContent = f29.price;
-    oatput12.textContent = f29.mortgage;
-    oatput13.textContent = f29.mortgageRepayment;
-
-    if(f29.owner == 1){
-        document.querySelector('.oatput2').textContent = 'Gracz 1';
-        oatput2.classList.add('green');
-    } else if (f29.owner == 2){
-        document.querySelector('.oatput2').textContent = 'Gracz 2';
-        oatput2.classList.add('red2');
-    } else if (f29.owner == 3){
-        document.querySelector('.oatput2').textContent = 'Gracz 3';
-        oatput2.classList.add('blue3');
-    } else if (f29.owner == 0){
-        document.querySelector('.oatput2').textContent = 'Brak';
-        oatput2.classList.remove('green');
-        oatput2.classList.remove('red2');
-        oatput2.classList.remove('blue3');
-    }
-},false);
-//// roll dice
+// roll dice
 function lottery() {
     roll = Math.random() * 5 + 1 ;
     roll = Math.round(roll);
