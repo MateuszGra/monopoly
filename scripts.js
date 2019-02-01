@@ -1,16 +1,13 @@
 (function() {
 
-const cube = document.querySelector(".cube"),
-    cube2 = document.querySelector(".cube2"),
-    rollButton = document.querySelector('.rollButton'),
-    endGame = document.querySelector('.endGame');
+const cube = [document.querySelector(".cube"), document.querySelector(".cube2")];
+const rollButton = document.querySelector('.rollButton');
+const endGame = document.querySelector('.endGame');
     
-let roll = 0,
-    roll2 = 0,
-    p1money = 1500,
+let roll = [0, 0], draw;
+let p1money = 1500,
     p2money = 1500,
-    p3money = 1500,
-    draw;
+    p3money = 1500;
 
 const player1 = document.querySelector(".player1");
 player1.textContent = p1money;
@@ -58,48 +55,66 @@ const card1 = document.querySelector('.card1'),
 
 const magnification = document.querySelector(".magnification");
 
-const play1 = document.querySelector(".play1"),
-    play2 = document.querySelector(".play2"),
-    play3 = document.querySelector(".play3"),
-    play4 = document.querySelector(".play4"),
-    play5 = document.querySelector(".play5"),
-    play6 = document.querySelector(".play6"),
-    play7 = document.querySelector(".play7"),
-    play8 = document.querySelector(".play8"),
-    play9 = document.querySelector(".play9"),
-    play10 = document.querySelector(".play10"),
-    play11 = document.querySelector(".play11"),
-    play12 = document.querySelector(".play12"),
-    play13 = document.querySelector(".play13"),
-    play14 = document.querySelector(".play14"),
-    play15 = document.querySelector(".play15"),
-    play16 = document.querySelector(".play16"),
-    play17 = document.querySelector(".play17"),
-    play18 = document.querySelector(".play18"),
-    play19 = document.querySelector(".play19"),
-    play20 = document.querySelector(".play20"),
-    play21 = document.querySelector(".play21"),
-    play22 = document.querySelector(".play22"),
-    play23 = document.querySelector(".play23"),
-    play24 = document.querySelector(".play24"),
-    play25 = document.querySelector(".play25"),
-    play26 = document.querySelector(".play26"),
-    play27 = document.querySelector(".play27"),
-    play28 = document.querySelector(".play28"),
-    play29 = document.querySelector(".play29"),
-    play30 = document.querySelector(".play30"),
-    play31 = document.querySelector(".play31"),
-    play32 = document.querySelector(".play32"),
-    play33 = document.querySelector(".play33"),
-    play34 = document.querySelector(".play34"),
-    play35 = document.querySelector(".play35"),
-    play36 = document.querySelector(".play36"),
-    play37 = document.querySelector(".play37"),
-    play38 = document.querySelector(".play38"),
-    play39 = document.querySelector(".play39"),
-    play40 = document.querySelector(".play40");
+const play = [
+    document.querySelector(".play1"),
+    document.querySelector(".play2"),
+    document.querySelector(".play3"),
+    document.querySelector(".play4"),
+    document.querySelector(".play5"),
+    document.querySelector(".play6"),
+    document.querySelector(".play7"),
+    document.querySelector(".play8"),
+    document.querySelector(".play9"),
+    document.querySelector(".play10"),
+    document.querySelector(".play11"),
+    document.querySelector(".play12"),
+    document.querySelector(".play13"),
+    document.querySelector(".play14"),
+    document.querySelector(".play15"),
+    document.querySelector(".play16"),
+    document.querySelector(".play17"),
+    document.querySelector(".play18"),
+    document.querySelector(".play19"),
+    document.querySelector(".play20"),
+    document.querySelector(".play21"),
+    document.querySelector(".play22"),
+    document.querySelector(".play23"),
+    document.querySelector(".play24"),
+    document.querySelector(".play25"),
+    document.querySelector(".play26"),
+    document.querySelector(".play27"),
+    document.querySelector(".play28"),
+    document.querySelector(".play29"),
+    document.querySelector(".play30"),
+    document.querySelector(".play31"),
+    document.querySelector(".play32"),
+    document.querySelector(".play33"),
+    document.querySelector(".play34"),
+    document.querySelector(".play35"),
+    document.querySelector(".play36"),
+    document.querySelector(".play37"),
+    document.querySelector(".play38"),
+    document.querySelector(".play39"),
+    document.querySelector(".play40")
+];
   
 const consol = document.querySelector('.consol');
+let logs = [];
+
+function Write(text, color) {
+    logs[0] = document.createElement('p');
+    consol.appendChild(logs[0]);
+    logs[0].textContent = text;
+    if (color == 1){
+        logs[0].classList.add('green');
+    }
+    if (color == 2){
+        logs[0].classList.add('red2');
+    }
+    if (color == 3){
+        logs[0].classList.add('blue3');
+    }
+}
 
 //// fields
 let fields = [
@@ -849,524 +864,183 @@ for (let i=0; i<fields.length; i++) {
     },false);
 };
 
-// roll dice
-function lottery() {
-    roll = Math.random() * 5 + 1 ;
-    roll = Math.round(roll);
-}
-function lottery2() {
-    roll2 = Math.random() * 5 + 1 ;
-    roll2 = Math.round(roll2);
-}
 function drawCard() {
     draw = Math.random() * 15 + 1 ;
     draw = Math.round(draw);
 }
-function rolldice() {
-    if (roll == 1) {
-    cube.classList.add('show-one');
-    cube.classList.remove('show-two');
-    cube.classList.remove('show-three');
-    cube.classList.remove('show-four');
-    cube.classList.remove('show-five');
-    cube.classList.remove('show-six');
-    }
-     else if (roll == 2) {
-    cube.classList.add('show-two');
-    cube.classList.remove('show-one');
-    cube.classList.remove('show-three');
-    cube.classList.remove('show-four');
-    cube.classList.remove('show-five');
-    cube.classList.remove('show-six');
-    }
-    else if (roll == 3) {
-    cube.classList.add('show-three');
-    cube.classList.remove('show-two');
-    cube.classList.remove('show-one');
-    cube.classList.remove('show-four');
-    cube.classList.remove('show-five');
-    cube.classList.remove('show-six');
-    }
-    else if (roll == 4) {
-    cube.classList.add('show-four');
-    cube.classList.remove('show-two');
-    cube.classList.remove('show-three');
-    cube.classList.remove('show-one');
-    cube.classList.remove('show-five');
-    cube.classList.remove('show-six');
-    }
-    else if (roll == 5) {
-    cube.classList.add('show-five');
-    cube.classList.remove('show-two');
-    cube.classList.remove('show-three');
-    cube.classList.remove('show-four');
-    cube.classList.remove('show-one');
-    cube.classList.remove('show-six');
-    }
-    else if (roll == 6) {
-    cube.classList.add('show-six');
-    cube.classList.remove('show-two');
-    cube.classList.remove('show-three');
-    cube.classList.remove('show-four');
-    cube.classList.remove('show-five');
-    cube.classList.remove('show-one');
-    }
+// roll dice
+function lottery(dice) {
+    roll[dice] = Math.random() * 5 + 1 ;
+    roll[dice] = Math.round(roll[dice]);
+
+    if (roll[dice] == 1) {
+        cube[dice].classList.add('show-one');
+        cube[dice].classList.remove('show-two');
+        cube[dice].classList.remove('show-three');
+        cube[dice].classList.remove('show-four');
+        cube[dice].classList.remove('show-five');
+        cube[dice].classList.remove('show-six');
+        }
+         else if (roll[dice]  == 2) {
+        cube[dice].classList.add('show-two');
+        cube[dice].classList.remove('show-one');
+        cube[dice].classList.remove('show-three');
+        cube[dice].classList.remove('show-four');
+        cube[dice].classList.remove('show-five');
+        cube[dice].classList.remove('show-six');
+        }
+        else if (roll[dice]  == 3) {
+        cube[dice].classList.add('show-three');
+        cube[dice].classList.remove('show-two');
+        cube[dice].classList.remove('show-one');
+        cube[dice].classList.remove('show-four');
+        cube[dice].classList.remove('show-five');
+        cube[dice].classList.remove('show-six');
+        }
+        else if (roll[dice]  == 4) {
+        cube[dice].classList.add('show-four');
+        cube[dice].classList.remove('show-two');
+        cube[dice].classList.remove('show-three');
+        cube[dice].classList.remove('show-one');
+        cube[dice].classList.remove('show-five');
+        cube[dice].classList.remove('show-six');
+        }
+        else if (roll[dice]  == 5) {
+        cube[dice].classList.add('show-five');
+        cube[dice].classList.remove('show-two');
+        cube[dice].classList.remove('show-three');
+        cube[dice].classList.remove('show-four');
+        cube[dice].classList.remove('show-one');
+        cube[dice].classList.remove('show-six');
+        }
+        else if (roll[dice]  == 6) {
+        cube[dice].classList.add('show-six');
+        cube[dice].classList.remove('show-two');
+        cube[dice].classList.remove('show-three');
+        cube[dice].classList.remove('show-four');
+        cube[dice].classList.remove('show-five');
+        cube[dice].classList.remove('show-one');
+        }
 }
-function rolldice2() {
-    if (roll2 == 1) {
-    cube2.classList.add('show-one');
-    cube2.classList.remove('show-two');
-    cube2.classList.remove('show-three');
-    cube2.classList.remove('show-four');
-    cube2.classList.remove('show-five');
-    cube2.classList.remove('show-six');
-    }
-     else if (roll2 == 2) {
-    cube2.classList.add('show-two');
-    cube2.classList.remove('show-one');
-    cube2.classList.remove('show-three');
-    cube2.classList.remove('show-four');
-    cube2.classList.remove('show-five');
-    cube2.classList.remove('show-six');
-    }
-    else if (roll2 == 3) {
-    cube2.classList.add('show-three');
-    cube2.classList.remove('show-two');
-    cube2.classList.remove('show-one');
-    cube2.classList.remove('show-four');
-    cube2.classList.remove('show-five');
-    cube2.classList.remove('show-six');
-    }
-    else if (roll2 == 4) {
-    cube2.classList.add('show-four');
-    cube2.classList.remove('show-two');
-    cube2.classList.remove('show-three');
-    cube2.classList.remove('show-one');
-    cube2.classList.remove('show-five');
-    cube2.classList.remove('show-six');
-    }
-    else if (roll2 == 5) {
-    cube2.classList.add('show-five');
-    cube2.classList.remove('show-two');
-    cube2.classList.remove('show-three');
-    cube2.classList.remove('show-four');
-    cube2.classList.remove('show-one');
-    cube2.classList.remove('show-six');
-    }
-    else if (roll2 == 6) {
-    cube2.classList.add('show-six');
-    cube2.classList.remove('show-two');
-    cube2.classList.remove('show-three');
-    cube2.classList.remove('show-four');
-    cube2.classList.remove('show-five');
-    cube2.classList.remove('show-one');
-    }
-}
-   
+
 let destyny,
     p1loc,
     p2loc,
     p3loc;
-function p1move() {
-    p1loc = p1loc + destyny;
 
-    if(p1loc > 40) {
-        p1loc = p1loc - 40;
-        p1money = p1money + 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'START- otrzymujesz pensję 200$.';
-        log.classList.add('green');
-        consol.scrollTo(0, 10000000000);
+function move(who) {
+    who = who + destyny;
+
+    if(who > 40) {
+        who = who - 40;
+        if (who === p1loc) {
+            Write('START- otrzymujesz pensję 200$.', 1);
+            p1money = p1money + 200;
+        }
+        if (who === p2loc) {
+            Write('START-  Gracz 2 otrzymuje pensję 200$.', 2);
+            p2money = p2money + 200;
+        }
+        if (who === p3loc) {
+            Write('START-  Gracz 3 otrzymuje pensję 200$.', 3);
+            p3money = p3money + 200;
+        }
+    }
+    if (who === p1loc) {
+        Write('Lądujesz na polu: ' + (who + 1) + ".", 1);
+    }
+    if (who === p2loc) {
+        Write('Gracz 2 ląduje na polu: ' + (who + 1) + ".", 2);
+    }
+    if (who === p3loc) {
+        Write('Gracz 3 ląduje na polu: ' + (who + 1) + ".", 3);
     }
 
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Lądujesz na polu: ' + p1loc + ".";
-    log.classList.add('green');
-    consol.scrollTo(0, 10000000000)
+    for (let i=0; i<play.length; i++) {
+        if(who == i && who === p1loc) {
+            play[i].classList.add('p1');
+        }
+        if(who == i && who === p2loc) {
+            play[i].classList.add('p2');
+        }
+        if(who == i && who === p3loc) {
+            play[i].classList.add('p3');
+        }
+    }
 
-    if(p1loc == 1) {
-        play1.classList.add('p1');
-    } else if(p1loc == 2) {
-        play2.classList.add('p1');
-    } else if(p1loc == 3) {
-        play3.classList.add('p1');
-    } else if(p1loc == 4) {
-        play4.classList.add('p1');
-    } else if(p1loc == 5) {
-        play5.classList.add('p1');
-
+    if(who == 5 && who === p1loc) {
+        Write('Podatek dochodowy. Płacisz 200$', 1);
         p1money = p1money - 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Płacisz 200$';
-        log.classList.add('green');
-        consol.scrollTo(0, 10000000000);
-
-    } else if(p1loc == 6) {
-        play6.classList.add('p1');
-    } else if(p1loc == 7) {
-        play7.classList.add('p1');
-    } else if(p1loc == 8) {
-        play8.classList.add('p1');
-    } else if(p1loc == 9) {
-        play9.classList.add('p1');
-    } else if(p1loc== 10) {
-        play10.classList.add('p1');
-    } else if(p1loc == 11) {
-        play11.classList.add('p1');
-    } else if(p1loc == 12){
-        play12.classList.add('p1');
-    } else if(p1loc == 13){
-        play13.classList.add('p1');
-    } else if(p1loc == 14){
-        play14.classList.add('p1');
-    } else if(p1loc == 15){
-        play15.classList.add('p1');
-    } else if(p1loc == 16){
-        play16.classList.add('p1');
-    } else if(p1loc == 17){
-        play17.classList.add('p1');
-    } else if(p1loc == 18){
-        play18.classList.add('p1');
-    } else if(p1loc == 19){
-        play19.classList.add('p1');
-    } else if(p1loc == 20){
-        play20.classList.add('p1');
-    } else if(p1loc == 21){
-        play21.classList.add('p1');
-    } else if(p1loc == 22){
-        play22.classList.add('p1');
-    } else if(p1loc == 23){
-        play23.classList.add('p1');
-    } else if(p1loc == 24){
-        play24.classList.add('p1');
-    } else if(p1loc == 25){
-        play25.classList.add('p1');
-    } else if(p1loc == 26){
-        play26.classList.add('p1');
-    } else if(p1loc == 27){
-        play27.classList.add('p1');
-    } else if(p1loc == 28){
-        play28.classList.add('p1');
-    } else if(p1loc == 29){
-        play29.classList.add('p1');
-    } else if(p1loc == 30){
-        play30.classList.add('p1');
-    } else if(p1loc == 31){
-        play31.classList.add('p1');
-    } else if(p1loc == 32){
-        play32.classList.add('p1');
-    } else if(p1loc == 33){
-        play33.classList.add('p1');
-    } else if(p1loc == 34){
-        play34.classList.add('p1');
-    } else if(p1loc == 35){
-        play35.classList.add('p1');
-    } else if(p1loc == 36){
-        play36.classList.add('p1');
-    } else if(p1loc == 37){
-        play37.classList.add('p1');
-    } else if(p1loc == 38){
-        play38.classList.add('p1');
-    }  else if(p1loc == 39){
-        play39.classList.add('p1');
-        
-        p1money = p1money - 100;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Płacisz 100$';
-        log.classList.add('green');
-        consol.scrollTo(0, 10000000000);
-
-    }  else if(p1loc == 40){
-        play40.classList.add('p1');
     }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;   
-}
-function p2move() {
-    p2loc = p2loc + destyny;
-
-    if(p2loc > 40) {
-        p2loc = p2loc - 40;
-        p2money = p2money + 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'START-  Gracz 2 otrzymuje pensję 200$.';
-        log.classList.add('red2');
-        consol.scrollTo(0, 10000000000);
-    }
-
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Gracz 2 ląduje na polu: ' + p2loc + ".";
-    log.classList.add('red2');
-    consol.scrollTo(0, 10000000000);
-
-    if(p2loc == 1) {
-        play1.classList.add('p2');
-    } else if(p2loc == 2) {
-        play2.classList.add('p2');
-    } else if(p2loc == 3) {
-        play3.classList.add('p2');
-    } else if(p2loc == 4) {
-        play4.classList.add('p2');
-    } else if(p2loc == 5) {
-        play5.classList.add('p2');
-
+    if(who == 5 && who === p2loc) {
+        Write('Podatek dochodowy. Gracz 2 płaci 200$', 2);
         p2money = p2money - 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Gracz 2 płaci 200$';
-        log.classList.add('red2');
-        consol.scrollTo(0, 10000000000);
-
-    } else if(p2loc == 6) {
-        play6.classList.add('p2');
-    } else if(p2loc == 7) {
-        play7.classList.add('p2');
-    } else if(p2loc == 8) {
-        play8.classList.add('p2');
-    } else if(p2loc == 9) {
-        play9.classList.add('p2');
-    } else if(p2loc== 10) {
-        play10.classList.add('p2');
-    } else if(p2loc == 11) {
-        play11.classList.add('p2');
-    } else if(p2loc == 12){
-        play12.classList.add('p2');
-    } else if(p2loc == 13){
-        play13.classList.add('p2');
-    } else if(p2loc == 14){
-        play14.classList.add('p2');
-    } else if(p2loc == 15){
-        play15.classList.add('p2');
-    } else if(p2loc == 16){
-        play16.classList.add('p2');
-    } else if(p2loc == 17){
-        play17.classList.add('p2');
-    } else if(p2loc == 18){
-        play18.classList.add('p2');
-    } else if(p2loc == 19){
-        play19.classList.add('p2');
-    } else if(p2loc == 20){
-        play20.classList.add('p2');
-    } else if(p2loc == 21){
-        play21.classList.add('p2');
-    } else if(p2loc == 22){
-        play22.classList.add('p2');
-    } else if(p2loc == 23){
-        play23.classList.add('p2');
-    } else if(p2loc == 24){
-        play24.classList.add('p2');
-    } else if(p2loc == 25){
-        play25.classList.add('p2');
-    } else if(p2loc == 26){
-        play26.classList.add('p2');
-    } else if(p2loc == 27){
-        play27.classList.add('p2');
-    } else if(p2loc == 28){
-        play28.classList.add('p2');
-    } else if(p2loc == 29){
-        play29.classList.add('p2');
-    } else if(p2loc == 30){
-        play30.classList.add('p2');
-    } else if(p2loc == 31){
-        play31.classList.add('p2');
-    } else if(p2loc == 32){
-        play32.classList.add('p2');
-    } else if(p2loc == 33){
-        play33.classList.add('p2');
-    } else if(p2loc == 34){
-        play34.classList.add('p2');
-    } else if(p2loc == 35){
-        play35.classList.add('p2');
-    } else if(p2loc == 36){
-        play36.classList.add('p2');
-    } else if(p2loc == 37){
-        play37.classList.add('p2');
-    } else if(p2loc == 38){
-        play38.classList.add('p2');
-    }  else if(p2loc == 39){
-        play39.classList.add('p2');
-        
-        p2money = p2money - 100;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Gracz 2 płaci 100$';
-        log.classList.add('red2');
-        consol.scrollTo(0, 10000000000);
-
-    }  else if(p2loc == 40){
-        play40.classList.add('p2');
     }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money; 
-}
-function p3move() {
-    p3loc = p3loc + destyny;
-
-    if(p3loc > 40) {
-        p3loc = p3loc - 40;
-        p3money = p3money + 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'START-  Gracz 3 otrzymuje pensję 200$.';
-        log.classList.add('blue3');
-        consol.scrollTo(0, 10000000000);
-    }
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Gracz 3 ląduje na polu: ' + p3loc + ".";
-    log.classList.add('blue3');
-    consol.scrollTo(0, 10000000000);
-
-    if(p3loc == 1) {
-        play1.classList.add('p3');
-    } else if(p3loc == 2) {
-        play2.classList.add('p3');
-    } else if(p3loc == 3) {
-        play3.classList.add('p3');
-    } else if(p3loc == 4) {
-        play4.classList.add('p3');
-    } else if(p3loc == 5) {
-        play5.classList.add('p3');
-
+    if(who == 5 && who === p3loc) {
+        Write('Podatek dochodowy. Gracz 3 płaci 200$', 3);
         p3money = p3money - 200;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Gracz 3 płaci 200$';
-        log.classList.add('blue3');
-        consol.scrollTo(0, 10000000000);
+    }
 
-    } else if(p3loc == 6) {
-        play6.classList.add('p3');
-    } else if(p3loc == 7) {
-        play7.classList.add('p3');
-    } else if(p3loc == 8) {
-        play8.classList.add('p3');
-    } else if(p3loc == 9) {
-        play9.classList.add('p3');
-    } else if(p3loc== 10) {
-        play10.classList.add('p3');
-    } else if(p3loc == 11) {
-        play11.classList.add('p3');
-    } else if(p3loc == 12){
-        play12.classList.add('p3');
-    } else if(p3loc == 13){
-        play13.classList.add('p3');
-    } else if(p3loc == 14){
-        play14.classList.add('p3');
-    } else if(p3loc == 15){
-        play15.classList.add('p3');
-    } else if(p3loc == 16){
-        play16.classList.add('p3');
-    } else if(p3loc == 17){
-        play17.classList.add('p3');
-    } else if(p3loc == 18){
-        play18.classList.add('p3');
-    } else if(p3loc == 19){
-        play19.classList.add('p3');
-    } else if(p3loc == 20){
-        play20.classList.add('p3');
-    } else if(p3loc == 21){
-        play21.classList.add('p3');
-    } else if(p3loc == 22){
-        play22.classList.add('p3');
-    } else if(p3loc == 23){
-        play23.classList.add('p3');
-    } else if(p3loc == 24){
-        play24.classList.add('p3');
-    } else if(p3loc == 25){
-        play25.classList.add('p3');
-    } else if(p3loc == 26){
-        play26.classList.add('p3');
-    } else if(p3loc == 27){
-        play27.classList.add('p3');
-    } else if(p3loc == 28){
-        play28.classList.add('p3');
-    } else if(p3loc == 29){
-        play29.classList.add('p3');
-    } else if(p3loc == 30){
-        play30.classList.add('p3');
-    } else if(p3loc == 31){
-        play31.classList.add('p3');
-    } else if(p3loc == 32){
-        play32.classList.add('p3');
-    } else if(p3loc == 33){
-        play33.classList.add('p3');
-    } else if(p3loc == 34){
-        play34.classList.add('p3');
-    } else if(p3loc == 35){
-        play35.classList.add('p3');
-    } else if(p3loc == 36){
-        play36.classList.add('p3');
-    } else if(p3loc == 37){
-        play37.classList.add('p3');
-    } else if(p3loc == 38){
-        play38.classList.add('p3');
-    }  else if(p3loc == 39){
-        play39.classList.add('p3');
-        
+
+    if(who == 39 && who === p1loc) {
+        Write('Podatek dochodowy. Płacisz 100$', 1);
+        p1money = p1money - 100;
+    }
+    if(who == 39 && who === p2loc) {
+        Write('Podatek dochodowy. Gracz 2 płaci 100$', 2);
+        p2money = p2money - 100;
+    }
+    if(who == 39 && who === p3loc) {
+        Write('Podatek dochodowy. Gracz 3 płaci 100$', 3);
         p3money = p3money - 100;
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Podatek dochodowy. Gracz 3 płaci 100$';
-        log.classList.add('blue3');
-        consol.scrollTo(0, 10000000000);
-
-    }  else if(p3loc == 40){
-        play40.classList.add('p3');
-    } 
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
+    }
+    
+    player1.textContent = p1money;
+    player2.textContent = p2money;
+    player3.textContent = p3money;   
 }
+
 function p1clean() {
-play1.classList.remove('p1');
-play2.classList.remove('p1');
-play3.classList.remove('p1');
-play4.classList.remove('p1');
-play5.classList.remove('p1');
-play6.classList.remove('p1');
-play7.classList.remove('p1');
-play8.classList.remove('p1');
-play9.classList.remove('p1');
-play10.classList.remove('p1');
-play11.classList.remove('p1');
-play12.classList.remove('p1');
-play13.classList.remove('p1');
-play14.classList.remove('p1');
-play15.classList.remove('p1');
-play16.classList.remove('p1');
-play17.classList.remove('p1');
-play18.classList.remove('p1');
-play19.classList.remove('p1');
-play20.classList.remove('p1');
-play21.classList.remove('p1');
-play22.classList.remove('p1');
-play23.classList.remove('p1');
-play24.classList.remove('p1');
-play25.classList.remove('p1');
-play26.classList.remove('p1');
-play27.classList.remove('p1');
-play28.classList.remove('p1');
-play29.classList.remove('p1');
-play30.classList.remove('p1');
-play31.classList.remove('p1');
-play32.classList.remove('p1');
-play33.classList.remove('p1');
-play34.classList.remove('p1');
-play35.classList.remove('p1');
-play36.classList.remove('p1');
-play37.classList.remove('p1');
-play38.classList.remove('p1');
-play39.classList.remove('p1');
-play40.classList.remove('p1');
+    play1.classList.remove('p1');
+    play2.classList.remove('p1');
+    play3.classList.remove('p1');
+    play4.classList.remove('p1');
+    play5.classList.remove('p1');
+    play6.classList.remove('p1');
+    play7.classList.remove('p1');
+    play8.classList.remove('p1');
+    play9.classList.remove('p1');
+    play10.classList.remove('p1');
+    play11.classList.remove('p1');
+    play12.classList.remove('p1');
+    play13.classList.remove('p1');
+    play14.classList.remove('p1');
+    play15.classList.remove('p1');
+    play16.classList.remove('p1');
+    play17.classList.remove('p1');
+    play18.classList.remove('p1');
+    play19.classList.remove('p1');
+    play20.classList.remove('p1');
+    play21.classList.remove('p1');
+    play22.classList.remove('p1');
+    play23.classList.remove('p1');
+    play24.classList.remove('p1');
+    play25.classList.remove('p1');
+    play26.classList.remove('p1');
+    play27.classList.remove('p1');
+    play28.classList.remove('p1');
+    play29.classList.remove('p1');
+    play30.classList.remove('p1');
+    play31.classList.remove('p1');
+    play32.classList.remove('p1');
+    play33.classList.remove('p1');
+    play34.classList.remove('p1');
+    play35.classList.remove('p1');
+    play36.classList.remove('p1');
+    play37.classList.remove('p1');
+    play38.classList.remove('p1');
+    play39.classList.remove('p1');
+    play40.classList.remove('p1');
 }
 function p2clean() {
     play1.classList.remove('p2');
@@ -1492,13 +1166,11 @@ function redQuestion() {
                 p1loc = 36;
             }
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 4){
-            lottery();
-            rolldice();
-            lottery2();
-            rolldice2();
-            destyny = roll + roll2;
+            lottery(0);
+            lottery(1);
+            destyny = roll[0] + roll[1];
             document.querySelector('.questionOatput').textContent = "Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło '" +  destyny + "')." ;
             if(p1loc == 8){
                 destyny = 0;
@@ -1513,7 +1185,7 @@ function redQuestion() {
                 p1loc = 29;
             }
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 5){
             document.querySelector('.questionOatput').textContent = "Mandat za przekroczenie prędkości 15$.";
             p1money = p1money - 15;
@@ -1524,7 +1196,7 @@ function redQuestion() {
             document.querySelector('.questionOatput').textContent = "Cofnij się o trzy pola.";
             destyny = -3;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 8){
             document.querySelector('.questionOatput').textContent = "Idz na pole 24. Jeżeli mijasz start, pobierz 200$.";
             if(p1loc == 37){
@@ -1533,7 +1205,7 @@ function redQuestion() {
             destyny = 0;
             p1loc = 24;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 9){
             document.querySelector('.questionOatput').textContent = "Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.";
             if(p2money > 0){
@@ -1552,14 +1224,14 @@ function redQuestion() {
             destyny = 0;
             p1loc = 16;
             p1clean();
-            p1move();
+            move(p1loc);
 
         } else if(draw == 11){
             document.querySelector('.questionOatput').textContent = "Idź na pole 40.";
             destyny = 0;
             p1loc = 40;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 12){
             document.querySelector('.questionOatput').textContent = "Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.";
         } else if(draw == 13){
@@ -1570,7 +1242,7 @@ function redQuestion() {
             destyny = 0;
             p1loc = 12;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 14){
             document.querySelector('.questionOatput').textContent = "Bank wypłaca ci dywidendę w kwocie 50$.";
             p1money = p1money +50;
@@ -1580,7 +1252,7 @@ function redQuestion() {
             destyny = 0;
             p1loc = 1;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 16){
             document.querySelector('.questionOatput').textContent = "Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.";
         }
@@ -1628,13 +1300,11 @@ function redQuestion2() {
                 p2loc = 36;
             }
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 4){
-            lottery();
-            rolldice();
-            lottery2();
-            rolldice2();
-            destyny = roll + roll2;
+            lottery(0);
+            lottery(1);
+            destyny = roll[0] + roll[1];
 
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1655,7 +1325,7 @@ function redQuestion2() {
                 p2loc = 29;
             }
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 5){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1680,7 +1350,7 @@ function redQuestion2() {
 
             destyny = -3;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 8){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1694,7 +1364,7 @@ function redQuestion2() {
             destyny = 0;
             p2loc = 24;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 9){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1723,7 +1393,7 @@ function redQuestion2() {
             destyny = 0;
             p2loc = 16;
             p2clean();
-            p2move();
+            move(p2loc);
 
         } else if(draw == 11){
             var log = document.createElement('p');
@@ -1735,7 +1405,7 @@ function redQuestion2() {
             destyny = 0;
             p2loc = 40;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 12){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1756,7 +1426,7 @@ function redQuestion2() {
             destyny = 0;
             p2loc = 12;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 14){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1776,7 +1446,7 @@ function redQuestion2() {
             destyny = 0;
             p2loc = 1;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 16){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1829,13 +1499,11 @@ function redQuestion3() {
                 p3loc = 36;
             }
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 4){
-            lottery();
-            rolldice();
-            lottery2();
-            rolldice2();
-            destyny = roll + roll2;
+            lottery(0);
+            lottery(1);
+            destyny = roll[0] + roll[1];
 
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1856,7 +1524,7 @@ function redQuestion3() {
                 p3loc = 29;
             }
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 5){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1881,7 +1549,7 @@ function redQuestion3() {
 
             destyny = -3;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 8){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1895,7 +1563,7 @@ function redQuestion3() {
             destyny = 0;
             p3loc = 24;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 9){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1924,7 +1592,7 @@ function redQuestion3() {
             destyny = 0;
             p3loc = 16;
             p3clean();
-            p3move();
+            move(p3loc);
 
         } else if(draw == 11){
             var log = document.createElement('p');
@@ -1936,7 +1604,7 @@ function redQuestion3() {
             destyny = 0;
             p3loc = 40;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 12){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1957,7 +1625,7 @@ function redQuestion3() {
             destyny = 0;
             p3loc = 12;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 14){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1977,7 +1645,7 @@ function redQuestion3() {
             destyny = 0;
             p3loc = 1;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 16){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -2014,7 +1682,7 @@ function blueQuestion() {
             destyny = 0;
             p1loc = 1;
             p1clean();
-            p1move();
+            move(p1loc);
         } else if(draw == 2){
             document.querySelector('.questionOatput').textContent = "Pomyłka banku na twoją korzyść. Pobierz 200$.";
             p1money = p1money + 200;
@@ -2092,7 +1760,7 @@ function blueQuestion2() {
             destyny = 0;
             p2loc = 1;
             p2clean();
-            p2move();
+            move(p2loc);
         } else if(draw == 2){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -2244,7 +1912,7 @@ function blueQuestion3() {
             destyny = 0;
             p3loc = 1;
             p3clean();
-            p3move();
+            move(p3loc);
         } else if(draw == 2){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -2381,320 +2049,77 @@ ok.addEventListener("click", function(e) {
 
 const buy = document.querySelector('.buy');
 function CanIBuy() {
-    if(p1loc == 2 && f2.owner == 0){
+    if(p1loc == 2 && fields[0].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 4 && f4.owner == 0){
+    } else if(p1loc == 4 && fields[1].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 6 && f6.owner == 0){
+    } else if(p1loc == 6 && fields[23].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 7 && f7.owner == 0){
+    } else if(p1loc == 7 && fields[2].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 9 && f9.owner == 0){
+    } else if(p1loc == 9 && fields[3].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 10 && f10.owner == 0){
+    } else if(p1loc == 10 && fields[4].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 12 && f12.owner == 0){
+    } else if(p1loc == 12 && fields[5].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 13 && f13.owner == 0){
+    } else if(p1loc == 13 && fields[27].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 14 && f14.owner == 0){
+    } else if(p1loc == 14 && fields[7].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 15 && f15.owner == 0){
+    } else if(p1loc == 15 && fields[8].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 16 && f16.owner == 0){
+    } else if(p1loc == 16 && fields[24].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 17 && f17.owner == 0){
+    } else if(p1loc == 17 && fields[9].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 19 && f19.owner == 0){
+    } else if(p1loc == 19 && fields[10].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 20 && f20.owner == 0){
+    } else if(p1loc == 20 && fields[11].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 22 && f22.owner == 0){
+    } else if(p1loc == 22 && fields[12].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 24 && f24.owner == 0){
+    } else if(p1loc == 24 && fields[13].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 25 && f25.owner == 0){
+    } else if(p1loc == 25 && fields[14].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 26 && f26.owner == 0){
+    } else if(p1loc == 26 && fields[25].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 27 && f27.owner == 0){
+    } else if(p1loc == 27 && fields[15].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 28 && f28.owner == 0){
+    } else if(p1loc == 28 && fields[16].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 29 && f29.owner == 0){
+    } else if(p1loc == 29 && fields[28].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 30 && f30.owner == 0){
+    } else if(p1loc == 30 && fields[17].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 32 && f32.owner == 0){
+    } else if(p1loc == 32 && fields[18].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 33 && f33.owner == 0){
+    } else if(p1loc == 33 && fields[19].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 35 && f35.owner == 0){
+    } else if(p1loc == 35 && fields[20].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 36 && f36.owner == 0){
+    } else if(p1loc == 36 && fields[26].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 38 && f38.owner == 0){
+    } else if(p1loc == 38 && fields[21].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 40 && f40.owner == 0){
+    } else if(p1loc == 40 && fields[22].owner == 0){
         buy.classList.remove('hide');
     }
 }
 function whoOwn() {
-    if(f2.owner == 1){
-        ownerfield2.classList.add('ownerp1');
+    for (let i=0; i<fields.length; i++) {
+        if(fields[i].owner == 1){
+            fields[i].ownerstyle.classList.add('ownerp1');
+        }
+        if(fields[i].owner == 2){
+            fields[i].ownerstyle.classList.add('ownerp2');
+        }
+        if(fields[i].owner == 3){
+            fields[i].ownerstyle.classList.add('ownerp3');
+        }
     }
-    if(f4.owner == 1){
-        ownerfield4.classList.add('ownerp1');
-    }
-    if(f6.owner == 1){
-        ownerfield6.classList.add('ownerp1');
-    }
-    if(f7.owner == 1){
-        ownerfield7.classList.add('ownerp1');
-    }
-    if(f9.owner == 1){
-        ownerfield9.classList.add('ownerp1');
-    }
-    if(f10.owner == 1){
-        ownerfield10.classList.add('ownerp1');
-    }
-    if(f12.owner == 1){
-        ownerfield12.classList.add('ownerp1');
-    }
-    if(f13.owner == 1){
-        ownerfield13.classList.add('ownerp1');
-    }
-    if(f14.owner == 1){
-        ownerfield14.classList.add('ownerp1');
-    }
-    if(f15.owner == 1){
-        ownerfield15.classList.add('ownerp1');
-    }
-    if(f16.owner == 1){
-        ownerfield16.classList.add('ownerp1');
-    }    
-    if(f17.owner == 1){
-        ownerfield17.classList.add('ownerp1');
-    }    
-    if(f19.owner == 1){
-        ownerfield19.classList.add('ownerp1');
-    }    
-    if(f20.owner == 1){
-        ownerfield20.classList.add('ownerp1');
-    }
-    if(f22.owner == 1){
-        ownerfield22.classList.add('ownerp1');
-    }   
-    if(f24.owner == 1){
-        ownerfield24.classList.add('ownerp1');
-    }
-    if(f25.owner == 1){
-        ownerfield25.classList.add('ownerp1');
-    }
-    if(f26.owner == 1){
-        ownerfield26.classList.add('ownerp1');
-    }    
-    if(f27.owner == 1){
-        ownerfield27.classList.add('ownerp1');
-    }
-    if(f28.owner == 1){
-        ownerfield28.classList.add('ownerp1');
-    }
-    if(f29.owner == 1){
-        ownerfield29.classList.add('ownerp1');
-    }        
-    if(f30.owner == 1){
-        ownerfield30.classList.add('ownerp1');
-    }
-    if(f32.owner == 1){
-        ownerfield32.classList.add('ownerp1');
-    }
-    if(f33.owner == 1){
-        ownerfield33.classList.add('ownerp1');
-    }
-    if(f35.owner == 1){
-        ownerfield35.classList.add('ownerp1');
-    }    
-    if(f36.owner == 1){
-        ownerfield36.classList.add('ownerp1');
-    }
-    if(f38.owner == 1){
-        ownerfield38.classList.add('ownerp1');
-    }
-    if(f40.owner == 1){
-        ownerfield40.classList.add('ownerp1');
-    }
-
-    if(f2.owner == 2){
-        ownerfield2.classList.add('ownerp2');
-    }
-    if(f4.owner == 2){
-        ownerfield4.classList.add('ownerp2');
-    }
-    if(f6.owner == 2){
-        ownerfield6.classList.add('ownerp2');
-    }
-    if(f7.owner == 2){
-        ownerfield7.classList.add('ownerp2');
-    }
-    if(f9.owner == 2){
-        ownerfield9.classList.add('ownerp2');
-    }
-    if(f10.owner == 2){
-        ownerfield10.classList.add('ownerp2');
-    }
-    if(f12.owner == 2){
-        ownerfield12.classList.add('ownerp2');
-    }
-    if(f13.owner == 2){
-        ownerfield13.classList.add('ownerp2');
-    }
-    if(f14.owner == 2){
-        ownerfield14.classList.add('ownerp2');
-    }
-    if(f15.owner == 2){
-        ownerfield15.classList.add('ownerp2');
-    }
-    if(f16.owner == 2){
-        ownerfield16.classList.add('ownerp2');
-    }    
-    if(f17.owner == 2){
-        ownerfield17.classList.add('ownerp2');
-    }    
-    if(f19.owner == 2){
-        ownerfield19.classList.add('ownerp2');
-    }    
-    if(f20.owner == 2){
-        ownerfield20.classList.add('ownerp2');
-    }
-    if(f22.owner == 2){
-        ownerfield22.classList.add('ownerp2');
-    }   
-    if(f24.owner == 2){
-        ownerfield24.classList.add('ownerp2');
-    }
-    if(f25.owner == 2){
-        ownerfield25.classList.add('ownerp2');
-    }
-    if(f26.owner == 2){
-        ownerfield26.classList.add('ownerp2');
-    }    
-    if(f27.owner == 2){
-        ownerfield27.classList.add('ownerp2');
-    }
-    if(f28.owner == 2){
-        ownerfield28.classList.add('ownerp2');
-    }
-    if(f29.owner == 2){
-        ownerfield29.classList.add('ownerp2');
-    }    
-    if(f30.owner == 2){
-        ownerfield30.classList.add('ownerp2');
-    }
-    if(f32.owner == 2){
-        ownerfield32.classList.add('ownerp2');
-    }
-    if(f33.owner == 2){
-        ownerfield33.classList.add('ownerp2');
-    }
-    if(f35.owner == 2){
-        ownerfield35.classList.add('ownerp2');
-    }    
-    if(f36.owner == 2){
-        ownerfield36.classList.add('ownerp2');
-    }
-    if(f38.owner == 2){
-        ownerfield38.classList.add('ownerp2');
-    }
-    if(f40.owner == 2){
-        ownerfield40.classList.add('ownerp2');
-    }
-
-    if(f2.owner == 3){
-        ownerfield2.classList.add('ownerp3');
-    }
-    if(f4.owner == 3){
-        ownerfield4.classList.add('ownerp3');
-    }
-    if(f6.owner == 3){
-        ownerfield6.classList.add('ownerp3');
-    }
-    if(f7.owner == 3){
-        ownerfield7.classList.add('ownerp3');
-    }
-    if(f9.owner == 3){
-        ownerfield9.classList.add('ownerp3');
-    }
-    if(f10.owner == 3){
-        ownerfield10.classList.add('ownerp3');
-    }
-    if(f12.owner == 3){
-        ownerfield12.classList.add('ownerp3');
-    }
-    if(f13.owner == 3){
-        ownerfield13.classList.add('ownerp3');
-    }
-    if(f14.owner == 3){
-        ownerfield14.classList.add('ownerp3');
-    }
-    if(f15.owner == 3){
-        ownerfield15.classList.add('ownerp3');
-    }
-    if(f16.owner == 3){
-        ownerfield16.classList.add('ownerp3');
-    }    
-    if(f17.owner == 3){
-        ownerfield17.classList.add('ownerp3');
-    }    
-    if(f19.owner == 3){
-        ownerfield19.classList.add('ownerp3');
-    }    
-    if(f20.owner == 3){
-        ownerfield20.classList.add('ownerp3');
-    }
-    if(f22.owner == 3){
-        ownerfield22.classList.add('ownerp3');
-    }   
-    if(f24.owner == 3){
-        ownerfield24.classList.add('ownerp3');
-    }
-    if(f25.owner == 3){
-        ownerfield25.classList.add('ownerp3');
-    }
-    if(f26.owner == 3){
-        ownerfield26.classList.add('ownerp3');
-    }    
-    if(f27.owner == 3){
-        ownerfield27.classList.add('ownerp3');
-    }
-    if(f28.owner == 3){
-        ownerfield28.classList.add('ownerp3');
-    }
-    if(f29.owner == 3){
-        ownerfield29.classList.add('ownerp3');
-    }    
-    if(f30.owner == 3){
-        ownerfield30.classList.add('ownerp3');
-    }
-    if(f32.owner == 3){
-        ownerfield32.classList.add('ownerp3');
-    }
-    if(f33.owner == 3){
-        ownerfield33.classList.add('ownerp3');
-    }
-    if(f35.owner == 3){
-        ownerfield35.classList.add('ownerp3');
-    }    
-    if(f36.owner == 3){
-        ownerfield36.classList.add('ownerp3');
-    }
-    if(f38.owner == 3){
-        ownerfield38.classList.add('ownerp3');
-    }
-    if(f40.owner == 3){
-        ownerfield40.classList.add('ownerp3');
-    }
-}
+}  
 function Pay1player() {
     if(p1loc == 2 && f2.owner == 2 && f2.hotel == 1){
         p1money = p1money - f2.rentHotel;
@@ -13297,41 +12722,31 @@ function Pay3player() {
 }
 
 destyny = 0;
-p1loc = 1;
-p2loc = 1;
-p3loc = 1;
-p1move();
-p2move();
-p3move();
+p1loc = 0;
+p2loc = 0;
+p3loc = 0;
+move(p1loc);
+move(p2loc);
+move(p3loc);
 
-var log = document.createElement('p');
-consol.appendChild(log);
-log.textContent = 'START GRY.';
-consol.scrollTo(0, 10000000000);
-
-var log = document.createElement('p');
-consol.appendChild(log);
-log.textContent = 'TWOJA TURA.';
-log.classList.add('green');
-consol.scrollTo(0, 10000000000);
+Write('START GRY.', 0);
+Write('TWOJA TURA.', 1);
 
 rollButton.addEventListener("click", function(e) {
     endGame.classList.remove('hide'); 
     p1clean();
 
-    lottery();
-    rolldice();
-    lottery2();
-    rolldice2();
+    lottery(0);
+    lottery(1);
+    destyny = roll[0] + roll[1];
 
-    destyny = roll + roll2;
     var log = document.createElement('p');
     consol.appendChild(log);
     log.textContent = 'Rzut kostką. Wypadło: ' + destyny + '.';
     log.classList.add('green');
     consol.scrollTo(0, 10000000000);
 
-    p1move();
+    move(p1loc);
     blueQuestion();
     redQuestion();
     CanIBuy();
@@ -13861,11 +13276,9 @@ endGame.addEventListener("click", function(e) {
     log.classList.add('red2');
     consol.scrollTo(0, 10000000000);
 
-    lottery();
-    rolldice();
-    lottery2();
-    rolldice2();
-    destyny = roll + roll2;
+    lottery(0);
+    lottery(1);
+    destyny = roll[0] + roll[1];
 
     var log = document.createElement('p');
     consol.appendChild(log);
@@ -13873,7 +13286,7 @@ endGame.addEventListener("click", function(e) {
     log.classList.add('red2');
     consol.scrollTo(0, 10000000000);
 
-    p2move();
+    move(p2loc);
     blueQuestion2();
     redQuestion2();
     Pay2player();
@@ -13885,11 +13298,9 @@ endGame.addEventListener("click", function(e) {
     log.classList.add('blue3');
     consol.scrollTo(0, 10000000000);
 
-    lottery();
-    rolldice();
-    lottery2();
-    rolldice2();
-    destyny = roll + roll2;
+    lottery(0);
+    lottery(1);
+    destyny = roll[0] + roll[1];
 
     var log = document.createElement('p');
     consol.appendChild(log);
@@ -13897,7 +13308,7 @@ endGame.addEventListener("click", function(e) {
     log.classList.add('blue3');
     consol.scrollTo(0, 10000000000);
 
-    p3move();
+    move(p3loc);
     blueQuestion3();
     redQuestion3();
     Pay3player();
