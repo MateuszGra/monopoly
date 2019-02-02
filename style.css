@@ -966,61 +966,6 @@ display: none;
     top: 0.1rem;
     left: 4.3rem;
 }
-/* katy szansy */
-.question{
-    display: block;
-    position: absolute;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.5;
-    z-index: 500;
-}
-.questionText{
-    display: block;
-    position: absolute;
-    width: 50%;
-    height: 30%;
-    background: lightgray;
-    left: 19.5rem;
-    top: 20rem;
-    padding: 1rem;
-    z-index: 500;
-}
-.questionOatput{
-    display: block;
-    position: relative;
-    font-size: 2rem;
-    text-align: center;
-    top: 3rem;
-}
-.ok{
-    display: block;
-    position: absolute;
-    width: 6rem;
-    height: 4rem;
-    left: 18rem;
-    top: 18rem;
-    color: white;
-    font-size: 2rem;
-    border-radius: 1rem;
-    cursor: pointer;
-}
-.red{
-    border: 0.3rem darkred solid;
-    color: darkred;
-}
-.blue{
-    border: 0.3rem darkblue solid;
-    color: darkblue;
-}
-.blueok{
-    background:  darkblue;
-}
-.redok{
-    background: darkred;
-}
 .consol{
     width: 51rem;
     height: 63.6rem;

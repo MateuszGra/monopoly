@@ -104,21 +104,23 @@ const play = [
 ];
   
 const consol = document.querySelector('.consol');
-let logs = [];
+let logs = []; let num = 0;
 
 function Write(text, color) {
-    logs[0] = document.createElement('p');
-    consol.appendChild(logs[0]);
-    logs[0].textContent = text;
+    logs[num] = document.createElement('p');
+    consol.appendChild(logs[num]);
+    logs[num].textContent = text;
     if (color == 1){
-        logs[0].classList.add('green');
+        logs[num].classList.add('green');
     }
     if (color == 2){
-        logs[0].classList.add('red2');
+        logs[num].classList.add('red2');
     }
     if (color == 3){
-        logs[0].classList.add('blue3');
+        logs[num].classList.add('blue3');
     }
+    logs[num].scrollIntoView();
+    num = num + 1;
 }
 
 //// fields
@@ -869,10 +871,6 @@ for (let i=0; i<fields.length; i++) {
     },false);
 };
 
-function drawCard() {
-    draw = Math.random() * 15 + 1 ;
-    draw = Math.round(draw);
-}
 // roll dice
 function lottery(dice) {
     roll[dice] = Math.random() * 5 + 1 ;
@@ -997,7 +995,6 @@ function move(variable, who) {
         Write('Podatek dochodowy. Gracz 3 płaci 100$', 3);
         p3money = p3money - 100;
     }
-    
     player1.textContent = p1money;
     player2.textContent = p2money;
     player3.textContent = p3money;   
@@ -1020,985 +1017,278 @@ function pClean(who) {
         }
     }
 }
-
-const question = document.querySelector('.question'),
-    questionText = document.querySelector('.questionText'),
-    questionOatput = document.querySelector('.questionOatput'),
-    ok = document.querySelector(".ok");
-
-function redQuestion() {
-    if(p1loc == 8 || p1loc == 23 || p1loc == 37){
-        question.classList.remove('hide');
-        questionText.classList.remove('hide');
-        questionText.classList.remove('blue');
-        questionText.classList.add('red');
-        ok.classList.remove('blueok');
-        ok.classList.add('redok');
-        
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę czerwoną. Wypadło: ' + draw + '.';
-        log.classList.add('green');
-        consol.scrollTo(0, 10000000000);
-
+function redQuestion(variable, who) {
+    if(variable == 7 || variable == 22 || variable == 36){
+        Write('KARTA CZERWONA:', who);
+        draw = Math.random() * 15 + 1 ;
+        draw = Math.round(draw);
         if(draw == 1){
-            document.querySelector('.questionOatput').textContent = "Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$.";
-            p1money = p1money + 150;
+            Write('Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$', who);
+            if(who == 1) {p1money = p1money + 150;}
+            if(who == 2) {p2money = p2money + 150;}
+            if(who == 3) {p3money = p3money + 150;}
         } else if(draw == 2 || draw == 3){
-            document.querySelector('.questionOatput').textContent = "Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu.";
-            if(p1loc == 8){
+            Write('Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu.', who);
+            if(variable == 7){
                 destyny = 0;
-                p1loc = 6;
+                variable = 5;
             }
-            if(p1loc == 23){
+            if(variable == 22){
                 destyny = 0;
-                p1loc = 26;
+                variable = 25;
             }
-            if(p1loc == 37){
+            if(variable == 36){
                 destyny = 0;
-                p1loc = 36;
+                variable = 35;
             }
-            pClean(1);
-            move(p1loc, 1);
+            pClean(who);
+            move(variable, who);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
             destyny = roll[0] + roll[1];
-            document.querySelector('.questionOatput').textContent = "Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło '" +  destyny + "')." ;
-            if(p1loc == 8){
+            Write('Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ').', who);
+            if(variable == 7){
                 destyny = 0;
-                p1loc = 13;
+                variable = 12;
             }
-            if(p1loc == 23){
+            if(variable == 22){
                 destyny = 0;
-                p1loc = 29;
+                variable = 28;
             }
-            if(p1loc == 37){
+            if(variable == 36){
                 destyny = 0;
-                p1loc = 29;
+                variable = 28;
             }
-            pClean(1);
-            move(p1loc, 1);
+            pClean(who);
+            move(variable, who);
         } else if(draw == 5){
-            document.querySelector('.questionOatput').textContent = "Mandat za przekroczenie prędkości 15$.";
-            p1money = p1money - 15;
+            Write('Mandat za przekroczenie prędkości 15$.', who);
+            if(who == 1) {p1money = p1money + 150;}
+            if(who == 2) {p2money = p2money + 150;}
+            if(who == 3) {p3money = p3money + 150;}
         } else if(draw == 6){
-            document.querySelector('.questionOatput').textContent = "WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.";
-
+            Write('WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.', who);
         } else if(draw == 7){
-            document.querySelector('.questionOatput').textContent = "Cofnij się o trzy pola.";
+            Write('Cofnij się o trzy pola.', who);
             destyny = -3;
-            pClean(1);
-            move(p1loc, 1);
+            pClean(who);
+            move(variable, who);
         } else if(draw == 8){
-            document.querySelector('.questionOatput').textContent = "Idz na pole 24. Jeżeli mijasz start, pobierz 200$.";
-            if(p1loc == 37){
-                p1money = p1money + 200;
+            Write('Idz na pole 24. Jeżeli mijasz start, pobierz 200$.', who);
+            if(variable == 36){
+                if(who == 1) {p1money = p1money + 150;}
+                if(who == 2) {p2money = p2money + 150;}
+                if(who == 3) {p3money = p3money + 150;}
             }
             destyny = 0;
-            p1loc = 24;
-            pClean(1);
-            move(p1loc, 1);
+            variable = 23;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 9){
-            document.querySelector('.questionOatput').textContent = "Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.";
-            if(p2money > 0){
-                p2money = p2money + 50;
-                p1money = p1money - 50;
-                }
-            if(p3money > 0){
-                p3money = p3money + 50;
-                p1money = p1money - 50;
-                }
+            Write('Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.', who);
+            if(who == 1) {p1money - p1money - 100; p2money = p2money + 50; p3money = p3money + 50;}
+            if(who == 2) {p2money - p2money - 100; p1money = p1money + 50; p3money = p3money + 50;}
+            if(who == 3) {p3money - p3money - 100; p1money = p1money + 50; p1money = p1money + 50;}
         } else if(draw == 10){
-            document.querySelector('.questionOatput').textContent = "Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$.";
-            if(p1loc == 23 || p1loc == 37){
-                p1money = p1money + 200;
+            Write('Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$.', who);
+            if(variable == 22 || variable == 36){
+                if(who == 1) {p1money = p1money + 200;}
+                if(who == 2) {p2money = p2money + 200;}
+                if(who == 3) {p3money = p3money + 200;}
             }
             destyny = 0;
-            p1loc = 16;
-            pClean(1);
-            move(p1loc, 1);
-
+            variable = 15;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 11){
-            document.querySelector('.questionOatput').textContent = "Idź na pole 40.";
+            Write('Idź na pole 40.', who);
             destyny = 0;
-            p1loc = 40;
-            pClean(1);
-            move(p1loc, 1);
+            variable = 40;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 12){
-            document.querySelector('.questionOatput').textContent = "Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.";
+            Write('Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.', who);
         } else if(draw == 13){
-            document.querySelector('.questionOatput').textContent = "Idz na pole 12. Jeżeli mijasz start, pobierz 200$.";
-           if(p1loc == 23 || p1loc == 37){
-                p1money = p1money +200;
+            Write('Idz na pole 12. Jeżeli mijasz start, pobierz 200$.', who);
+           if(variable == 22 || variable == 36){
+            if(who == 1) {p1money = p1money + 200;}
+            if(who == 2) {p2money = p2money + 200;}
+            if(who == 3) {p3money = p3money + 200;}
            }
             destyny = 0;
-            p1loc = 12;
-            pClean(1);
-            move(p1loc, 1);
+            variable = 11;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 14){
-            document.querySelector('.questionOatput').textContent = "Bank wypłaca ci dywidendę w kwocie 50$.";
-            p1money = p1money +50;
+            Write('Bank wypłaca ci dywidendę w kwocie 50$.', who);
+            if(who == 1) {p1money = p1money + 50;}
+            if(who == 2) {p2money = p2money + 50;}
+            if(who == 3) {p3money = p3money + 50;}
         } else if(draw == 15){
-            document.querySelector('.questionOatput').textContent = "Idż na pole START. (Pobierz 200$).";
-            p1money = p1money + 200;
+            Write('Idż na pole START. (Pobierz 200$).', who);
+            if(who == 1) {p1money = p1money + 200;}
+            if(who == 2) {p2money = p2money + 200;}
+            if(who == 3) {p3money = p3money + 200;}
             destyny = 0;
-            p1loc = 1;
-            pClean(1);
-            move(p1loc, 1);
+            variable = 0;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 16){
-            document.querySelector('.questionOatput').textContent = "Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.";
+            Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
         }
     }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
+    player1.textContent = p1money;
+    player2.textContent = p2money;
+    player3.textContent = p3money;
 }
-function redQuestion2() {
-    if(p2loc == 8 || p2loc == 23 || p2loc == 37){
 
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę czerwoną. Wypadło: ' + draw + '.';
-        log.classList.add('red2');
-        consol.scrollTo(0, 10000000000);
+function blueQuestion(variable, who) {
+    if(variable == 2 || variable == 17 || variable == 33){
+        Write('KARTA NIEBIESKA:', who);
+        draw = Math.random() * 15 + 1 ;
+        draw = Math.round(draw);
 
         if(draw == 1){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$"."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 150;
-        } else if(draw == 2 || draw == 3){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p2loc == 8){
-                destyny = 0;
-                p2loc = 6;
-            }
-            if(p2loc == 23){
-                destyny = 0;
-                p2loc = 26;
-            }
-            if(p2loc == 37){
-                destyny = 0;
-                p2loc = 36;
-            }
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 4){
-            lottery(0);
-            lottery(1);
-            destyny = roll[0] + roll[1];
-
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ')."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p2loc == 8){
-                destyny = 0;
-                p2loc = 13;
-            }
-            if(p2loc == 23){
-                destyny = 0;
-                p2loc = 29;
-            }
-            if(p2loc == 37){
-                destyny = 0;
-                p2loc = 29;
-            }
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 5){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Mandat za przekroczenie prędkości 15$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money - 15;
-        } else if(draw == 6){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 7){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Cofnij się o trzy pola."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            destyny = -3;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 8){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na pole 24. Jeżeli mijasz start, pobierz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p2loc == 37){
-                p2money = p2money + 200;
-            }
+            Write('Idż na pole START. (Pobierz 200$).', who);
+            if(who == 1) {p1money = p1money + 200;}
+            if(who == 2) {p2money = p2money + 200;}
+            if(who == 3) {p3money = p3money + 200;}
             destyny = 0;
-            p2loc = 24;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 9){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p1money > 0){
-                p1money = p1money + 50;
-                p2money = p2money - 50;
-                }
-            if(p3money > 0){
-                p3money = p3money + 50;
-                p2money = p2money - 50;
-                }
-        } else if(draw == 10){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p2loc == 23 || p2loc == 37){
-                p2money = p2money + 200;
-            }
-            destyny = 0;
-            p2loc = 16;
-            pClean(2);
-            move(p2loc, 2);
-
-        } else if(draw == 11){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź na pole 40."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            destyny = 0;
-            p2loc = 40;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 12){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 13){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na pole 12. Jeżeli mijasz start, pobierz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-           if(p2loc == 23 || p2loc == 37){
-                p2money = p2money +200;
-           }
-            destyny = 0;
-            p2loc = 12;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 14){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Bank wypłaca ci dywidendę w kwocie 50$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money +50;
-        } else if(draw == 15){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idż na pole START. (Pobierz 200$)."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 200;
-            destyny = 0;
-            p2loc = 1;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 16){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-            
-        }
-    }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
-}
-function redQuestion3() {
-    if(p3loc == 8 || p3loc == 23 || p3loc == 37){
-        
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę czerwoną. Wypadło: ' + draw + '.';
-        log.classList.add('blue3');
-        consol.scrollTo(0, 10000000000);
-
-        if(draw == 1){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$"."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 150;
-        } else if(draw == 2 || draw == 3){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p3loc == 8){
-                destyny = 0;
-                p3loc = 6;
-            }
-            if(p3loc == 23){
-                destyny = 0;
-                p3loc = 26;
-            }
-            if(p3loc == 37){
-                destyny = 0;
-                p3loc = 36;
-            }
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 4){
-            lottery(0);
-            lottery(1);
-            destyny = roll[0] + roll[1];
-
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ')."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p3loc == 8){
-                destyny = 0;
-                p3loc = 13;
-            }
-            if(p3loc == 23){
-                destyny = 0;
-                p3loc = 29;
-            }
-            if(p3loc == 37){
-                destyny = 0;
-                p3loc = 29;
-            }
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 5){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Mandat za przekroczenie prędkości 15$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money - 15;
-        } else if(draw == 6){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 7){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Cofnij się o trzy pola."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            destyny = -3;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 8){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na pole 24. Jeżeli mijasz start, pobierz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p3loc == 37){
-                p3money = p3money + 200;
-            }
-            destyny = 0;
-            p3loc = 24;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 9){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p1money > 0){
-                p1money = p1money + 50;
-                p3money = p3money - 50;
-                }
-            if(p2money > 0){
-                p2money = p2money + 50;
-                p3money = p3money - 50;
-                }
-        } else if(draw == 10){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p3loc == 23 || p3loc == 37){
-                p3money = p3money + 200;
-            }
-            destyny = 0;
-            p3loc = 16;
-            pClean(3);
-            move(p3loc, 3);
-
-        } else if(draw == 11){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź na pole 40."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            destyny = 0;
-            p3loc = 40;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 12){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 13){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idz na pole 12. Jeżeli mijasz start, pobierz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-           if(p3loc == 23 || p3loc == 37){
-                p3money = p3money +200;
-           }
-            destyny = 0;
-            p3loc = 12;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 14){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Bank wypłaca ci dywidendę w kwocie 50$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money +50;
-        } else if(draw == 15){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idż na pole START. (Pobierz 200$)."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 200;
-            destyny = 0;
-            p3loc = 1;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 16){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-            
-        }
-    }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
-}
-function blueQuestion() {
-    if(p1loc == 3 || p1loc == 18 || p1loc == 34){
-        question.classList.remove('hide');
-        questionText.classList.remove('hide');
-        questionText.classList.remove('red');
-        questionText.classList.add('blue');
-        ok.classList.remove('redok');
-        ok.classList.add('blueok');
-       
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę niebieską. Wypadło: ' + draw + '.';
-        log.classList.add('green');
-        consol.scrollTo(0, 10000000000);
-
-        if(draw == 1){
-            document.querySelector('.questionOatput').textContent = "Idż na pole START. (Pobierz 200$).";
-            p1money = p1money + 200;
-            destyny = 0;
-            p1loc = 1;
-            pClean(1);
-            move(p1loc, 1);
+            variable = 0;
+            pClean(who);
+            move(variable, who);
         } else if(draw == 2){
-            document.querySelector('.questionOatput').textContent = "Pomyłka banku na twoją korzyść. Pobierz 200$.";
-            p1money = p1money + 200;
+            Write('Pomyłka banku na twoją korzyść. Pobierz 200$.', who);
+            if(who == 1) {p1money = p1money + 200;}
+            if(who == 2) {p2money = p2money + 200;}
+            if(who == 3) {p3money = p3money + 200;}
         } else if(draw == 3){
+            Write('Sprzedajesz akcje z zyskiem. Pobierz 50$.', who);
             document.querySelector('.questionOatput').textContent = "Sprzedajesz akcje z zyskiem. Pobierz 50$.";
-            p1money = p1money + 50;
+            if(who == 1) {p1money = p1money + 50;}
+            if(who == 2) {p2money = p2money + 50;}
+            if(who == 3) {p3money = p3money + 50;}
         } else if(draw == 4){
-            document.querySelector('.questionOatput').textContent = "Dziedziczysz spadek w wysokości 100$.";
-            p1money = p1money + 100;
+            Write('Dziedziczysz spadek w wysokości 100$.', who);
+            if(who == 1) {p1money = p1money + 100;}
+            if(who == 2) {p2money = p2money + 100;}
+            if(who == 3) {p3money = p3money + 100;}
         } else if(draw == 5){
-            document.querySelector('.questionOatput').textContent = "Dziś są twoje urodziny pobierz 10$ od każdego z graczy.";
-            if(p2money >= 10){
-                p2money = p2money - 10;
-                p1money = p1money + 10;
-                }
-            if(p3money >= 10){
-                p3money = p3money - 10;
-                p1money = p1money + 10;
-                }
+            Write('Dziś są twoje urodziny pobierz 10$ od każdego z graczy.', who);
+            if(who == 1) {p1money = p1money + 20; p2money = p2money - 10; p3money = p3money - 10;}
+            if(who == 2) {p2money = p2money + 20; p1money = p1money - 10; p3money = p3money - 10;}
+            if(who == 3) {p3money = p3money + 20; p2money = p1money - 10; p1money = p1money - 10;}
         } else if(draw == 6){
-            document.querySelector('.questionOatput').textContent = "Pobierz 25$ za usługę konsultingową.";
-            p1money = p1money + 25;
+            Write('Pobierz 25$ za usługę konsultingową.', who);
+            if(who == 1) {p1money = p1money + 25;}
+            if(who == 2) {p2money = p2money + 25;}
+            if(who == 3) {p3money = p3money + 25;}
         } else if(draw == 7){
-            document.querySelector('.questionOatput').textContent = "Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.";
+            Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
         } else if(draw == 8){
-            document.querySelector('.questionOatput').textContent = "Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$.";
-            p1money = p1money + 100;
+            Write('Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$.', who);
+            if(who == 1) {p1money = p1money + 100;}
+            if(who == 2) {p2money = p2money + 100;}
+            if(who == 3) {p3money = p3money + 100;}
         } else if(draw == 9){
-            document.querySelector('.questionOatput').textContent = "Opłata za konsultację lekarską. Zapłać 50$.";
-            p1money = p1money - 50;
+            Write('Opłata za konsultację lekarską. Zapłać 50$.', who);
+            if(who == 1) {p1money = p1money - 50;}
+            if(who == 2) {p2money = p2money - 50;}
+            if(who == 3) {p3money = p3money - 50;}
         } else if(draw == 10){
-            document.querySelector('.questionOatput').textContent = "Opłata za czesne. Zapłać 50$.";
-            p1money = p1money - 50;
+            Write('Opłata za czesne. Zapłać 50$.', who);
+            if(who == 1) {p1money = p1money - 50;}
+            if(who == 2) {p2money = p2money - 50;}
+            if(who == 3) {p3money = p3money - 50;}
         } else if(draw == 11){
-            document.querySelector('.questionOatput').textContent = "Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$.";
-            p1money = p1money + 100;
+            Write('Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$.', who);
+            if(who == 1) {p1money = p1money + 100;}
+            if(who == 2) {p2money = p2money + 100;}
+            if(who == 3) {p3money = p3money + 100;}
         } else if(draw == 12){
-            document.querySelector('.questionOatput').textContent = "Zwrot podatku dochodowego. Pobierz 20$.";
-            p1money = p1money + 20;
+            Write('Zwrot podatku dochodowego. Pobierz 20$.', who);
+            if(who == 1) {p1money = p1money + 20;}
+            if(who == 2) {p2money = p2money + 20;}
+            if(who == 3) {p3money = p3money + 20;}
         } else if(draw == 13){
-            document.querySelector('.questionOatput').textContent = "Opłata za pobyt w szpitalu. Zapłać 100$.";
-            p1money = p1money - 100;
+            Write('Opłata za pobyt w szpitalu. Zapłać 100$.', who);
+            if(who == 1) {p1money = p1money - 100;}
+            if(who == 2) {p2money = p2money - 100;}
+            if(who == 3) {p3money = p3money - 100;}
         } else if(draw == 14){
-            document.querySelector('.questionOatput').textContent = "WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.";
+            Write('WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.', who);
         } else if(draw == 15){
-            document.querySelector('.questionOatput').textContent = "Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$.";
-            p1money = p1money + 10;
+            Write('Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$.', who);
+            if(who == 1) {p1money = p1money + 10;}
+            if(who == 2) {p2money = p2money + 10;}
+            if(who == 3) {p3money = p3money + 10;}
         } else if(draw == 16){
-            document.querySelector('.questionOatput').textContent = "Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz.";
+            Write('Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz.', who);
         }
     }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
+    player1.textContent = p1money;
+    player2.textContent = p2money;
+    player3.textContent = p3money;
 }
-function blueQuestion2() {
-    if(p2loc == 3 || p2loc == 18 || p2loc == 34){
-        
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę niebieską. Wypadło: ' + draw + '.';
-        log.classList.add('red2');
-        consol.scrollTo(0, 10000000000);
-
-        if(draw == 1){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idż na pole START. (Pobierz 200$)."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 200;
-            destyny = 0;
-            p2loc = 1;
-            pClean(2);
-            move(p2loc, 2);
-        } else if(draw == 2){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Pomyłka banku na twoją korzyść. Pobierz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 200;
-        } else if(draw == 3){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Sprzedajesz akcje z zyskiem. Pobierz 50$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 50;
-        } else if(draw == 4){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Dziedziczysz spadek w wysokości 100$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 100;
-        } else if(draw == 5){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Dziś są twoje urodziny pobierz 10$ od każdego z graczy."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            if(p1money >= 10){
-                p1money = p1money - 10;
-                p2money = p2money + 10;
-                }
-            if(p3money >= 10){
-                p3money = p3money - 10;
-                p2money = p2money + 10;
-                }
-        } else if(draw == 6){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Pobierz 25$ za usługę konsultingową."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 25;
-        } else if(draw == 7){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 8){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 100;
-        } else if(draw == 9){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za konsultację lekarską. Zapłać 50$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money - 50;
-        } else if(draw == 10){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za czesne. Zapłać 50$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money - 50;
-        } else if(draw == 11){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 100;
-        } else if(draw == 12){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Zwrot podatku dochodowego. Pobierz 20$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 20;
-        } else if(draw == 13){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za pobyt w szpitalu. Zapłać 100$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money - 100;
-        } else if(draw == 14){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 15){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-
-            p2money = p2money + 10;
-        } else if(draw == 16){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz."';
-            log.classList.add('red2');
-            consol.scrollTo(0, 10000000000);
-        }
-    }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
-}
-function blueQuestion3() {
-    if(p3loc == 3 || p3loc == 18 || p3loc == 34){
-
-        drawCard();
-
-        var log = document.createElement('p');
-        consol.appendChild(log);
-        log.textContent = 'Losuję kartę niebieską. Wypadło: ' + draw + '.';
-        log.classList.add('blue3');
-        consol.scrollTo(0, 10000000000);
-
-        if(draw == 1){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idż na pole START. (Pobierz 200$)."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 200;
-            destyny = 0;
-            p3loc = 1;
-            pClean(3);
-            move(p3loc, 3);
-        } else if(draw == 2){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Pomyłka banku na twoją korzyść. Pobierz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 200;
-        } else if(draw == 3){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Sprzedajesz akcje z zyskiem. Pobierz 50$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 50;
-        } else if(draw == 4){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Dziedziczysz spadek w wysokości 100$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 100;
-        } else if(draw == 5){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Dziś są twoje urodziny pobierz 10$ od każdego z graczy."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            if(p1money >= 10){
-                p1money = p1money - 10;
-                p3money = p3money + 10;
-                }
-            if(p2money >= 10){
-                p2money = p2money - 10;
-                p3money = p3money + 10;
-                }
-        } else if(draw == 6){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Pobierz 25$ za usługę konsultingową."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 25;
-        } else if(draw == 7){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 8){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 100;
-        } else if(draw == 9){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za konsultację lekarską. Zapłać 50$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money - 50;
-        } else if(draw == 10){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za czesne. Zapłać 50$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money - 50;
-        } else if(draw == 11){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 100;
-        } else if(draw == 12){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Zwrot podatku dochodowego. Pobierz 20$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 20;
-        } else if(draw == 13){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Opłata za pobyt w szpitalu. Zapłać 100$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money - 100;
-        } else if(draw == 14){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-        } else if(draw == 15){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-
-            p3money = p3money + 10;
-        } else if(draw == 16){
-            var log = document.createElement('p');
-            consol.appendChild(log);
-            log.textContent = '"Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz."';
-            log.classList.add('blue3');
-            consol.scrollTo(0, 10000000000);
-        }
-    }
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
-}
-ok.addEventListener("click", function(e) { 
-    question.classList.add('hide');
-    questionText.classList.add('hide');
-},false);
 
 const buy = document.querySelector('.buy');
 function CanIBuy() {
-    if(p1loc == 2 && fields[0].owner == 0){
+    if(p1loc == 1 && fields[0].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 4 && fields[1].owner == 0){
+    } else if(p1loc == 3 && fields[1].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 6 && fields[23].owner == 0){
+    } else if(p1loc == 5 && fields[23].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 7 && fields[2].owner == 0){
+    } else if(p1loc == 6 && fields[2].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 9 && fields[3].owner == 0){
+    } else if(p1loc == 8 && fields[3].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 10 && fields[4].owner == 0){
+    } else if(p1loc == 9 && fields[4].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 12 && fields[5].owner == 0){
+    } else if(p1loc == 11 && fields[5].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 13 && fields[27].owner == 0){
+    } else if(p1loc == 12 && fields[27].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 14 && fields[7].owner == 0){
+    } else if(p1loc == 13 && fields[7].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 15 && fields[8].owner == 0){
+    } else if(p1loc == 14 && fields[8].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 16 && fields[24].owner == 0){
+    } else if(p1loc == 15 && fields[24].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 17 && fields[9].owner == 0){
+    } else if(p1loc == 16 && fields[9].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 19 && fields[10].owner == 0){
+    } else if(p1loc == 18 && fields[10].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 20 && fields[11].owner == 0){
+    } else if(p1loc == 19 && fields[11].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 22 && fields[12].owner == 0){
+    } else if(p1loc == 21 && fields[12].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 24 && fields[13].owner == 0){
+    } else if(p1loc == 23 && fields[13].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 25 && fields[14].owner == 0){
+    } else if(p1loc == 24 && fields[14].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 26 && fields[25].owner == 0){
+    } else if(p1loc == 25 && fields[25].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 27 && fields[15].owner == 0){
+    } else if(p1loc == 26 && fields[15].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 28 && fields[16].owner == 0){
+    } else if(p1loc == 27 && fields[16].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 29 && fields[28].owner == 0){
+    } else if(p1loc == 28 && fields[28].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 30 && fields[17].owner == 0){
+    } else if(p1loc == 29 && fields[17].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 32 && fields[18].owner == 0){
+    } else if(p1loc == 31 && fields[18].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 33 && fields[19].owner == 0){
+    } else if(p1loc == 32 && fields[19].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 35 && fields[20].owner == 0){
+    } else if(p1loc == 34 && fields[20].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 36 && fields[26].owner == 0){
+    } else if(p1loc == 35 && fields[26].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 38 && fields[21].owner == 0){
+    } else if(p1loc == 37 && fields[21].owner == 0){
         buy.classList.remove('hide');
-    } else if(p1loc == 40 && fields[22].owner == 0){
+    } else if(p1loc == 39 && fields[22].owner == 0){
         buy.classList.remove('hide');
     }
 }
@@ -12637,8 +11927,8 @@ rollButton.addEventListener("click", function(e) {
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 1)
 
     move(p1loc, 1);
-    blueQuestion();
-    redQuestion();
+    blueQuestion(p1loc, 1);
+    redQuestion(p1loc, 1);
     CanIBuy();
     Pay1player();
     
@@ -13167,12 +12457,12 @@ endGame.addEventListener("click", function(e) {
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
 
     move(p2loc, 2);
-    blueQuestion2();
-    redQuestion2();
+    blueQuestion(p2loc, 2);
+    redQuestion(p2loc, 2);
     Pay2player();
 
     pClean(3);
-    Write('TURA GRACZA 2.', 3);
+    Write('TURA GRACZA 3.', 3);
 
     lottery(0);
     lottery(1);
@@ -13180,16 +12470,16 @@ endGame.addEventListener("click", function(e) {
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 3);
 
     move(p3loc, 3);
-    blueQuestion3();
-    redQuestion3();
+    blueQuestion(p3loc, 3);
+    redQuestion(p3loc, 3);
     Pay3player();
 
     whoOwn();
     Write('TWOJA TURA', 1);
 
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
+    player1.textContent = p1money;
+    player2.textContent = p2money;
+    player3.textContent = p3money;
 },false);
 
 })();
