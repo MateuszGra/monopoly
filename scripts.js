@@ -9,6 +9,11 @@ let p1money = 1500,
     p2money = 1500,
     p3money = 1500;
 
+let destyny,
+    p1loc,
+    p2loc,
+    p3loc;
+
 const player1 = document.querySelector(".player1");
 player1.textContent = p1money;
     
@@ -923,74 +928,72 @@ function lottery(dice) {
         }
 }
 
-let destyny,
-    p1loc,
-    p2loc,
-    p3loc;
+function move(variable, who) {
+    variable = variable + destyny;
 
-function move(who) {
-    who = who + destyny;
-
-    if(who > 40) {
-        who = who - 40;
-        if (who === p1loc) {
+    if(variable > 40) {
+        variable = variable - 40;
+        if (who == 1) {
             Write('START- otrzymujesz pensję 200$.', 1);
             p1money = p1money + 200;
         }
-        if (who === p2loc) {
-            Write('START-  Gracz 2 otrzymuje pensję 200$.', 2);
+        if (who == 2) {
+            Write('START- Gracz 2 otrzymuje pensję 200$.', 2);
             p2money = p2money + 200;
         }
-        if (who === p3loc) {
-            Write('START-  Gracz 3 otrzymuje pensję 200$.', 3);
+        if (who == 3) {
+            Write('START- Gracz 3 otrzymuje pensję 200$.', 3);
             p3money = p3money + 200;
         }
     }
-    if (who === p1loc) {
-        Write('Lądujesz na polu: ' + (who + 1) + ".", 1);
+    if (who == 1) {
+        Write('Lądujesz na polu: ' + (variable + 1) + ".", 1);
+        p1loc = variable;
     }
-    if (who === p2loc) {
-        Write('Gracz 2 ląduje na polu: ' + (who + 1) + ".", 2);
+    if (who == 2) {
+        Write('Gracz 2 ląduje na polu: ' + (variable + 1) + ".", 2);
+        p2loc = variable;
     }
-    if (who === p3loc) {
-        Write('Gracz 3 ląduje na polu: ' + (who + 1) + ".", 3);
+    if (who == 3) {
+        Write('Gracz 3 ląduje na polu: ' + (variable + 1) + ".", 3);
+        p3loc = variable;
     }
 
     for (let i=0; i<play.length; i++) {
-        if(who == i && who === p1loc) {
+        if(who == 1 && variable == i) {
             play[i].classList.add('p1');
         }
-        if(who == i && who === p2loc) {
+        if(who == 2 && variable == i) {
             play[i].classList.add('p2');
         }
-        if(who == i && who === p3loc) {
+        if(who == 3 && variable == i) {
             play[i].classList.add('p3');
         }
     }
 
-    if(who == 5 && who === p1loc) {
+    if(variable == 4 && who == 1) {
         Write('Podatek dochodowy. Płacisz 200$', 1);
         p1money = p1money - 200;
     }
-    if(who == 5 && who === p2loc) {
+    if(variable == 4 && who == 2) {
         Write('Podatek dochodowy. Gracz 2 płaci 200$', 2);
         p2money = p2money - 200;
     }
-    if(who == 5 && who === p3loc) {
+    if(variable == 4 && who == 3) {
         Write('Podatek dochodowy. Gracz 3 płaci 200$', 3);
         p3money = p3money - 200;
     }
 
 
-    if(who == 39 && who === p1loc) {
+    if(variable == 38 && who == 1) {
         Write('Podatek dochodowy. Płacisz 100$', 1);
         p1money = p1money - 100;
     }
-    if(who == 39 && who === p2loc) {
+    if(variable == 38 && who == 2) {
         Write('Podatek dochodowy. Gracz 2 płaci 100$', 2);
         p2money = p2money - 100;
     }
-    if(who == 39 && who === p3loc) {
+    if(variable == 38 && who == 3) {
         Write('Podatek dochodowy. Gracz 3 płaci 100$', 3);
         p3money = p3money - 100;
     }
@@ -1000,132 +1003,24 @@ function move(who) {
     player3.textContent = p3money;   
 }
 
-function p1clean() {
-    play1.classList.remove('p1');
-    play2.classList.remove('p1');
-    play3.classList.remove('p1');
-    play4.classList.remove('p1');
-    play5.classList.remove('p1');
-    play6.classList.remove('p1');
-    play7.classList.remove('p1');
-    play8.classList.remove('p1');
-    play9.classList.remove('p1');
-    play10.classList.remove('p1');
-    play11.classList.remove('p1');
-    play12.classList.remove('p1');
-    play13.classList.remove('p1');
-    play14.classList.remove('p1');
-    play15.classList.remove('p1');
-    play16.classList.remove('p1');
-    play17.classList.remove('p1');
-    play18.classList.remove('p1');
-    play19.classList.remove('p1');
-    play20.classList.remove('p1');
-    play21.classList.remove('p1');
-    play22.classList.remove('p1');
-    play23.classList.remove('p1');
-    play24.classList.remove('p1');
-    play25.classList.remove('p1');
-    play26.classList.remove('p1');
-    play27.classList.remove('p1');
-    play28.classList.remove('p1');
-    play29.classList.remove('p1');
-    play30.classList.remove('p1');
-    play31.classList.remove('p1');
-    play32.classList.remove('p1');
-    play33.classList.remove('p1');
-    play34.classList.remove('p1');
-    play35.classList.remove('p1');
-    play36.classList.remove('p1');
-    play37.classList.remove('p1');
-    play38.classList.remove('p1');
-    play39.classList.remove('p1');
-    play40.classList.remove('p1');
+function pClean(who) {
+    if(who == 1){
+        for (let i=0; i<play.length; i++) {
+            play[i].classList.remove('p1')
+        }
+    }
+    if(who == 2){
+        for (let i=0; i<play.length; i++) {
+            play[i].classList.remove('p2')
+        }
+    }
+    if(who == 3){
+        for (let i=0; i<play.length; i++) {
+            play[i].classList.remove('p3')
+        }
+    }
 }
-function p2clean() {
-    play1.classList.remove('p2');
-    play2.classList.remove('p2');
-    play3.classList.remove('p2');
-    play4.classList.remove('p2');
-    play5.classList.remove('p2');
-    play6.classList.remove('p2');
-    play7.classList.remove('p2');
-    play8.classList.remove('p2');
-    play9.classList.remove('p2');
-    play10.classList.remove('p2');
-    play11.classList.remove('p2');
-    play12.classList.remove('p2');
-    play13.classList.remove('p2');
-    play14.classList.remove('p2');
-    play15.classList.remove('p2');
-    play16.classList.remove('p2');
-    play17.classList.remove('p2');
-    play18.classList.remove('p2');
-    play19.classList.remove('p2');
-    play20.classList.remove('p2');
-    play21.classList.remove('p2');
-    play22.classList.remove('p2');
-    play23.classList.remove('p2');
-    play24.classList.remove('p2');
-    play25.classList.remove('p2');
-    play26.classList.remove('p2');
-    play27.classList.remove('p2');
-    play28.classList.remove('p2');
-    play29.classList.remove('p2');
-    play30.classList.remove('p2');
-    play31.classList.remove('p2');
-    play32.classList.remove('p2');
-    play33.classList.remove('p2');
-    play34.classList.remove('p2');
-    play35.classList.remove('p2');
-    play36.classList.remove('p2');
-    play37.classList.remove('p2');
-    play38.classList.remove('p2');
-    play39.classList.remove('p2');
-    play40.classList.remove('p2');
-}
-function p3clean() {
-    play1.classList.remove('p3');
-    play2.classList.remove('p3');
-    play3.classList.remove('p3');
-    play4.classList.remove('p3');
-    play5.classList.remove('p3');
-    play6.classList.remove('p3');
-    play7.classList.remove('p3');
-    play8.classList.remove('p3');
-    play9.classList.remove('p3');
-    play10.classList.remove('p3');
-    play11.classList.remove('p3');
-    play12.classList.remove('p3');
-    play13.classList.remove('p3');
-    play14.classList.remove('p3');
-    play15.classList.remove('p3');
-    play16.classList.remove('p3');
-    play17.classList.remove('p3');
-    play18.classList.remove('p3');
-    play19.classList.remove('p3');
-    play20.classList.remove('p3');
-    play21.classList.remove('p3');
-    play22.classList.remove('p3');
-    play23.classList.remove('p3');
-    play24.classList.remove('p3');
-    play25.classList.remove('p3');
-    play26.classList.remove('p3');
-    play27.classList.remove('p3');
-    play28.classList.remove('p3');
-    play29.classList.remove('p3');
-    play30.classList.remove('p3');
-    play31.classList.remove('p3');
-    play32.classList.remove('p3');
-    play33.classList.remove('p3');
-    play34.classList.remove('p3');
-    play35.classList.remove('p3');
-    play36.classList.remove('p3');
-    play37.classList.remove('p3');
-    play38.classList.remove('p3');
-    play39.classList.remove('p3');
-    play40.classList.remove('p3');
-}
+
 const question = document.querySelector('.question'),
     questionText = document.querySelector('.questionText'),
     questionOatput = document.querySelector('.questionOatput'),
@@ -1165,8 +1060,8 @@ function redQuestion() {
                 destyny = 0;
                 p1loc = 36;
             }
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
@@ -1184,8 +1079,8 @@ function redQuestion() {
                 destyny = 0;
                 p1loc = 29;
             }
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 5){
             document.querySelector('.questionOatput').textContent = "Mandat za przekroczenie prędkości 15$.";
             p1money = p1money - 15;
@@ -1195,8 +1090,8 @@ function redQuestion() {
         } else if(draw == 7){
             document.querySelector('.questionOatput').textContent = "Cofnij się o trzy pola.";
             destyny = -3;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 8){
             document.querySelector('.questionOatput').textContent = "Idz na pole 24. Jeżeli mijasz start, pobierz 200$.";
             if(p1loc == 37){
@@ -1204,8 +1099,8 @@ function redQuestion() {
             }
             destyny = 0;
             p1loc = 24;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 9){
             document.querySelector('.questionOatput').textContent = "Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.";
             if(p2money > 0){
@@ -1223,15 +1118,15 @@ function redQuestion() {
             }
             destyny = 0;
             p1loc = 16;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
 
         } else if(draw == 11){
             document.querySelector('.questionOatput').textContent = "Idź na pole 40.";
             destyny = 0;
             p1loc = 40;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 12){
             document.querySelector('.questionOatput').textContent = "Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.";
         } else if(draw == 13){
@@ -1241,8 +1136,8 @@ function redQuestion() {
            }
             destyny = 0;
             p1loc = 12;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 14){
             document.querySelector('.questionOatput').textContent = "Bank wypłaca ci dywidendę w kwocie 50$.";
             p1money = p1money +50;
@@ -1251,8 +1146,8 @@ function redQuestion() {
             p1money = p1money + 200;
             destyny = 0;
             p1loc = 1;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 16){
             document.querySelector('.questionOatput').textContent = "Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.";
         }
@@ -1299,8 +1194,8 @@ function redQuestion2() {
                 destyny = 0;
                 p2loc = 36;
             }
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
@@ -1324,8 +1219,8 @@ function redQuestion2() {
                 destyny = 0;
                 p2loc = 29;
             }
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 5){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1349,8 +1244,8 @@ function redQuestion2() {
             consol.scrollTo(0, 10000000000);
 
             destyny = -3;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 8){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1363,8 +1258,8 @@ function redQuestion2() {
             }
             destyny = 0;
             p2loc = 24;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 9){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1392,8 +1287,8 @@ function redQuestion2() {
             }
             destyny = 0;
             p2loc = 16;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
 
         } else if(draw == 11){
             var log = document.createElement('p');
@@ -1404,8 +1299,8 @@ function redQuestion2() {
 
             destyny = 0;
             p2loc = 40;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 12){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1425,8 +1320,8 @@ function redQuestion2() {
            }
             destyny = 0;
             p2loc = 12;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 14){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1445,8 +1340,8 @@ function redQuestion2() {
             p2money = p2money + 200;
             destyny = 0;
             p2loc = 1;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 16){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1498,8 +1393,8 @@ function redQuestion3() {
                 destyny = 0;
                 p3loc = 36;
             }
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
@@ -1523,8 +1418,8 @@ function redQuestion3() {
                 destyny = 0;
                 p3loc = 29;
             }
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 5){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1548,8 +1443,8 @@ function redQuestion3() {
             consol.scrollTo(0, 10000000000);
 
             destyny = -3;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 8){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1562,8 +1457,8 @@ function redQuestion3() {
             }
             destyny = 0;
             p3loc = 24;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 9){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1591,8 +1486,8 @@ function redQuestion3() {
             }
             destyny = 0;
             p3loc = 16;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
 
         } else if(draw == 11){
             var log = document.createElement('p');
@@ -1603,8 +1498,8 @@ function redQuestion3() {
 
             destyny = 0;
             p3loc = 40;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 12){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1624,8 +1519,8 @@ function redQuestion3() {
            }
             destyny = 0;
             p3loc = 12;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 14){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1644,8 +1539,8 @@ function redQuestion3() {
             p3money = p3money + 200;
             destyny = 0;
             p3loc = 1;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 16){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1681,8 +1576,8 @@ function blueQuestion() {
             p1money = p1money + 200;
             destyny = 0;
             p1loc = 1;
-            p1clean();
-            move(p1loc);
+            pClean(1);
+            move(p1loc, 1);
         } else if(draw == 2){
             document.querySelector('.questionOatput').textContent = "Pomyłka banku na twoją korzyść. Pobierz 200$.";
             p1money = p1money + 200;
@@ -1759,8 +1654,8 @@ function blueQuestion2() {
             p2money = p2money + 200;
             destyny = 0;
             p2loc = 1;
-            p2clean();
-            move(p2loc);
+            pClean(2);
+            move(p2loc, 2);
         } else if(draw == 2){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -1911,8 +1806,8 @@ function blueQuestion3() {
             p3money = p3money + 200;
             destyny = 0;
             p3loc = 1;
-            p3clean();
-            move(p3loc);
+            pClean(3);
+            move(p3loc, 3);
         } else if(draw == 2){
             var log = document.createElement('p');
             consol.appendChild(log);
@@ -12725,36 +12620,31 @@ destyny = 0;
 p1loc = 0;
 p2loc = 0;
 p3loc = 0;
-move(p1loc);
-move(p2loc);
-move(p3loc);
+move(p1loc, 1);
+move(p2loc, 2);
+move(p3loc, 3);
 
 Write('START GRY.', 0);
 Write('TWOJA TURA.', 1);
 
 rollButton.addEventListener("click", function(e) {
     endGame.classList.remove('hide'); 
-    p1clean();
+    pClean(1);
 
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
+    Write('Rzut kostką. Wypadło: ' + destyny + '.', 1)
 
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Rzut kostką. Wypadło: ' + destyny + '.';
-    log.classList.add('green');
-    consol.scrollTo(0, 10000000000);
-
-    move(p1loc);
+    move(p1loc, 1);
     blueQuestion();
     redQuestion();
     CanIBuy();
     Pay1player();
     
-    document.querySelector('.player1').textContent = p1money;
-    document.querySelector('.player2').textContent = p2money;
-    document.querySelector('.player3').textContent = p3money;
+    player1.textContent = p1money;
+    player2.textContent = p2money;
+    player3.textContent = p3money;
 },false);
 buy.addEventListener("click", function(e) {
     if(p1loc == 2 && f2.owner == 0 && p1money >= f2.price){
@@ -13265,60 +13155,37 @@ buy.addEventListener("click", function(e) {
 },false);
 
 endGame.addEventListener("click", function(e) {
-    
     endGame.classList.toggle('hide');
     buy.classList.add('hide'); 
     
-    p2clean()
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'TURA GRACZA 2.';
-    log.classList.add('red2');
-    consol.scrollTo(0, 10000000000);
-
+    pClean(2);
+    Write('TURA GRACZA 2.', 2);
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
 
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Rzut kostką. Wypadło: ' + destyny + '.';
-    log.classList.add('red2');
-    consol.scrollTo(0, 10000000000);
+    Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
 
-    move(p2loc);
+    move(p2loc, 2);
     blueQuestion2();
     redQuestion2();
     Pay2player();
 
-    p3clean();
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'TURA GRACZA 3.';
-    log.classList.add('blue3');
-    consol.scrollTo(0, 10000000000);
+    pClean(3);
+    Write('TURA GRACZA 2.', 3);
 
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
+    Write('Rzut kostką. Wypadło: ' + destyny + '.', 3);
 
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'Rzut kostką. Wypadło: ' + destyny + '.';
-    log.classList.add('blue3');
-    consol.scrollTo(0, 10000000000);
-
-    move(p3loc);
+    move(p3loc, 3);
     blueQuestion3();
     redQuestion3();
     Pay3player();
 
     whoOwn();
-    var log = document.createElement('p');
-    consol.appendChild(log);
-    log.textContent = 'TWOJA TURA.';
-    log.classList.add('green');
-    consol.scrollTo(0, 10000000000);
+    Write('TWOJA TURA', 1);
 
     document.querySelector('.player1').textContent = p1money;
     document.querySelector('.player2').textContent = p2money;
