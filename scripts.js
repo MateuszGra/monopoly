@@ -3,8 +3,9 @@
 const cube = [document.querySelector(".cube"), document.querySelector(".cube2")];
 const rollButton = document.querySelector('.rollButton');
 const endGame = document.querySelector('.endGame');
+const buy = document.querySelector('.buy');
     
-let roll = [0, 0], draw;
+let roll = [0, 0];
 let money = [1500, 1500, 1500];
 
 let destyny;
@@ -1024,6 +1025,7 @@ function pClean(who) {
 function redQuestion(who) {
     if(location[who] == 7 || location[who] == 22 || location[who] == 36){
         Write('KARTA CZERWONA:', who);
+        let = draw;
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
         if(draw == 1){
@@ -1136,6 +1138,7 @@ function redQuestion(who) {
 function blueQuestion(who) {
     if(location[who] == 2 || location[who] == 17 || location[who] == 33){
         Write('KARTA NIEBIESKA:', who);
+        let = draw;
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
 
@@ -1198,7 +1201,6 @@ function blueQuestion(who) {
     player3.textContent = money[2];
 }
 
-const buy = document.querySelector('.buy');
 function canIBuy() {
     for (let i=0; i<fields.length; i++) {
         if(location[0] == i && fields[i].owner == 0){
