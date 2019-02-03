@@ -1025,7 +1025,7 @@ function pClean(who) {
 function redQuestion(who) {
     if(location[who] == 7 || location[who] == 22 || location[who] == 36){
         Write('KARTA CZERWONA:', who);
-        let = draw;
+        let draw;
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
         if(draw == 1){
@@ -1138,7 +1138,7 @@ function redQuestion(who) {
 function blueQuestion(who) {
     if(location[who] == 2 || location[who] == 17 || location[who] == 33){
         Write('KARTA NIEBIESKA:', who);
-        let = draw;
+        let draw;
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
 
