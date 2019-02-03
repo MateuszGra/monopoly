@@ -344,9 +344,9 @@ display: none;
 .bigfield17::before{ content: "17";}
 .bigfield19::before{ content: "19";}
 .bigfield20::before{ content: "20";}
-.bigfield22::before{ content: "22";}
-.bigfield24::before{ content: "24";}
-.bigfield25::before{ content: "25";}
+.bigfield22::before{ content: "22"; color: black;}
+.bigfield24::before{ content: "24"; color: black;}
+.bigfield25::before{ content: "25"; color: black;}
 .bigfield27::before{ content: "27";}
 .bigfield28::before{ content: "28";}
 .bigfield30::before{ content: "30";}
@@ -980,6 +980,7 @@ display: none;
     font-size: 2rem;
     overflow-y: scroll;
     padding: 1rem;
+    line-height: 2.2rem;
 }
 .green{
 color: greenyellow;

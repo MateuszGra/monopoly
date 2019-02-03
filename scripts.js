@@ -102,7 +102,7 @@ let fields = [
         mortgage: 30,
         mortgageRepayment: 33,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -129,7 +129,7 @@ let fields = [
         mortgage: 30,
         mortgageRepayment: 33,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -150,7 +150,7 @@ let fields = [
         mortgage: 100,
         mortgageRepayment: 110,
 
-        owner: 0
+        owner: -1,
     },
     {
         player: document.querySelector(".play7"),
@@ -172,7 +172,7 @@ let fields = [
         mortgage: 50,
         mortgageRepayment: 55,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -199,7 +199,7 @@ let fields = [
         mortgage: 50,
         mortgageRepayment: 55,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -223,7 +223,7 @@ let fields = [
         mortgage: 60,
         mortgageRepayment: 66,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -250,7 +250,7 @@ let fields = [
         mortgage: 70,
         mortgageRepayment: 77,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -263,7 +263,7 @@ let fields = [
         mortgage: 75,
         mortgageRepayment: 83,
 
-        owner: 0
+        owner: -1,
     },
     {
         player: document.querySelector(".play14"),
@@ -285,7 +285,7 @@ let fields = [
         mortgage: 70,
         mortgageRepayment: 77,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },   
@@ -309,7 +309,7 @@ let fields = [
         mortgage: 80,
         mortgageRepayment: 88,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -327,7 +327,7 @@ let fields = [
         mortgage: 100,
         mortgageRepayment: 110,
 
-        owner: 0
+        owner: -1,
     },
     {   
         player: document.querySelector(".play17"),
@@ -349,7 +349,7 @@ let fields = [
         mortgage: 90,
         mortgageRepayment: 99,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -376,7 +376,7 @@ let fields = [
         mortgage: 90,
         mortgageRepayment: 99,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },  
@@ -400,7 +400,7 @@ let fields = [
         mortgage: 100,
         mortgageRepayment: 110,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -427,7 +427,7 @@ let fields = [
         mortgage: 110,
         mortgageRepayment: 121,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -454,7 +454,7 @@ let fields = [
         mortgage: 110,
         mortgageRepayment: 121,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -478,7 +478,7 @@ let fields = [
         mortgage: 120,
         mortgageRepayment: 132,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -496,7 +496,7 @@ let fields = [
         mortgage: 100,
         mortgageRepayment: 110,
 
-        owner: 0
+        owner: -1,
     },
     {
         player: document.querySelector(".play27"),
@@ -518,7 +518,7 @@ let fields = [
         mortgage: 130,
         mortgageRepayment: 143,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -542,7 +542,7 @@ let fields = [
         mortgage: 130,
         mortgageRepayment: 143,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -555,7 +555,7 @@ let fields = [
         mortgage: 75,
         mortgageRepayment: 83,
 
-        owner: 0
+        owner: -1,
     },
     {
         player: document.querySelector(".play30"),
@@ -577,7 +577,7 @@ let fields = [
         mortgage: 140,
         mortgageRepayment: 154,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -604,7 +604,7 @@ let fields = [
         mortgage: 150,
         mortgageRepayment: 165,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -628,7 +628,7 @@ let fields = [
         mortgage: 150,
         mortgageRepayment: 165,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -655,7 +655,7 @@ let fields = [
         mortgage: 160,
         mortgageRepayment: 176,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -673,7 +673,7 @@ let fields = [
         mortgage: 100,
         mortgageRepayment: 110,
 
-        owner: 0
+        owner: -1,
     },
     {
         player: document.querySelector(".play37")
@@ -698,7 +698,7 @@ let fields = [
         mortgage: 175,
         mortgageRepayment: 193,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -725,7 +725,7 @@ let fields = [
         mortgage: 200,
         mortgageRepayment: 220,
 
-        owner: 0,
+        owner: -1,
         hotel: 0,
         house: 0
     },
@@ -870,16 +870,16 @@ for (let i=0; i<fields.length; i++) {
             oatput15.textContent = fields[i].rent3;
             oatput16.textContent = fields[i].rent4;
 
-            if(fields[i].owner == 1){
+            if(fields[i].owner == 0){
                 oatput2.textContent = 'Gracz 1';
                 oatput2.classList.add('green');
-            } else if (fields[i].owner == 2){
+            } else if (fields[i].owner == 1){
                 oatput2.textContent = 'Gracz 2';
                 oatput2.classList.add('red2');
-            } else if (fields[i].owner == 3){
+            } else if (fields[i].owner == 2){
                 oatput2.textContent = 'Gracz 3';
                 oatput2.classList.add('blue3');
-            } else if (fields[i].owner == 0){
+            } else if (fields[i].owner == -1){
                 oatput2.textContent = 'Brak';
                 oatput2.classList.remove('green');
                 oatput2.classList.remove('red2');
@@ -950,7 +950,7 @@ function move(who) {
     if(location[who] > 40) {
         location[who] = location[who] - 40;
         money[who] = money[who] + 200;
-        Write('START- otrzymujesz pensję 200$.', who);
+        Write('START- pensja 200$!', who);
     }
     if (who == 0) {
         Write('Lądujesz na polu: ' + (location[who] + 1) + ".", who);
@@ -1102,7 +1102,7 @@ function redQuestion(who) {
         } else if(draw == 11){
             Write('Idź na pole 40.', who);
             destyny = 0;
-            location[who] = 40;
+            location[who] = 39;
             pClean(who);
             move(who);
         } else if(draw == 12){
@@ -1154,7 +1154,7 @@ function blueQuestion(who) {
             money[who] = money[who] + 200;
         } else if(draw == 3){
             Write('Sprzedajesz akcje z zyskiem. Pobierz 50$.', who);
-            document.querySelector('.questionOatput').textContent = "Sprzedajesz akcje z zyskiem. Pobierz 50$.";
+
             money[who] = money[who] + 50;
         } else if(draw == 4){
             Write('Dziedziczysz spadek w wysokości 100$.', who);
@@ -1203,24 +1203,96 @@ function blueQuestion(who) {
 
 function canIBuy() {
     for (let i=0; i<fields.length; i++) {
-        if(location[0] == i && fields[i].owner == 0){
+        if(location[0] == i && fields[i].owner == -1){
             buy.classList.remove('hide');
         }
     }
 }
 function whoOwn() {
     for (let i=0; i<fields.length; i++) {
-        if(fields[i].owner == 1){
+        if(fields[i].owner == 0){
             fields[i].ownerstyle.classList.add('ownerp1');
         }
-        if(fields[i].owner == 2){
+        if(fields[i].owner == 1){
             fields[i].ownerstyle.classList.add('ownerp2');
         }
-        if(fields[i].owner == 3){
+        if(fields[i].owner == 2){
             fields[i].ownerstyle.classList.add('ownerp3');
         }
     }
 }  
+function payRent(who){
+    for (let i=0; i<fields.length; i++) {
+        if (location[who] == i && fields[i].owner != who &&  fields[i].owner != -1 && location[who] != 0 && location[who] != 2 && location[who] != 4 && location[who] != 7 && location[who] != 10 && location[who] != 17 && location[who] != 20 && location[who] != 22 && location[who] != 30 && location[who] != 33 && location[who] != 36 && location[who] != 38) {
+            if(fields[i].hotel == 1){
+                money[who] = money[who] - fields[i].rentHotel;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rentHotel;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentHotel + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + 'w wysokości ' +  fields[i].rentHotel + '$.', who);
+                }
+            }
+            if(fields[i].house == 4){
+                money[who] = money[who] - fields[i].rent4house;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent4house;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4house + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4house + '$.', who);
+                }
+            }else if(fields[i].house == 3){
+                money[who] = money[who] - fields[i].rent3house;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent3house;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3house + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3house + '$.', who);
+                }
+            }else if(fields[i].house == 2){
+                money[who] = money[who] - fields[i].rent2house;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent2house;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2house + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2house + '$.', who);
+                }
+            }else if(fields[i].house == 1){
+                money[who] = money[who] - fields[i].rent1house;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent1house;
+                    if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent1house + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent1house + '$.', who);
+                }
+            }else if(i == 1 && fields[1].owner == fields[3].owner || i == 3 && fields[1].owner == fields[3].owner || i == 7 && fields[7].owner == fields[8].owner == fields[9].owner || i == 8 && fields[7].owner == fields[8].owner == fields[9].owner || i == 9 && fields[7].owner == fields[8].owner == fields[9].owner || i == 16 && fields[16].owner == fields[18].owner == fields[19].owner || i == 18 && fields[16].owner == fields[18].owner == fields[19].owner || i == 19 && fields[16].owner == fields[18].owner == fields[19].owner || i == 21 && fields[21].owner == fields[23].owner == fields[24].owner || i == 23 && fields[21].owner == fields[23].owner == fields[24].owner || i == 24 && fields[21].owner == fields[23].owner == fields[24].owner || i == 26 && fields[26].owner == fields[27].owner == fields[29].owner || i == 27 && fields[26].owner == fields[27].owner == fields[29].owner || i == 29 && fields[26].owner == fields[27].owner == fields[29].owner || i == 31 && fields[31].owner == fields[32].owner == fields[34].owner || i == 32 && fields[31].owner == fields[32].owner == fields[34].owner || i == 34 && fields[31].owner == fields[32].owner   == fields[34].owner || i == 37 && fields[37].owner == fields[39].owner || i == 39 && fields[37].owner == fields[39].owner){
+                money[who] = money[who] - fields[i].rentAll;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rentAll;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentAll + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentAll + '$.', who);
+                }
+            }else if(i == 12 && fields[12].owner == fields[28].owner || i == 28 && fields[12].owner == fields[28].owner){
+                money[who] = money[who] - (9 * destyny);
+                money[fields[i].owner] = money[fields[i].owner] + (9 * destyny);
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                }
+            }else{
+                money[who] = money[who] - fields[i].rent;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
+                }
+            }
+        }
+    }
+}
 
 
 destyny = 0;
@@ -1234,7 +1306,6 @@ Write('TWOJA TURA.', 0);
 rollButton.addEventListener("click", function(e) {
     endGame.classList.remove('hide'); 
     pClean(0);
-
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
@@ -1243,6 +1314,7 @@ rollButton.addEventListener("click", function(e) {
     move(0);
     blueQuestion(0);
     redQuestion(0);
+    payRent(0);
     canIBuy();
     
     player1.textContent = money[0];
@@ -1253,12 +1325,12 @@ rollButton.addEventListener("click", function(e) {
 buy.addEventListener("click", function(e) {
 
     for (let i=0; i<fields.length; i++) {
-        if(location[0] == i && fields[i].owner == 0 && money[0] >= fields[i].price){
+        if(location[0] == i && fields[i].owner == -1 && money[0] >= fields[i].price){
             buy.classList.add('hide');
             money[0] = money[0] - fields[i].price;
-            fields[i].owner = 1;
+            fields[i].owner = 0;
             Write('Kupujesz pole ' + (i + 1) + ' za ' + fields[i].price + '$.', 0)
-        } else if (location[0] == i && fields[i].owner == 0 && money[0] < fields[i].price) {
+        } else if (location[0] == i && fields[i].owner == -1 && money[0] < fields[i].price) {
             Write('ZA MAŁO GOTÓWKI. Potrzeba ' + fields[i].price + '$.')
         }
     }
@@ -1270,8 +1342,8 @@ endGame.addEventListener("click", function(e) {
     endGame.classList.toggle('hide');
     buy.classList.add('hide'); 
     
-    pClean(1);
     Write('TURA GRACZA 2.', 1);
+    pClean(1);
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
@@ -1281,10 +1353,10 @@ endGame.addEventListener("click", function(e) {
     move(1);
     blueQuestion(1);
     redQuestion(1);
-
-    pClean(2);
+    payRent(1);
+    
     Write('TURA GRACZA 3.', 2);
-
+    pClean(2);
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
@@ -1293,6 +1365,7 @@ endGame.addEventListener("click", function(e) {
     move(2);
     blueQuestion(2);
     redQuestion(2);
+    payRent(2);
 
     whoOwn();
     Write('TWOJA TURA', 0);
