@@ -7,10 +7,8 @@ const endGame = document.querySelector('.endGame');
 let roll = [0, 0], draw;
 let money = [1500, 1500, 1500];
 
-let destyny,
-    p1loc,
-    p2loc,
-    p3loc;
+let destyny;
+let location = [0, 0, 0]
 
 const player1 = document.querySelector(".player1");
 player1.textContent = money[0];
@@ -945,64 +943,59 @@ function lottery(dice) {
         }
 }
 
-function move(variable, who) {
-    variable = variable + destyny;
+function move(who) {
+    location[who] = location[who] + destyny;
 
-    if(variable > 40) {
-        variable = variable - 40;
-        money[who] = money[who] - 40;
-        if (who == 0) {
-            Write('START- otrzymujesz pensję 200$.', who);
-        }
+    if(location[who] > 40) {
+        location[who] = location[who] - 40;
+        money[who] = money[who] + 200;
+        Write('START- otrzymujesz pensję 200$.', who);
     }
     if (who == 0) {
-        Write('Lądujesz na polu: ' + (variable + 1) + ".", who);
-        p1loc = variable;
+        Write('Lądujesz na polu: ' + (location[who] + 1) + ".", who);
     }
     if (who == 1) {
-        Write('Gracz 2 ląduje na polu: ' + (variable + 1) + ".", who);
-        p2loc = variable;
+        Write('Gracz 2 ląduje na polu: ' + (location[who] + 1) + ".", who);
     }
     if (who == 2) {
-        Write('Gracz 3 ląduje na polu: ' + (variable + 1) + ".", who);
-        p3loc = variable;
+        Write('Gracz 3 ląduje na polu: ' + (location[who] + 1) + ".", who);
     }
 
     for (let i=0; i<fields.length; i++) {
-        if(who == 0 && variable == i) {
+        if(who == 0 && location[who] == i) {
             fields[i].player.classList.add('p1');
         }
-        if(who == 1 && variable == i) {
+        if(who == 1 && location[who] == i) {
             fields[i].player.classList.add('p2');
         }
-        if(who == 2 && variable == i) {
+        if(who == 2 && location[who] == i) {
             fields[i].player.classList.add('p3');
         }
     }
 
-    if(variable == 4 && who == 0) {
+    if(location[who] == 4 && who == 0) {
         Write('Podatek dochodowy. Płacisz 200$', who);
         money[who] = money[who] - 200;
     }
-    if(variable == 4 && who == 1) {
+    if(location[who] == 4 && who == 1) {
         Write('Podatek dochodowy. Gracz 2 płaci 200$', who);
         money[who] = money[who] - 200;
     }
-    if(variable == 4 && who == 2) {
+    if(location[who] == 4 && who == 2) {
         Write('Podatek dochodowy. Gracz 3 płaci 200$', who);
         money[who] = money[who] - 200;
     }
 
 
-    if(variable == 38 && who == 0) {
+    if(location[who] == 38 && who == 0) {
         Write('Podatek dochodowy. Płacisz 100$', who);
         money[who] = money[who] - 200;
     }
-    if(variable == 38 && who == 1) {
+    if(location[who] == 38 && who == 1) {
         Write('Podatek dochodowy. Gracz 2 płaci 100$', who);
         money[who] = money[who] - 200;
     }
-    if(variable == 38 && who == 2) {
+    if(location[who] == 38 && who == 2) {
         Write('Podatek dochodowy. Gracz 3 płaci 100$', who);
         money[who] = money[who] - 200;
     }
@@ -1028,8 +1021,8 @@ function pClean(who) {
         }
     }
 }
-function redQuestion(variable, who) {
-    if(variable == 7 || variable == 22 || variable == 36){
+function redQuestion(who) {
+    if(location[who] == 7 || location[who] == 22 || location[who] == 36){
         Write('KARTA CZERWONA:', who);
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
@@ -1038,39 +1031,39 @@ function redQuestion(variable, who) {
             money[who] = money[who] + 150;
         } else if(draw == 2 || draw == 3){
             Write('Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu.', who);
-            if(variable == 7){
+            if(location[who] == 7){
                 destyny = 0;
-                variable = 5;
+                location[who] = 5;
             }
-            if(variable == 22){
+            if(location[who] == 22){
                 destyny = 0;
-                variable = 25;
+                location[who] = 25;
             }
-            if(variable == 36){
+            if(location[who] == 36){
                 destyny = 0;
-                variable = 35;
+                location[who] = 35;
             }
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
             destyny = roll[0] + roll[1];
             Write('Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ').', who);
-            if(variable == 7){
+            if(location[who] == 7){
                 destyny = 0;
-                variable = 12;
+                location[who] = 12;
             }
-            if(variable == 22){
+            if(location[who] == 22){
                 destyny = 0;
-                variable = 28;
+                location[who] = 28;
             }
-            if(variable == 36){
+            if(location[who] == 36){
                 destyny = 0;
-                variable = 28;
+                location[who] = 28;
             }
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 5){
             Write('Mandat za przekroczenie prędkości 15$.', who);
             money[who] = money[who] - 15;
@@ -1080,16 +1073,16 @@ function redQuestion(variable, who) {
             Write('Cofnij się o trzy pola.', who);
             destyny = -3;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 8){
             Write('Idz na pole 24. Jeżeli mijasz start, pobierz 200$.', who);
-            if(variable == 36){
+            if(location[who] == 36){
                 money[who] = money[who] + 200;
             }
             destyny = 0;
-            variable = 23;
+            location[who] = 23;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 9){
             Write('Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.', who);
             if(who == 1) {money[0] - money[0] - 100; money[1] = money[1] + 50; money[2] = money[2] + 50;}
@@ -1097,30 +1090,30 @@ function redQuestion(variable, who) {
             if(who == 3) {money[2] - money[2] - 100; money[1] = money[1] + 50; money[0] = money[0] + 50;}
         } else if(draw == 10){
             Write('Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$.', who);
-            if(variable == 22 || variable == 36){
+            if(location[who] == 22 || location[who] == 36){
                 money[who] = money[who] + 200;
             }
             destyny = 0;
-            variable = 15;
+            location[who] = 15;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 11){
             Write('Idź na pole 40.', who);
             destyny = 0;
-            variable = 40;
+            location[who] = 40;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 12){
             Write('Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.', who);
         } else if(draw == 13){
             Write('Idz na pole 12. Jeżeli mijasz start, pobierz 200$.', who);
-            if(variable == 22 || variable == 36){
+            if(location[who] == 22 || location[who] == 36){
                 money[who] = money[who] + 200;
             }
             destyny = 0;
-            variable = 11;
+            location[who] = 11;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 14){
             Write('Bank wypłaca ci dywidendę w kwocie 50$.', who);
             money[who] = money[who] + 50;
@@ -1128,9 +1121,9 @@ function redQuestion(variable, who) {
             Write('Idż na pole START. (Pobierz 200$).', who);
             money[who] = money[who] + 200;
             destyny = 0;
-            variable = 0;
+            location[who] = 0;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 16){
             Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
         }
@@ -1140,8 +1133,8 @@ function redQuestion(variable, who) {
     player3.textContent = money[2];
 }
 
-function blueQuestion(variable, who) {
-    if(variable == 2 || variable == 17 || variable == 33){
+function blueQuestion(who) {
+    if(location[who] == 2 || location[who] == 17 || location[who] == 33){
         Write('KARTA NIEBIESKA:', who);
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
@@ -1150,9 +1143,9 @@ function blueQuestion(variable, who) {
             Write('Idż na pole START. (Pobierz 200$).', who);
             money[who] = money[who] + 200;
             destyny = 0;
-            variable = 0;
+            location[who] = 0;
             pClean(who);
-            move(variable, who);
+            move(who);
         } else if(draw == 2){
             Write('Pomyłka banku na twoją korzyść. Pobierz 200$.', who);
             money[who] = money[who] + 200;
@@ -1208,7 +1201,7 @@ function blueQuestion(variable, who) {
 const buy = document.querySelector('.buy');
 function canIBuy() {
     for (let i=0; i<fields.length; i++) {
-        if(p1loc == i && fields[i].owner == 0){
+        if(location[0] == i && fields[i].owner == 0){
             buy.classList.remove('hide');
         }
     }
@@ -1229,12 +1222,9 @@ function whoOwn() {
 
 
 destyny = 0;
-p1loc = 0;
-p2loc = 0;
-p3loc = 0;
-move(p1loc, 0);
-move(p2loc, 1);
-move(p3loc, 2);
+move(0);
+move(1);
+move(2);
 
 Write('START GRY.', 3);
 Write('TWOJA TURA.', 0);
@@ -1248,9 +1238,9 @@ rollButton.addEventListener("click", function(e) {
     destyny = roll[0] + roll[1];
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 0)
 
-    move(p1loc, 0);
-    blueQuestion(p1loc, 0);
-    redQuestion(p1loc, 0);
+    move(0);
+    blueQuestion(0);
+    redQuestion(0);
     canIBuy();
     
     player1.textContent = money[0];
@@ -1777,9 +1767,9 @@ endGame.addEventListener("click", function(e) {
 
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 1);
 
-    move(p2loc, 1);
-    blueQuestion(p2loc, 1);
-    redQuestion(p2loc, 1);
+    move(1);
+    blueQuestion(1);
+    redQuestion(1);
 
     pClean(2);
     Write('TURA GRACZA 3.', 2);
@@ -1789,9 +1779,9 @@ endGame.addEventListener("click", function(e) {
     destyny = roll[0] + roll[1];
     Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
 
-    move(p3loc, 2);
-    blueQuestion(p3loc, 2);
-    redQuestion(p3loc, 2);
+    move(2);
+    blueQuestion(2);
+    redQuestion(2);
 
     whoOwn();
     Write('TWOJA TURA', 0);
