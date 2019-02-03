@@ -223,7 +223,7 @@ let fields = [
         mortgage: 60,
         mortgageRepayment: 66,
 
-        owner10: 0,
+        owner: 0,
         hotel: 0,
         house: 0
     },
