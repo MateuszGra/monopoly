@@ -947,8 +947,8 @@ function lottery(dice) {
 function move(who) {
     location[who] = location[who] + destyny;
 
-    if(location[who] > 40) {
-        location[who] = location[who] - 40;
+    if(location[who] > 39) {
+        location[who] = location[who] - 39;
         money[who] = money[who] + 200;
         Write('START- pensja 200$!', who);
     }
@@ -1265,7 +1265,29 @@ function payRent(who){
                 } else {
                     Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent1house + '$.', who);
                 }
-            }else if(i == 1 && fields[1].owner == fields[3].owner || i == 3 && fields[1].owner == fields[3].owner || i == 7 && fields[7].owner == fields[8].owner == fields[9].owner || i == 8 && fields[7].owner == fields[8].owner == fields[9].owner || i == 9 && fields[7].owner == fields[8].owner == fields[9].owner || i == 16 && fields[16].owner == fields[18].owner == fields[19].owner || i == 18 && fields[16].owner == fields[18].owner == fields[19].owner || i == 19 && fields[16].owner == fields[18].owner == fields[19].owner || i == 21 && fields[21].owner == fields[23].owner == fields[24].owner || i == 23 && fields[21].owner == fields[23].owner == fields[24].owner || i == 24 && fields[21].owner == fields[23].owner == fields[24].owner || i == 26 && fields[26].owner == fields[27].owner == fields[29].owner || i == 27 && fields[26].owner == fields[27].owner == fields[29].owner || i == 29 && fields[26].owner == fields[27].owner == fields[29].owner || i == 31 && fields[31].owner == fields[32].owner == fields[34].owner || i == 32 && fields[31].owner == fields[32].owner == fields[34].owner || i == 34 && fields[31].owner == fields[32].owner   == fields[34].owner || i == 37 && fields[37].owner == fields[39].owner || i == 39 && fields[37].owner == fields[39].owner){
+            }else if(
+                i == 1 && fields[1].owner == fields[3].owner || 
+                i == 3 && fields[1].owner == fields[3].owner || 
+                i == 6 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
+                i == 8 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
+                i == 9 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner ||
+                i == 11 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                i == 13 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                i == 14 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                i == 16 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                i == 18 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                i == 19 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                i == 21 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                i == 23 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                i == 24 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                i == 26 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                i == 27 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                i == 29 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                i == 31 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                i == 32 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                i == 34 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                i == 37 && fields[37].owner == fields[39].owner || 
+                i == 39 && fields[37].owner == fields[39].owner){
                 money[who] = money[who] - fields[i].rentAll;
                 money[fields[i].owner] = money[fields[i].owner] + fields[i].rentAll;
                 if(who == 0){
@@ -1280,6 +1302,58 @@ function payRent(who){
                     Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
                 } else {
                     Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                }
+            }else if(i == 12 || i == 28){
+                money[who] = money[who] - (4 * destyny);
+                money[fields[i].owner] = money[fields[i].owner] + (4 * destyny);
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                }
+            }else if(
+                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
+                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner ||
+                i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner ||
+                i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner && fields[35].owner == fields[5].owner){
+                money[who] = money[who] - fields[i].rent4;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent4;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4 + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4 + '$.', who);
+                }
+            }else if(
+                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
+                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[35].owner||
+                i == 5 && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner||
+                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner|| 
+                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[35].owner||
+                i == 15 && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner||
+                i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[15].owner|| 
+                i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner||
+                i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[35].owner||
+                i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[15].owner|| 
+                i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[25].owner||
+                i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner){
+                money[who] = money[who] - fields[i].rent3;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent3;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3 + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3 + '$.', who);
+                }
+            }else if(
+                i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
+                i == 15 && fields[15].owner == fields[5].owner || i == 15 && fields[15].owner == fields[25].owner || i == 15 && fields[15].owner == fields[35].owner ||
+                i == 25 && fields[25].owner == fields[5].owner || i == 25 && fields[25].owner == fields[15].owner || i == 25 && fields[25].owner == fields[35].owner ||
+                i == 35 && fields[35].owner == fields[5].owner || i == 35 && fields[35].owner == fields[15].owner || i == 35 && fields[35].owner == fields[25].owner){
+                money[who] = money[who] - fields[i].rent2;
+                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent2;
+                if(who == 0){
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2 + '$.', who);
+                } else {
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2 + '$.', who);
                 }
             }else{
                 money[who] = money[who] - fields[i].rent;
