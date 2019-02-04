@@ -9,7 +9,8 @@ let roll = [0, 0];
 let money = [1500, 1500, 1500];
 
 let destyny;
-let location = [0, 0, 0]
+let location = [0, 0, 0];
+let jail = [0, 0, 0];
 
 const player1 = document.querySelector(".player1");
 player1.textContent = money[0];
@@ -952,14 +953,11 @@ function move(who) {
         money[who] = money[who] + 200;
         Write('START- pensja 200$!', who);
     }
-    if (who == 0) {
+    if (who == 0 && jail[who] == 0) {
         Write('Lądujesz na polu: ' + (location[who] + 1) + ".", who);
     }
-    if (who == 1) {
-        Write('Gracz 2 ląduje na polu: ' + (location[who] + 1) + ".", who);
-    }
-    if (who == 2) {
-        Write('Gracz 3 ląduje na polu: ' + (location[who] + 1) + ".", who);
+    if (who != 0 && jail[who] == 0) {
+        Write('Gracz ' + (who + 1 ) + ' ląduje na polu: ' + (location[who] + 1) + ".", who);
     }
 
     for (let i=0; i<fields.length; i++) {
@@ -978,12 +976,8 @@ function move(who) {
         Write('Podatek dochodowy. Płacisz 200$', who);
         money[who] = money[who] - 200;
     }
-    if(location[who] == 4 && who == 1) {
-        Write('Podatek dochodowy. Gracz 2 płaci 200$', who);
-        money[who] = money[who] - 200;
-    }
-    if(location[who] == 4 && who == 2) {
-        Write('Podatek dochodowy. Gracz 3 płaci 200$', who);
+    if(location[who] == 4 && who != 0) {
+        Write('Podatek dochodowy. Gracz ' + (who + 1 ) + ' płaci 200$', who);
         money[who] = money[who] - 200;
     }
 
@@ -992,14 +986,28 @@ function move(who) {
         Write('Podatek dochodowy. Płacisz 100$', who);
         money[who] = money[who] - 200;
     }
-    if(location[who] == 38 && who == 1) {
-        Write('Podatek dochodowy. Gracz 2 płaci 100$', who);
+    if(location[who] == 38 && who != 0) {
+        Write('Podatek dochodowy. Gracz ' + (who + 1 ) + ' płaci 100$', who);
         money[who] = money[who] - 200;
     }
-    if(location[who] == 38 && who == 2) {
-        Write('Podatek dochodowy. Gracz 3 płaci 100$', who);
-        money[who] = money[who] - 200;
+
+    if(location[who] == 30 && who == 0){
+        Write('Idziesz do więzienia!!!', who);
+        jail[who] = 3;
+        destyny = 0;
+        location[who] = 10;
+        pClean(who);
+        move(who);
     }
+    if(location[who] == 30 && who != 0){
+        Write('Gracz ' + (who + 1 ) + ' idzie do więzienia!!!', who);
+        jail[who] = 3;
+        destyny = 0;
+        location[who] = 10;
+        pClean(who);
+        move(who);
+    }
+
     player1.textContent = money[0];
     player2.textContent = money[1];
     player3.textContent = money[2];   
@@ -1128,6 +1136,10 @@ function redQuestion(who) {
             move(who);
         } else if(draw == 16){
             Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
+                jail[who] = 3;
+                destyny = 0;
+                location[who] = 10;
+                move(who);
         }
     }
     player1.textContent = money[0];
@@ -1169,6 +1181,10 @@ function blueQuestion(who) {
             money[who] = money[who] + 25;
         } else if(draw == 7){
             Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
+            jail[who] = 3;
+            destyny = 0;
+            location[who] = 10;
+            move(who);
         } else if(draw == 8){
             Write('Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$.', who);
             money[who] = money[who] + 100;
@@ -1311,8 +1327,7 @@ function payRent(who){
                 } else {
                     Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
                 }
-            }else if(
-                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
+            }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
                 i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner ||
                 i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner ||
                 i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner && fields[35].owner == fields[5].owner){
@@ -1323,8 +1338,7 @@ function payRent(who){
                 } else {
                     Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4 + '$.', who);
                 }
-            }else if(
-                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
+            }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
                 i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[35].owner||
                 i == 5 && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner||
                 i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner|| 
@@ -1343,8 +1357,7 @@ function payRent(who){
                 } else {
                     Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3 + '$.', who);
                 }
-            }else if(
-                i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
+            }else if(i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
                 i == 15 && fields[15].owner == fields[5].owner || i == 15 && fields[15].owner == fields[25].owner || i == 15 && fields[15].owner == fields[35].owner ||
                 i == 25 && fields[25].owner == fields[5].owner || i == 25 && fields[25].owner == fields[15].owner || i == 25 && fields[25].owner == fields[35].owner ||
                 i == 35 && fields[35].owner == fields[5].owner || i == 35 && fields[35].owner == fields[15].owner || i == 35 && fields[35].owner == fields[25].owner){
@@ -1367,14 +1380,29 @@ function payRent(who){
         }
     }
 }
-
+function goToJail(who){
+    if(jail[who] != 0){
+        if(roll[0] == roll[1]){
+            Write('Rzut kostką: Wypadł DUBLET- koniec kary.', who);
+            jail[who] = 0;
+        } else{
+            Write('Rzut kostką: bez dubletu.', who);
+        }
+        if(jail[who] != 0){
+            destyny = 0;
+            location[who] = 10;
+            jail[who] = jail[who] - 1;
+            Write('WIĘZIENIE pozostało tur: ' + (jail[who] + 1) + ' .', who);
+        }
+    }
+}
 
 destyny = 0;
 move(0);
 move(1);
 move(2);
 
-Write('START GRY.', 3);
+Write('START GRY.');
 Write('TWOJA TURA.', 0);
 
 rollButton.addEventListener("click", function(e) {
@@ -1383,8 +1411,10 @@ rollButton.addEventListener("click", function(e) {
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
-    Write('Rzut kostką. Wypadło: ' + destyny + '.', 0)
-
+    if(jail[0] == 0) {
+        Write('Rzut kostką. Wypadło: ' + destyny + '.', 0);
+    }
+    goToJail(0);
     move(0);
     blueQuestion(0);
     redQuestion(0);
@@ -1422,8 +1452,10 @@ endGame.addEventListener("click", function(e) {
     lottery(1);
     destyny = roll[0] + roll[1];
 
-    Write('Rzut kostką. Wypadło: ' + destyny + '.', 1);
-
+    if(jail[1] == 0) {
+        Write('Rzut kostką. Wypadło: ' + destyny + '.', 1);
+    }
+    goToJail(1);
     move(1);
     blueQuestion(1);
     redQuestion(1);
@@ -1434,8 +1466,10 @@ endGame.addEventListener("click", function(e) {
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
-    Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
-
+    if(jail[2] == 0) {
+        Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
+    }
+    goToJail(2);
     move(2);
     blueQuestion(2);
     redQuestion(2);
