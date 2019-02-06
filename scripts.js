@@ -993,7 +993,7 @@ function move(who) {
 
     if(location[who] == 30 && who == 0){
         Write('Idziesz do więzienia!!!', who);
-        jail[who] = 3;
+        jail[who] = 4;
         destyny = 0;
         location[who] = 10;
         pClean(who);
@@ -1001,7 +1001,7 @@ function move(who) {
     }
     if(location[who] == 30 && who != 0){
         Write('Gracz ' + (who + 1 ) + ' idzie do więzienia!!!', who);
-        jail[who] = 3;
+        jail[who] = 4;
         destyny = 0;
         location[who] = 10;
         pClean(who);
@@ -1136,9 +1136,10 @@ function redQuestion(who) {
             move(who);
         } else if(draw == 16){
             Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
-                jail[who] = 3;
+                jail[who] = 4;
                 destyny = 0;
                 location[who] = 10;
+                pClean(who);
                 move(who);
         }
     }
@@ -1181,9 +1182,10 @@ function blueQuestion(who) {
             money[who] = money[who] + 25;
         } else if(draw == 7){
             Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
-            jail[who] = 3;
+            jail[who] = 4;
             destyny = 0;
             location[who] = 10;
+            pClean(who);
             move(who);
         } else if(draw == 8){
             Write('Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$.', who);
@@ -1381,18 +1383,18 @@ function payRent(who){
     }
 }
 function goToJail(who){
-    if(jail[who] != 0){
-        if(roll[0] == roll[1]){
+    if(jail[who] > 0){
+        jail[who] = jail[who] - 1;
+        if(roll[0] == roll[1] && jail[who] > 0){
             Write('Rzut kostką: Wypadł DUBLET- koniec kary.', who);
             jail[who] = 0;
-        } else{
+        } else if(roll[0] != roll[1] && jail[who] > 0){
             Write('Rzut kostką: bez dubletu.', who);
         }
-        if(jail[who] != 0){
+        if(jail[who] > 0){
             destyny = 0;
             location[who] = 10;
-            jail[who] = jail[who] - 1;
-            Write('WIĘZIENIE pozostało tur: ' + (jail[who] + 1) + ' .', who);
+            Write('WIĘZIENIE pozostało tur: ' + jail[who] + ' .', who);
         }
     }
 }
@@ -1411,7 +1413,7 @@ rollButton.addEventListener("click", function(e) {
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
-    if(jail[0] == 0) {
+    if(jail[0] <= 1) {
         Write('Rzut kostką. Wypadło: ' + destyny + '.', 0);
     }
     goToJail(0);
@@ -1452,7 +1454,7 @@ endGame.addEventListener("click", function(e) {
     lottery(1);
     destyny = roll[0] + roll[1];
 
-    if(jail[1] == 0) {
+    if(jail[1] <= 1) {
         Write('Rzut kostką. Wypadło: ' + destyny + '.', 1);
     }
     goToJail(1);
@@ -1466,7 +1468,7 @@ endGame.addEventListener("click", function(e) {
     lottery(0);
     lottery(1);
     destyny = roll[0] + roll[1];
-    if(jail[2] == 0) {
+    if(jail[2] <= 1) {
         Write('Rzut kostką. Wypadło: ' + destyny + '.', 2);
     }
     goToJail(2);
