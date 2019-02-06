@@ -87,6 +87,10 @@ let fields = [
         player: document.querySelector(".play2"),
         style: document.querySelector(".field2"),
         ownerstyle: document.querySelector(".owner2"),
+        houseStyle1: document.querySelector(".house1p2"),
+        houseStyle2: document.querySelector(".house2p2"),
+        houseStyle3: document.querySelector(".house3p2"),
+        houseStyle4: document.querySelector(".house4p2"),
         price: 60,
         
         rent: 2,
@@ -114,6 +118,10 @@ let fields = [
         player: document.querySelector(".play4"),
         style: document.querySelector(".field4"),
         ownerstyle: document.querySelector(".owner4"),
+        houseStyle1: document.querySelector(".house1p4"),
+        houseStyle2: document.querySelector(".house2p4"),
+        houseStyle3: document.querySelector(".house3p4"),
+        houseStyle4: document.querySelector(".house4p4"),
         price: 60,
         
         rent: 4,
@@ -157,6 +165,10 @@ let fields = [
         player: document.querySelector(".play7"),
         style: document.querySelector(".field7"),
         ownerstyle: document.querySelector(".owner7"),
+        houseStyle1: document.querySelector(".house1p7"),
+        houseStyle2: document.querySelector(".house2p7"),
+        houseStyle3: document.querySelector(".house3p7"),
+        houseStyle4: document.querySelector(".house4p7"),
         price: 100,
         
         rent: 6,
@@ -184,6 +196,10 @@ let fields = [
         player: document.querySelector(".play9"),
         style: document.querySelector(".field9"),
         ownerstyle: document.querySelector(".owner9"),
+        houseStyle1: document.querySelector(".house1p9"),
+        houseStyle2: document.querySelector(".house2p9"),
+        houseStyle3: document.querySelector(".house3p9"),
+        houseStyle4: document.querySelector(".house4p9"),
         price: 100,
         
         rent: 6,
@@ -208,6 +224,10 @@ let fields = [
         player: document.querySelector(".play10"),
         style: document.querySelector(".field10"),
         ownerstyle: document.querySelector(".owner10"),
+        houseStyle1: document.querySelector(".house1p10"),
+        houseStyle2: document.querySelector(".house2p10"),
+        houseStyle3: document.querySelector(".house3p10"),
+        houseStyle4: document.querySelector(".house4p10"),
         price: 120,
         
         rent: 8,
@@ -235,6 +255,10 @@ let fields = [
         player: document.querySelector(".play12"),
         style: document.querySelector(".field12"),
         ownerstyle: document.querySelector(".owner12"),
+        houseStyle1: document.querySelector(".house1p12"),
+        houseStyle2: document.querySelector(".house2p12"),
+        houseStyle3: document.querySelector(".house3p12"),
+        houseStyle4: document.querySelector(".house4p12"),
         price: 140,
         
         rent: 10,
@@ -270,6 +294,10 @@ let fields = [
         player: document.querySelector(".play14"),
         style: document.querySelector(".field14"),
         ownerstyle: document.querySelector(".owner14"),
+        houseStyle1: document.querySelector(".house1p14"),
+        houseStyle2: document.querySelector(".house2p14"),
+        houseStyle3: document.querySelector(".house3p14"),
+        houseStyle4: document.querySelector(".house4p14"),
         price: 140,
         
         rent: 10,
@@ -294,6 +322,10 @@ let fields = [
         player: document.querySelector(".play15"),
         style: document.querySelector(".field15"),
         ownerstyle: document.querySelector(".owner15"),
+        houseStyle1: document.querySelector(".house1p15"),
+        houseStyle2: document.querySelector(".house2p15"),
+        houseStyle3: document.querySelector(".house3p15"),
+        houseStyle4: document.querySelector(".house4p15"),
         price: 160,
         
         rent: 12,
@@ -334,6 +366,10 @@ let fields = [
         player: document.querySelector(".play17"),
         style: document.querySelector(".field17"),
         ownerstyle: document.querySelector(".owner17"),
+        houseStyle1: document.querySelector(".house1p17"),
+        houseStyle2: document.querySelector(".house2p17"),
+        houseStyle3: document.querySelector(".house3p17"),
+        houseStyle4: document.querySelector(".house4p17"),
         price: 180,
         
         rent: 14,
@@ -361,6 +397,10 @@ let fields = [
         player: document.querySelector(".play19"),
         style: document.querySelector(".field19"),
         ownerstyle: document.querySelector(".owner19"),
+        houseStyle1: document.querySelector(".house1p19"),
+        houseStyle2: document.querySelector(".house2p19"),
+        houseStyle3: document.querySelector(".house3p19"),
+        houseStyle4: document.querySelector(".house4p19"),
         price: 180,
         
         rent: 14,
@@ -385,6 +425,10 @@ let fields = [
         player: document.querySelector(".play20"),
         style: document.querySelector(".field20"),
         ownerstyle: document.querySelector(".owner20"),
+        houseStyle1: document.querySelector(".house1p20"),
+        houseStyle2: document.querySelector(".house2p20"),
+        houseStyle3: document.querySelector(".house3p20"),
+        houseStyle4: document.querySelector(".house4p20"),
         price: 200,
         
         rent: 16,
@@ -412,6 +456,10 @@ let fields = [
         player: document.querySelector(".play22"),
         style: document.querySelector(".field22"),
         ownerstyle: document.querySelector(".owner22"),
+        houseStyle1: document.querySelector(".house1p22"),
+        houseStyle2: document.querySelector(".house2p22"),
+        houseStyle3: document.querySelector(".house3p22"),
+        houseStyle4: document.querySelector(".house4p22"),
         price: 220,
         
         rent: 18,
@@ -439,6 +487,10 @@ let fields = [
         player: document.querySelector(".play24"),
         style: document.querySelector(".field24"),
         ownerstyle: document.querySelector(".owner24"),
+        houseStyle1: document.querySelector(".house1p24"),
+        houseStyle2: document.querySelector(".house2p24"),
+        houseStyle3: document.querySelector(".house3p24"),
+        houseStyle4: document.querySelector(".house4p24"),
         price: 220,
         
         rent: 18,
@@ -463,6 +515,10 @@ let fields = [
         player: document.querySelector(".play25"),
         style: document.querySelector(".field25"),
         ownerstyle: document.querySelector(".owner25"),
+        houseStyle1: document.querySelector(".house1p25"),
+        houseStyle2: document.querySelector(".house2p25"),
+        houseStyle3: document.querySelector(".house3p25"),
+        houseStyle4: document.querySelector(".house4p25"),
         price: 240,
         
         rent: 20,
@@ -503,6 +559,10 @@ let fields = [
         player: document.querySelector(".play27"),
         style: document.querySelector(".field27"),
         ownerstyle: document.querySelector(".owner27"),
+        houseStyle1: document.querySelector(".house1p27"),
+        houseStyle2: document.querySelector(".house2p27"),
+        houseStyle3: document.querySelector(".house3p27"),
+        houseStyle4: document.querySelector(".house4p27"),
         price: 260,
         
         rent: 22,
@@ -527,6 +587,10 @@ let fields = [
         player: document.querySelector(".play28"),
         style: document.querySelector(".field28"),
         ownerstyle: document.querySelector(".owner28"),
+        houseStyle1: document.querySelector(".house1p28"),
+        houseStyle2: document.querySelector(".house2p28"),
+        houseStyle3: document.querySelector(".house3p28"),
+        houseStyle4: document.querySelector(".house4p28"),
         price: 260,
         
         rent: 22,
@@ -562,6 +626,10 @@ let fields = [
         player: document.querySelector(".play30"),
         style: document.querySelector(".field30"),
         ownerstyle: document.querySelector(".owner30"),
+        houseStyle1: document.querySelector(".house1p30"),
+        houseStyle2: document.querySelector(".house2p30"),
+        houseStyle3: document.querySelector(".house3p30"),
+        houseStyle4: document.querySelector(".house4p30"),
         price: 280,
         
         rent: 24,
@@ -589,6 +657,10 @@ let fields = [
         player: document.querySelector(".play32"),
         style: document.querySelector(".field32"),
         ownerstyle: document.querySelector(".owner32"),
+        houseStyle1: document.querySelector(".house1p32"),
+        houseStyle2: document.querySelector(".house2p32"),
+        houseStyle3: document.querySelector(".house3p32"),
+        houseStyle4: document.querySelector(".house4p32"),
         price: 300,
         
         rent: 26,
@@ -613,6 +685,10 @@ let fields = [
         player: document.querySelector(".play33"),
         style: document.querySelector(".field33"),
         ownerstyle: document.querySelector(".owner33"),
+        houseStyle1: document.querySelector(".house1p33"),
+        houseStyle2: document.querySelector(".house2p33"),
+        houseStyle3: document.querySelector(".house3p33"),
+        houseStyle4: document.querySelector(".house4p33"),
         price: 300,
         
         rent: 26,
@@ -640,6 +716,10 @@ let fields = [
         player: document.querySelector(".play35"),
         style: document.querySelector(".field35"),
         ownerstyle: document.querySelector(".owner35"),
+        houseStyle1: document.querySelector(".house1p35"),
+        houseStyle2: document.querySelector(".house2p35"),
+        houseStyle3: document.querySelector(".house3p35"),
+        houseStyle4: document.querySelector(".house4p35"),
         price: 320,
         
         rent: 28,
@@ -683,6 +763,10 @@ let fields = [
         player: document.querySelector(".play38"),
         style: document.querySelector(".field38"),
         ownerstyle: document.querySelector(".owner38"),
+        houseStyle1: document.querySelector(".house1p38"),
+        houseStyle2: document.querySelector(".house2p38"),
+        houseStyle3: document.querySelector(".house3p38"),
+        houseStyle4: document.querySelector(".house4p38"),
         price: 350,
         
         rent: 35,
@@ -710,6 +794,10 @@ let fields = [
         player: document.querySelector(".play40"),
         style: document.querySelector(".field40"),
         ownerstyle: document.querySelector(".owner40"),
+        houseStyle1: document.querySelector(".house1p40"),
+        houseStyle2: document.querySelector(".house2p40"),
+        houseStyle3: document.querySelector(".house3p40"),
+        houseStyle4: document.querySelector(".house4p40"),
         price: 400,
         
         rent: 50,
@@ -1239,6 +1327,30 @@ function whoOwn() {
         }
     }
 }  
+function houses(){
+    for (let i=0; i<fields.length; i++) {
+        if(fields[i].house >= 1){
+            fields[i].houseStyle1.classList.add('house');
+        }
+        if(fields[i].house >= 2){
+            fields[i].houseStyle2.classList.add('house');
+        }
+        if(fields[i].house >= 3){
+            fields[i].houseStyle3.classList.add('house');
+        }
+        if(fields[i].house >= 4){
+            fields[i].houseStyle4.classList.add('house');
+        }
+        if(fields[i].hotel == 1){
+            fields[i].houseStyle1.classList.remove('house');
+            fields[i].houseStyle2.classList.remove('house');
+            fields[i].houseStyle3.classList.remove('house');
+            fields[i].houseStyle4.classList.remove('house');
+            fields[i].houseStyle1.classList.add('hotel');
+            fields[i].house = 0;
+        }
+    }
+}
 function payRent(who){
     for (let i=0; i<fields.length; i++) {
         if (location[who] == i && fields[i].owner != who &&  fields[i].owner != -1 && location[who] != 0 && location[who] != 2 && location[who] != 4 && location[who] != 7 && location[who] != 10 && location[who] != 17 && location[who] != 20 && location[who] != 22 && location[who] != 30 && location[who] != 33 && location[who] != 36 && location[who] != 38) {
@@ -1248,10 +1360,9 @@ function payRent(who){
                 if(who == 0){
                     Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentHotel + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + 'w wysokości ' +  fields[i].rentHotel + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentHotel + '$.', who);
                 }
-            }
-            if(fields[i].house == 4){
+            }else if(fields[i].house == 4){
                 money[who] = money[who] - fields[i].rent4house;
                 money[fields[i].owner] = money[fields[i].owner] + fields[i].rent4house;
                 if(who == 0){
@@ -1403,12 +1514,13 @@ destyny = 0;
 move(0);
 move(1);
 move(2);
+houses(); //to remove
 
 Write('START GRY.');
 Write('TWOJA TURA.', 0);
 
 rollButton.addEventListener("click", function(e) {
-    endGame.classList.remove('hide'); 
+    endGame.classList.remove('hide');
     pClean(0);
     lottery(0);
     lottery(1);
