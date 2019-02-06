@@ -1037,10 +1037,10 @@ function redQuestion(who) {
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
         if(draw == 1){
-            Write('Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$', who);
+            Write('"Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$"', who);
             money[who] = money[who] + 150;
         } else if(draw == 2 || draw == 3){
-            Write('Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu.', who);
+            Write('"Idz na najbliższe pole DWORZEC KOLEJOWY. Jeżeli pole ma właściciela zapłać mu dwukrotną wysokość czynszu."', who);
             if(location[who] == 7){
                 destyny = 0;
                 location[who] = 5;
@@ -1059,7 +1059,7 @@ function redQuestion(who) {
             lottery(0);
             lottery(1);
             destyny = roll[0] + roll[1];
-            Write('Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ').', who);
+            Write('"Idz na najbliższe pole ELEKTROWNIA lub WODICIĄGI. Jeżeli pole ma właściciela, zapłać jego właścicielowi równowartość 10x suma wyrzuconych oczek (wypadło ' +  destyny + ')."', who);
             if(location[who] == 7){
                 destyny = 0;
                 location[who] = 12;
@@ -1075,17 +1075,17 @@ function redQuestion(who) {
             pClean(who);
             move(who);
         } else if(draw == 5){
-            Write('Mandat za przekroczenie prędkości 15$.', who);
+            Write('"Mandat za przekroczenie prędkości 15$."', who);
             money[who] = money[who] - 15;
         } else if(draw == 6){
-            Write('WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.', who);
+            Write('"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."', who);
         } else if(draw == 7){
-            Write('Cofnij się o trzy pola.', who);
+            Write('"Cofnij się o trzy pola."', who);
             destyny = -3;
             pClean(who);
             move(who);
         } else if(draw == 8){
-            Write('Idz na pole 24. Jeżeli mijasz start, pobierz 200$.', who);
+            Write('"Idz na pole 24. Jeżeli mijasz start, pobierz 200$."', who);
             if(location[who] == 36){
                 money[who] = money[who] + 200;
             }
@@ -1094,12 +1094,12 @@ function redQuestion(who) {
             pClean(who);
             move(who);
         } else if(draw == 9){
-            Write('Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50.', who);
+            Write('"Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50."', who);
             if(who == 1) {money[0] - money[0] - 100; money[1] = money[1] + 50; money[2] = money[2] + 50;}
             if(who == 2) {money[1] - money[1] - 100; money[2] = money[2] + 50; money[0] = money[0] + 50;}
             if(who == 3) {money[2] - money[2] - 100; money[1] = money[1] + 50; money[0] = money[0] + 50;}
         } else if(draw == 10){
-            Write('Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$.', who);
+            Write('"Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$."', who);
             if(location[who] == 22 || location[who] == 36){
                 money[who] = money[who] + 200;
             }
@@ -1108,15 +1108,15 @@ function redQuestion(who) {
             pClean(who);
             move(who);
         } else if(draw == 11){
-            Write('Idź na pole 40.', who);
+            Write('"Idź na pole 40."', who);
             destyny = 0;
             location[who] = 39;
             pClean(who);
             move(who);
         } else if(draw == 12){
-            Write('Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$.', who);
+            Write('"Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$."', who);
         } else if(draw == 13){
-            Write('Idz na pole 12. Jeżeli mijasz start, pobierz 200$.', who);
+            Write('"Idz na pole 12. Jeżeli mijasz start, pobierz 200$."', who);
             if(location[who] == 22 || location[who] == 36){
                 money[who] = money[who] + 200;
             }
@@ -1125,17 +1125,17 @@ function redQuestion(who) {
             pClean(who);
             move(who);
         } else if(draw == 14){
-            Write('Bank wypłaca ci dywidendę w kwocie 50$.', who);
+            Write('"Bank wypłaca ci dywidendę w kwocie 50$."', who);
             money[who] = money[who] + 50;
         } else if(draw == 15){
-            Write('Idż na pole START. (Pobierz 200$).', who);
+            Write('"Idż na pole START. (Pobierz 200$)."', who);
             money[who] = money[who] + 200;
             destyny = 0;
             location[who] = 0;
             pClean(who);
             move(who);
         } else if(draw == 16){
-            Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
+            Write('"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."', who);
                 jail[who] = 4;
                 destyny = 0;
                 location[who] = 10;
@@ -1156,62 +1156,62 @@ function blueQuestion(who) {
         draw = Math.round(draw);
 
         if(draw == 1){
-            Write('Idż na pole START. (Pobierz 200$).', who);
+            Write('"Idż na pole START. (Pobierz 200$)."', who);
             money[who] = money[who] + 200;
             destyny = 0;
             location[who] = 0;
             pClean(who);
             move(who);
         } else if(draw == 2){
-            Write('Pomyłka banku na twoją korzyść. Pobierz 200$.', who);
+            Write('"Pomyłka banku na twoją korzyść. Pobierz 200$."', who);
             money[who] = money[who] + 200;
         } else if(draw == 3){
-            Write('Sprzedajesz akcje z zyskiem. Pobierz 50$.', who);
+            Write('"Sprzedajesz akcje z zyskiem. Pobierz 50$."', who);
 
             money[who] = money[who] + 50;
         } else if(draw == 4){
-            Write('Dziedziczysz spadek w wysokości 100$.', who);
+            Write('"Dziedziczysz spadek w wysokości 100$."', who);
             money[who] = money[who] + 100;
         } else if(draw == 5){
-            Write('Dziś są twoje urodziny pobierz 10$ od każdego z graczy.', who);
+            Write('"Dziś są twoje urodziny pobierz 10$ od każdego z graczy."', who);
             if(who == 1) {money[0] - money[0] - 20; money[1] = money[1] + 10; money[2] = money[2] + 10;}
             if(who == 2) {money[1] - money[1] - 20; money[2] = money[2] + 10; money[0] = money[0] + 10;}
             if(who == 3) {money[2] - money[2] - 20; money[1] = money[1] + 10; money[0] = money[0] + 10;}
         } else if(draw == 6){
-            Write('Pobierz 25$ za usługę konsultingową.', who);
+            Write('"Pobierz 25$ za usługę konsultingową."', who);
             money[who] = money[who] + 25;
         } else if(draw == 7){
-            Write('Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$.', who);
+            Write('"Idź do więzienia. Idziesz bezpośrednio do więziena, nie mijasz pola start, nie pobierasz 200$."', who);
             jail[who] = 4;
             destyny = 0;
             location[who] = 10;
             pClean(who);
             move(who);
         } else if(draw == 8){
-            Write('Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$.', who);
+            Write('"Otrzymujesz wypłatę z funduszu wakacyjnego. Pobierz 100$."', who);
             money[who] = money[who] + 100;
         } else if(draw == 9){
-            Write('Opłata za konsultację lekarską. Zapłać 50$.', who);
+            Write('"Opłata za konsultację lekarską. Zapłać 50$."', who);
             money[who] = money[who] - 50;
         } else if(draw == 10){
-            Write('Opłata za czesne. Zapłać 50$.', who);
+            Write('"Opłata za czesne. Zapłać 50$."', who);
             money[who] = money[who] - 50;
         } else if(draw == 11){
-            Write('Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$.', who);
+            Write('"Otrzymujesz wypłatę z ubezpieczeniea na życie. Pobierz 100$."', who);
             money[who] = money[who] + 100;
         } else if(draw == 12){
-            Write('Zwrot podatku dochodowego. Pobierz 20$.', who);
+            Write('"Zwrot podatku dochodowego. Pobierz 20$."', who);
             money[who] = money[who] + 20;
         } else if(draw == 13){
-            Write('Opłata za pobyt w szpitalu. Zapłać 100$.', who);
+            Write('"Opłata za pobyt w szpitalu. Zapłać 100$."', who);
             money[who] = money[who] - 100;
         } else if(draw == 14){
-            Write('WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi.', who);
+            Write('"WYJDŹ BEZPŁATIE Z WIĘZIENIA. Kartę możesz zachować i wykorzystać w razie potrzeby lub odsprzedać innemu graczowi."', who);
         } else if(draw == 15){
-            Write('Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$.', who);
+            Write('"Zajmuejsz drugie miejsce w konkursie piękności. Pobierz 10$."', who);
             money[who] = money[who] + 10;
         } else if(draw == 16){
-            Write('Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz.', who);
+            Write('"Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz."', who);
         }
     }
     player1.textContent = money[0];
