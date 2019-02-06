@@ -91,6 +91,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p2"),
         houseStyle3: document.querySelector(".house3p2"),
         houseStyle4: document.querySelector(".house4p2"),
+        buyStyle: document.querySelector(".buyhouse2"),
         price: 60,
         
         rent: 2,
@@ -122,6 +123,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p4"),
         houseStyle3: document.querySelector(".house3p4"),
         houseStyle4: document.querySelector(".house4p4"),
+        buyStyle: document.querySelector(".buyhouse4"),
         price: 60,
         
         rent: 4,
@@ -169,6 +171,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p7"),
         houseStyle3: document.querySelector(".house3p7"),
         houseStyle4: document.querySelector(".house4p7"),
+        buyStyle: document.querySelector(".buyhouse7"),
         price: 100,
         
         rent: 6,
@@ -200,6 +203,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p9"),
         houseStyle3: document.querySelector(".house3p9"),
         houseStyle4: document.querySelector(".house4p9"),
+        buyStyle: document.querySelector(".buyhouse9"),
         price: 100,
         
         rent: 6,
@@ -228,6 +232,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p10"),
         houseStyle3: document.querySelector(".house3p10"),
         houseStyle4: document.querySelector(".house4p10"),
+        buyStyle: document.querySelector(".buyhouse10"),
         price: 120,
         
         rent: 8,
@@ -259,6 +264,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p12"),
         houseStyle3: document.querySelector(".house3p12"),
         houseStyle4: document.querySelector(".house4p12"),
+        buyStyle: document.querySelector(".buyhouse12"),
         price: 140,
         
         rent: 10,
@@ -298,6 +304,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p14"),
         houseStyle3: document.querySelector(".house3p14"),
         houseStyle4: document.querySelector(".house4p14"),
+        buyStyle: document.querySelector(".buyhouse14"),
         price: 140,
         
         rent: 10,
@@ -326,6 +333,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p15"),
         houseStyle3: document.querySelector(".house3p15"),
         houseStyle4: document.querySelector(".house4p15"),
+        buyStyle: document.querySelector(".buyhouse15"),
         price: 160,
         
         rent: 12,
@@ -370,6 +378,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p17"),
         houseStyle3: document.querySelector(".house3p17"),
         houseStyle4: document.querySelector(".house4p17"),
+        buyStyle: document.querySelector(".buyhouse17"),
         price: 180,
         
         rent: 14,
@@ -401,6 +410,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p19"),
         houseStyle3: document.querySelector(".house3p19"),
         houseStyle4: document.querySelector(".house4p19"),
+        buyStyle: document.querySelector(".buyhouse19"),
         price: 180,
         
         rent: 14,
@@ -429,6 +439,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p20"),
         houseStyle3: document.querySelector(".house3p20"),
         houseStyle4: document.querySelector(".house4p20"),
+        buyStyle: document.querySelector(".buyhouse20"),
         price: 200,
         
         rent: 16,
@@ -460,6 +471,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p22"),
         houseStyle3: document.querySelector(".house3p22"),
         houseStyle4: document.querySelector(".house4p22"),
+        buyStyle: document.querySelector(".buyhouse22"),
         price: 220,
         
         rent: 18,
@@ -491,6 +503,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p24"),
         houseStyle3: document.querySelector(".house3p24"),
         houseStyle4: document.querySelector(".house4p24"),
+        buyStyle: document.querySelector(".buyhouse24"),
         price: 220,
         
         rent: 18,
@@ -519,6 +532,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p25"),
         houseStyle3: document.querySelector(".house3p25"),
         houseStyle4: document.querySelector(".house4p25"),
+        buyStyle: document.querySelector(".buyhouse25"),
         price: 240,
         
         rent: 20,
@@ -563,6 +577,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p27"),
         houseStyle3: document.querySelector(".house3p27"),
         houseStyle4: document.querySelector(".house4p27"),
+        buyStyle: document.querySelector(".buyhouse27"),
         price: 260,
         
         rent: 22,
@@ -591,6 +606,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p28"),
         houseStyle3: document.querySelector(".house3p28"),
         houseStyle4: document.querySelector(".house4p28"),
+        buyStyle: document.querySelector(".buyhouse28"),
         price: 260,
         
         rent: 22,
@@ -630,6 +646,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p30"),
         houseStyle3: document.querySelector(".house3p30"),
         houseStyle4: document.querySelector(".house4p30"),
+        buyStyle: document.querySelector(".buyhouse30"),
         price: 280,
         
         rent: 24,
@@ -661,6 +678,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p32"),
         houseStyle3: document.querySelector(".house3p32"),
         houseStyle4: document.querySelector(".house4p32"),
+        buyStyle: document.querySelector(".buyhouse32"),
         price: 300,
         
         rent: 26,
@@ -689,6 +707,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p33"),
         houseStyle3: document.querySelector(".house3p33"),
         houseStyle4: document.querySelector(".house4p33"),
+        buyStyle: document.querySelector(".buyhouse33"),
         price: 300,
         
         rent: 26,
@@ -720,6 +739,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p35"),
         houseStyle3: document.querySelector(".house3p35"),
         houseStyle4: document.querySelector(".house4p35"),
+        buyStyle: document.querySelector(".buyhouse35"),
         price: 320,
         
         rent: 28,
@@ -767,6 +787,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p38"),
         houseStyle3: document.querySelector(".house3p38"),
         houseStyle4: document.querySelector(".house4p38"),
+        buyStyle: document.querySelector(".buyhouse38"),
         price: 350,
         
         rent: 35,
@@ -798,6 +819,7 @@ let fields = [
         houseStyle2: document.querySelector(".house2p40"),
         houseStyle3: document.querySelector(".house3p40"),
         houseStyle4: document.querySelector(".house4p40"),
+        buyStyle: document.querySelector(".buyhouse40"),
         price: 400,
         
         rent: 50,
@@ -1183,9 +1205,9 @@ function redQuestion(who) {
             move(who);
         } else if(draw == 9){
             Write('"Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50."', who);
-            if(who == 1) {money[0] - money[0] - 100; money[1] = money[1] + 50; money[2] = money[2] + 50;}
-            if(who == 2) {money[1] - money[1] - 100; money[2] = money[2] + 50; money[0] = money[0] + 50;}
-            if(who == 3) {money[2] - money[2] - 100; money[1] = money[1] + 50; money[0] = money[0] + 50;}
+            if(who == 0) {money[0] - money[0] - 100; money[1] = money[1] + 50; money[2] = money[2] + 50;}
+            if(who == 1) {money[1] - money[1] - 100; money[2] = money[2] + 50; money[0] = money[0] + 50;}
+            if(who == 2) {money[2] - money[2] - 100; money[1] = money[1] + 50; money[0] = money[0] + 50;}
         } else if(draw == 10){
             Write('"Idź na pole DWORZEC ZACHÓD. Jeżeli mijasz pole start, pobierz 200$."', who);
             if(location[who] == 22 || location[who] == 36){
@@ -1262,9 +1284,9 @@ function blueQuestion(who) {
             money[who] = money[who] + 100;
         } else if(draw == 5){
             Write('"Dziś są twoje urodziny pobierz 10$ od każdego z graczy."', who);
-            if(who == 1) {money[0] - money[0] - 20; money[1] = money[1] + 10; money[2] = money[2] + 10;}
-            if(who == 2) {money[1] - money[1] - 20; money[2] = money[2] + 10; money[0] = money[0] + 10;}
-            if(who == 3) {money[2] - money[2] - 20; money[1] = money[1] + 10; money[0] = money[0] + 10;}
+            if(who == 0) {money[0] - money[0] - 20; money[1] = money[1] + 10; money[2] = money[2] + 10;}
+            if(who == 1) {money[1] - money[1] - 20; money[2] = money[2] + 10; money[0] = money[0] + 10;}
+            if(who == 2) {money[2] - money[2] - 20; money[1] = money[1] + 10; money[0] = money[0] + 10;}
         } else if(draw == 6){
             Write('"Pobierz 25$ za usługę konsultingową."', who);
             money[who] = money[who] + 25;
@@ -1347,7 +1369,126 @@ function houses(){
             fields[i].houseStyle3.classList.remove('house');
             fields[i].houseStyle4.classList.remove('house');
             fields[i].houseStyle1.classList.add('hotel');
-            fields[i].house = 0;
+        }
+        if(fields[i].house == 4){
+            fields[i].buyStyle.classList.add('buyHotel');
+        }
+        if(i == 1 || i == 3 || i == 6 || i == 8 || i == 9 || i == 11 || i == 13 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 26 || i == 27 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 37 || i == 39){
+            fields[i].buyStyle.classList.add('hide');
+        }
+    }
+    if(fields[1].owner == 0 && fields[3].owner == 0 ){
+        fields[1].buyStyle.classList.remove('hide');
+        fields[3].buyStyle.classList.remove('hide');
+    }
+    if(fields[6].owner == 0 && fields[8].owner == 0 && fields[9].owner == 0 ){
+        fields[6].buyStyle.classList.remove('hide');
+        fields[8].buyStyle.classList.remove('hide');
+        fields[9].buyStyle.classList.remove('hide');
+    }
+    if(fields[11].owner == 0 && fields[13].owner == 0 && fields[14].owner == 0 ){
+        fields[11].buyStyle.classList.remove('hide');
+        fields[13].buyStyle.classList.remove('hide');
+        fields[14].buyStyle.classList.remove('hide');
+    }
+    if(fields[16].owner == 0 && fields[18].owner == 0 && fields[19].owner == 0 ){
+        fields[16].buyStyle.classList.remove('hide');
+        fields[18].buyStyle.classList.remove('hide');
+        fields[19].buyStyle.classList.remove('hide');
+    }
+    if(fields[21].owner == 0 && fields[23].owner == 0 && fields[24].owner == 0 ){
+        fields[21].buyStyle.classList.remove('hide');
+        fields[23].buyStyle.classList.remove('hide');
+        fields[24].buyStyle.classList.remove('hide');
+    }
+    if(fields[26].owner == 0 && fields[27].owner == 0 && fields[29].owner == 0 ){
+        fields[26].buyStyle.classList.remove('hide');
+        fields[27].buyStyle.classList.remove('hide');
+        fields[29].buyStyle.classList.remove('hide');
+    }
+    if(fields[31].owner == 0 && fields[32].owner == 0 && fields[34].owner == 0 ){
+        fields[31].buyStyle.classList.remove('hide');
+        fields[32].buyStyle.classList.remove('hide');
+        fields[34].buyStyle.classList.remove('hide');
+    }
+    if(fields[37].owner == 0 && fields[39].owner == 0){
+        fields[37].buyStyle.classList.remove('hide');
+        fields[39].buyStyle.classList.remove('hide');
+    }
+    if(fields[1].house > fields[3].house){
+        fields[1].buyStyle.classList.add('hide');
+    }
+    if(fields[3].house > fields[1].house){
+        fields[3].buyStyle.classList.add('hide');
+    }
+    if(fields[6].house > fields[8].house || fields[6].house > fields[9].house){
+        fields[6].buyStyle.classList.add('hide');
+    }
+    if(fields[8].house > fields[6].house || fields[8].house > fields[9].house){
+        fields[8].buyStyle.classList.add('hide');
+    }
+    if(fields[9].house > fields[6].house || fields[9].house > fields[8].house){
+        fields[9].buyStyle.classList.add('hide');
+    }
+    if(fields[11].house > fields[13].house || fields[11].house > fields[14].house){
+        fields[11].buyStyle.classList.add('hide');
+    }
+    if(fields[13].house > fields[11].house || fields[13].house > fields[14].house){
+        fields[13].buyStyle.classList.add('hide');
+    }
+    if(fields[14].house > fields[11].house || fields[14].house > fields[13].house){
+        fields[14].buyStyle.classList.add('hide');
+    }
+    if(fields[16].house > fields[18].house || fields[16].house > fields[19].house){
+        fields[16].buyStyle.classList.add('hide');
+    }
+    if(fields[18].house > fields[16].house || fields[18].house > fields[19].house){
+        fields[18].buyStyle.classList.add('hide');
+    }
+    if(fields[19].house > fields[16].house || fields[19].house > fields[18].house){
+        fields[19].buyStyle.classList.add('hide');
+    }
+    if(fields[21].house > fields[23].house || fields[21].house > fields[24].house){
+        fields[21].buyStyle.classList.add('hide');
+    }
+    if(fields[21].house > fields[23].house || fields[21].house > fields[24].house){
+        fields[21].buyStyle.classList.add('hide');
+    }
+    if(fields[23].house > fields[21].house || fields[23].house > fields[24].house){
+        fields[23].buyStyle.classList.add('hide');
+    }
+    if(fields[24].house > fields[21].house || fields[24].house > fields[23].house){
+        fields[24].buyStyle.classList.add('hide');
+    }
+    if(fields[26].house > fields[27].house || fields[26].house > fields[29].house){
+        fields[26].buyStyle.classList.add('hide');
+    }
+    if(fields[27].house > fields[26].house || fields[27].house > fields[29].house){
+        fields[27].buyStyle.classList.add('hide');
+    }
+    if(fields[29].house > fields[26].house || fields[29].house > fields[27].house){
+        fields[29].buyStyle.classList.add('hide');
+    }
+    if(fields[31].house > fields[32].house || fields[31].house > fields[34].house){
+        fields[31].buyStyle.classList.add('hide');
+    }
+    if(fields[32].house > fields[31].house || fields[32].house > fields[34].house){
+        fields[32].buyStyle.classList.add('hide');
+    }
+    if(fields[34].house > fields[31].house || fields[34].house > fields[32].house){
+        fields[34].buyStyle.classList.add('hide');
+    }
+    if(fields[37].house > fields[39].house){
+        fields[37].buyStyle.classList.add('hide');
+    }
+    if(fields[39].house > fields[37].house){
+        fields[39].buyStyle.classList.add('hide');
+    }
+    for (let i=0; i<fields.length; i++) {
+        if(i == 1 || i == 3 || i == 6 || i == 8 || i == 9 || i == 11 || i == 13 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 26 || i == 27 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 37 || i == 39){
+            if(fields[i].hotel == 1){
+                fields[i].buyStyle.classList.add('hide');
+            }
         }
     }
 }
@@ -1514,7 +1655,7 @@ destyny = 0;
 move(0);
 move(1);
 move(2);
-houses(); //to remove
+houses();
 
 Write('START GRY.');
 Write('TWOJA TURA.', 0);
@@ -1541,7 +1682,6 @@ rollButton.addEventListener("click", function(e) {
 },false);
 
 buy.addEventListener("click", function(e) {
-
     for (let i=0; i<fields.length; i++) {
         if(location[0] == i && fields[i].owner == -1 && money[0] >= fields[i].price){
             buy.classList.add('hide');
@@ -1553,6 +1693,7 @@ buy.addEventListener("click", function(e) {
         }
     }
     whoOwn();
+    houses();
     player1.textContent = money[0];
 },false);
 
@@ -1596,5 +1737,27 @@ endGame.addEventListener("click", function(e) {
     player2.textContent = money[1];
     player3.textContent = money[2];
 },false);
+
+for (let i=0; i<fields.length; i++) {
+    if(i == 1 || i == 3 || i == 6 || i == 8 || i == 9 || i == 11 || i == 13 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 26 || i == 27 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 37 || i == 39){
+        fields[i].buyStyle.addEventListener("click", function(e) {
+            if(fields[i].hotel != 1 && fields[i].house < 4 && money[0] >= fields[i].priceHome){
+                fields[i].house = fields[i].house + 1;
+                money[0] = money[0] - fields[i].priceHome;
+                Write('Kupujesz dom na polu ' + (i + 1) + ' za ' + fields[i].priceHome + '$.', 0)
+            }else if(fields[i].hotel != 1 && fields[i].house < 4 && money[0] < fields[i].priceHome){
+                Write('ZA MAŁO GOTÓWKI. Potrzeba ' + fields[i].priceHome+ '$.', 0)
+            }else if(fields[i].house == 4 && money[0] >= fields[i].priceHotel){
+                fields[i].hotel = 1;
+                money[0] = money[0] - fields[i].priceHotel;
+                Write('Kupujesz hotel na polu ' + (i + 1) + ' za ' + fields[i].priceHotel + '$.', 0)
+            }else if(fields[i].house == 4 && money[0] < fields[i].priceHotel){
+                Write('ZA MAŁO GOTÓWKI. Potrzeba ' + fields[i].priceHotel+ '$.', 0)
+            }
+            player1.textContent = money[0];
+            houses();
+        },false);
+    }
+}
 
 })();

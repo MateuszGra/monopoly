@@ -1011,26 +1011,26 @@ color: greenyellow;
     background: blue;
 }
 /* domy */
-.house1p2, .house1p4, .house1p2, .house1p7, .house1p2, .house1p9, .house1p10, .house1p12, .house1p14, .house1p15, .house1p17, .house1p19, .house1p20, .house1p22, .house1p24, .house1p25, .house1p27, .house1p28, .house1p30, .house1p32, .house1p33, .house1p35, .house1p38, .house1p40, .house2p2, .house2p4, .house2p2, .house2p7, .house2p2, .house2p9, .house2p10, .house2p12, .house2p14, .house2p15, .house2p17, .house2p19, .house2p20, .house2p22, .house2p24, .house2p25, .house2p27, .house2p28, .house2p30, .house2p32, .house2p33, .house2p35, .house2p38, .house2p40, .house3p2, .house3p4, .house3p2, .house3p7, .house3p2, .house3p9, .house3p10, .house3p12, .house3p14, .house3p15, .house3p17, .house3p19, .house3p20, .house3p22, .house3p24, .house3p25, .house3p27, .house3p28, .house3p30, .house3p32, .house3p33, .house3p35, .house3p38, .house3p40, .house4p2, .house4p4, .house4p2, .house4p7, .house4p2, .hous4p9, .house4p10, .house4p12, .house4p14, .house4p15, .house4p17, .house4p19, .house4p20, .house4p22, .house4p24, .house4p25, .house4p27, .house4p28, .house4p30, .house4p32, .house4p33, .house4p35, .house4p38, .house4p40{
+.house1p2, .house1p4, .house1p7, .house1p9, .house1p10, .house1p12, .house1p14, .house1p15, .house1p17, .house1p19, .house1p20, .house1p22, .house1p24, .house1p25, .house1p27, .house1p28, .house1p30, .house1p32, .house1p33, .house1p35, .house1p38, .house1p40, .house2p2, .house2p4, .house2p7, .house2p9, .house2p10, .house2p12, .house2p14, .house2p15, .house2p17, .house2p19, .house2p20, .house2p22, .house2p24, .house2p25, .house2p27, .house2p28, .house2p30, .house2p32, .house2p33, .house2p35, .house2p38, .house2p40, .house3p2, .house3p4, .house3p7, .house3p9, .house3p10, .house3p12, .house3p14, .house3p15, .house3p17, .house3p19, .house3p20, .house3p22, .house3p24, .house3p25, .house3p27, .house3p28, .house3p30, .house3p32, .house3p33, .house3p35, .house3p38, .house3p40, .house4p2, .house4p4, .house4p7, .house4p9, .house4p10, .house4p12, .house4p14, .house4p15, .house4p17, .house4p19, .house4p20, .house4p22, .house4p24, .house4p25, .house4p27, .house4p28, .house4p30, .house4p32, .house4p33, .house4p35, .house4p38, .house4p40{
     display: none;
     position: absolute;
     width: 2rem;
     height: 2rem;
     border: 0.1rem black solid; 
 }
-.house1p2, .house1p4, .house1p2, .house1p7, .house1p2, .house1p9, .house1p10, .house1p12, .house1p14, .house1p15, .house1p17, .house1p19, .house1p20, .house1p22, .house1p24, .house1p25, .house1p27, .house1p28, .house1p30, .house1p32, .house1p33, .house1p35, .house1p38, .house1p40{
+.house1p2, .house1p4, .house1p7, .house1p9, .house1p10, .house1p12, .house1p14, .house1p15, .house1p17, .house1p19, .house1p20, .house1p22, .house1p24, .house1p25, .house1p27, .house1p28, .house1p30, .house1p32, .house1p33, .house1p35, .house1p38, .house1p40{
     left: 0.7rem;
     top: 4rem;
 }
-.house2p2, .house2p4, .house2p2, .house2p7, .house2p2, .house2p9, .house2p10, .house2p12, .house2p14, .house2p15, .house2p17, .house2p19, .house2p20, .house2p22, .house2p24, .house2p25, .house2p27, .house2p28, .house2p30, .house2p32, .house2p33, .house2p35, .house2p38, .house2p40{
+.house2p2, .house2p4, .house2p7, .house2p9, .house2p10, .house2p12, .house2p14, .house2p15, .house2p17, .house2p19, .house2p20, .house2p22, .house2p24, .house2p25, .house2p27, .house2p28, .house2p30, .house2p32, .house2p33, .house2p35, .house2p38, .house2p40{
     left: 3.7rem;
     top: 4rem;
 }
-.house3p2, .house3p4, .house3p2, .house3p7, .house3p2, .house3p9, .house3p10, .house3p12, .house3p14, .house3p15, .house3p17, .house3p19, .house3p20, .house3p22, .house3p24, .house3p25, .house3p27, .house3p28, .house3p30, .house3p32, .house3p33, .house3p35, .house3p38, .house3p40{
+.house3p2, .house3p4, .house3p7, .house3p9, .house3p10, .house3p12, .house3p14, .house3p15, .house3p17, .house3p19, .house3p20, .house3p22, .house3p24, .house3p25, .house3p27, .house3p28, .house3p30, .house3p32, .house3p33, .house3p35, .house3p38, .house3p40{
     left: 0.7rem;
     top: 7rem;
 }
-.house4p2, .house4p4, .house4p2, .house4p7, .house4p2, .house4p9, .house4p10, .house4p12, .house4p14, .house4p15, .house4p17, .house4p19, .house4p20, .house4p22, .house4p24, .house4p25, .house4p27, .house4p28, .house4p30, .house4p32, .house4p33, .house4p35, .house4p38, .house4p40{
+.house4p2, .house4p4, .house4p7, .house4p9, .house4p10, .house4p12, .house4p14, .house4p15, .house4p17, .house4p19, .house4p20, .house4p22, .house4p24, .house4p25, .house4p27, .house4p28, .house4p30, .house4p32, .house4p33, .house4p35, .house4p38, .house4p40{
     left: 3.7rem;
     top: 7rem;
 }
@@ -1046,7 +1046,21 @@ color: greenyellow;
     left: 2rem;
     top: 5rem;
 }
-
+.buyhouse2, .buyhouse4, .buyhouse7, .buyhouse9, .buyhouse10, .buyhouse12, .buyhouse14, .buyhouse15, .buyhouse17, .buyhouse19, .buyhouse20, .buyhouse22, .buyhouse24, .buyhouse25, .buyhouse27, .buyhouse28, .buyhouse30, .buyhouse32, .buyhouse33, .buyhouse35, .buyhouse38, .buyhouse40{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    bottom: -2.2rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    background: lightgreen;
+    text-align: center;
+    cursor: pointer;
+}
+.buyHotel{
+    background: lightcoral;
+}
 
 .hide{
     display: none;
