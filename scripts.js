@@ -9,6 +9,7 @@ let roll = [0, 0];
 let money = [1500, 1500, 1500];
 
 let destyny;
+let ratio = 1;
 let location = [0, 0, 0];
 let jail = [0, 0, 0];
 
@@ -1146,6 +1147,7 @@ function redQuestion(who) {
         let draw;
         draw = Math.random() * 15 + 1 ;
         draw = Math.round(draw);
+
         if(draw == 1){
             Write('"Otrzymujesz spłatę kredytu budowlanego. Pobierz 150$"', who);
             money[who] = money[who] + 150;
@@ -1165,6 +1167,8 @@ function redQuestion(who) {
             }
             pClean(who);
             move(who);
+            ratio = 2;
+            payRent(who);
         } else if(draw == 4){
             lottery(0);
             lottery(1);
@@ -1184,6 +1188,8 @@ function redQuestion(who) {
             }
             pClean(who);
             move(who);
+            ratio = 10;
+            payRent(who);
         } else if(draw == 5){
             Write('"Mandat za przekroczenie prędkości 15$."', who);
             money[who] = money[who] - 15;
@@ -1194,6 +1200,7 @@ function redQuestion(who) {
             destyny = -3;
             pClean(who);
             move(who);
+            payRent(who);
         } else if(draw == 8){
             Write('"Idz na pole 24. Jeżeli mijasz start, pobierz 200$."', who);
             if(location[who] == 36){
@@ -1203,6 +1210,7 @@ function redQuestion(who) {
             location[who] = 23;
             pClean(who);
             move(who);
+            payRent(who);
         } else if(draw == 9){
             Write('"Wybrano cię prezesem zarządu. Zapłać każdemu graczowi $50."', who);
             if(who == 0) {money[0] - money[0] - 100; money[1] = money[1] + 50; money[2] = money[2] + 50;}
@@ -1217,14 +1225,29 @@ function redQuestion(who) {
             location[who] = 15;
             pClean(who);
             move(who);
+            payRent(who);
         } else if(draw == 11){
             Write('"Idź na pole 40."', who);
             destyny = 0;
             location[who] = 39;
             pClean(who);
             move(who);
+            payRent(who);
         } else if(draw == 12){
             Write('"Przeprowadzasz generalny remont wszystkich nieruchomości: za każdy dom płacisz 25$, za każdy hotel płacisz 100$."', who);
+            let sumHouse = 0;
+            let sumHotel = 0;
+            for (let i=0; i<fields.length; i++) {
+                if(i == 1 || i == 3 || i == 6 || i == 8 || i == 9 || i == 11 || i == 13 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 26 || i == 27 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 37 || i == 39){
+                    if(fields[i].owner == who && fields[i].hotel == 1){
+                        sumHotel = sumHotel + fields[i].hotel;
+                    }else if (fields[i].owner == who && fields[i].house != 0){
+                        sumHouse = sumHouse + fields[i].house;
+                    }
+                }
+            }
+            money[who] = money[who] - ((sumHouse * 25) + (sumHotel * 100));
+            Write('Masz ' + sumHotel + ' hoteli i ' + sumHouse +  ' domów. Płacisz ' + ((sumHouse * 25) + (sumHotel * 100)) + '$.', who);
         } else if(draw == 13){
             Write('"Idz na pole 12. Jeżeli mijasz start, pobierz 200$."', who);
             if(location[who] == 22 || location[who] == 36){
@@ -1234,6 +1257,7 @@ function redQuestion(who) {
             location[who] = 11;
             pClean(who);
             move(who);
+            payRent(who);
         } else if(draw == 14){
             Write('"Bank wypłaca ci dywidendę w kwocie 50$."', who);
             money[who] = money[who] + 50;
@@ -1253,6 +1277,7 @@ function redQuestion(who) {
                 move(who);
         }
     }
+    ratio = 1;
     player1.textContent = money[0];
     player2.textContent = money[1];
     player3.textContent = money[2];
@@ -1277,7 +1302,6 @@ function blueQuestion(who) {
             money[who] = money[who] + 200;
         } else if(draw == 3){
             Write('"Sprzedajesz akcje z zyskiem. Pobierz 50$."', who);
-
             money[who] = money[who] + 50;
         } else if(draw == 4){
             Write('"Dziedziczysz spadek w wysokości 100$."', who);
@@ -1322,6 +1346,19 @@ function blueQuestion(who) {
             money[who] = money[who] + 10;
         } else if(draw == 16){
             Write('"Obliczono koszt napraw komunalnych twoich nieruchomości: zapłać 40$ za każdy dom 115$ za każdy hotel, jaki posiadasz."', who);
+            let sumHouse = 0;
+            let sumHotel = 0;
+            for (let i=0; i<fields.length; i++) {
+                if(i == 1 || i == 3 || i == 6 || i == 8 || i == 9 || i == 11 || i == 13 || i == 14 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 26 || i == 27 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 37 || i == 39){
+                    if(fields[i].owner == who && fields[i].hotel == 1){
+                        sumHotel = sumHotel + fields[i].hotel;
+                    }else if (fields[i].owner == who && fields[i].house != 0){
+                        sumHouse = sumHouse + fields[i].house;
+                    }
+                }
+            }
+            money[who] = money[who] - ((sumHouse * 40) + (sumHotel * 115));
+            Write('Masz ' + sumHotel + ' hoteli i ' + sumHouse +  ' domów. Płacisz ' + ((sumHouse * 40) + (sumHotel * 115)) + '$.', who);
         }
     }
     player1.textContent = money[0];
@@ -1496,44 +1533,44 @@ function payRent(who){
     for (let i=0; i<fields.length; i++) {
         if (location[who] == i && fields[i].owner != who &&  fields[i].owner != -1 && location[who] != 0 && location[who] != 2 && location[who] != 4 && location[who] != 7 && location[who] != 10 && location[who] != 17 && location[who] != 20 && location[who] != 22 && location[who] != 30 && location[who] != 33 && location[who] != 36 && location[who] != 38) {
             if(fields[i].hotel == 1){
-                money[who] = money[who] - fields[i].rentHotel;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rentHotel;
+                money[who] = money[who] - (fields[i].rentHotel * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentHotel * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentHotel + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentHotel + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
                 }
             }else if(fields[i].house == 4){
-                money[who] = money[who] - fields[i].rent4house;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent4house;
+                money[who] = money[who] - (fields[i].rent4house * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4house * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4house + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4house + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
                 }
             }else if(fields[i].house == 3){
-                money[who] = money[who] - fields[i].rent3house;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent3house;
+                money[who] = money[who] - (fields[i].rent3house * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3house * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3house + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3house + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
                 }
             }else if(fields[i].house == 2){
-                money[who] = money[who] - fields[i].rent2house;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent2house;
+                money[who] = money[who] - (fields[i].rent2house * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2house * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2house + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2house + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
                 }
             }else if(fields[i].house == 1){
-                money[who] = money[who] - fields[i].rent1house;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent1house;
+                money[who] = money[who] - (fields[i].rent1house * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent1house * ratio);
                     if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent1house + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent1house + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
                 }
             }else if(
                 i == 1 && fields[1].owner == fields[3].owner || 
@@ -1558,39 +1595,59 @@ function payRent(who){
                 i == 34 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
                 i == 37 && fields[37].owner == fields[39].owner || 
                 i == 39 && fields[37].owner == fields[39].owner){
-                money[who] = money[who] - fields[i].rentAll;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rentAll;
+                money[who] = money[who] - (fields[i].rentAll * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentAll * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentAll + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rentAll + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
                 }
             }else if(i == 12 && fields[12].owner == fields[28].owner || i == 28 && fields[12].owner == fields[28].owner){
-                money[who] = money[who] - (9 * destyny);
-                money[fields[i].owner] = money[fields[i].owner] + (9 * destyny);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                if(ratio == 10){
+                    money[who] = money[who] - (ratio * destyny);
+                    money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                    }
+                }else{
+                    money[who] = money[who] - (9 * destyny);
+                    money[fields[i].owner] = money[fields[i].owner] + (9 * destyny);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                    }
                 }
             }else if(i == 12 || i == 28){
-                money[who] = money[who] - (4 * destyny);
-                money[fields[i].owner] = money[fields[i].owner] + (4 * destyny);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                if(ratio == 10){
+                    money[who] = money[who] - (ratio * destyny);
+                    money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                    }
+                }else {
+                    money[who] = money[who] - (4 * destyny);
+                    money[fields[i].owner] = money[fields[i].owner] + (4 * destyny);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                    }
                 }
             }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
                 i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner ||
                 i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner ||
                 i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner && fields[35].owner == fields[5].owner){
-                money[who] = money[who] - fields[i].rent4;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent4;
+                money[who] = money[who] - (fields[i].rent4 * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4 * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4 + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent4 + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
                 }
             }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
                 i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[35].owner||
@@ -1604,27 +1661,27 @@ function payRent(who){
                 i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[15].owner|| 
                 i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[25].owner||
                 i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner){
-                money[who] = money[who] - fields[i].rent3;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent3;
+                money[who] = money[who] - (fields[i].rent3 * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3 * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3 + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent3 + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
                 }
             }else if(i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
                 i == 15 && fields[15].owner == fields[5].owner || i == 15 && fields[15].owner == fields[25].owner || i == 15 && fields[15].owner == fields[35].owner ||
                 i == 25 && fields[25].owner == fields[5].owner || i == 25 && fields[25].owner == fields[15].owner || i == 25 && fields[25].owner == fields[35].owner ||
                 i == 35 && fields[35].owner == fields[5].owner || i == 35 && fields[35].owner == fields[15].owner || i == 35 && fields[35].owner == fields[25].owner){
-                money[who] = money[who] - fields[i].rent2;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent2;
+                money[who] = money[who] - (fields[i].rent2 * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2 * ratio);
                 if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2 + '$.', who);
+                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
                 } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent2 + '$.', who);
+                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
                 }
             }else{
-                money[who] = money[who] - fields[i].rent;
-                money[fields[i].owner] = money[fields[i].owner] + fields[i].rent;
+                money[who] = money[who] - (fields[i].rent * ratio);
+                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent * ratio);
                 if(who == 0){
                     Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
                 } else {
@@ -1671,9 +1728,9 @@ rollButton.addEventListener("click", function(e) {
     }
     goToJail(0);
     move(0);
-    blueQuestion(0);
-    redQuestion(0);
     payRent(0);
+    redQuestion(0);
+    blueQuestion(0);
     canIBuy();
     
     player1.textContent = money[0];
@@ -1712,9 +1769,9 @@ endGame.addEventListener("click", function(e) {
     }
     goToJail(1);
     move(1);
-    blueQuestion(1);
-    redQuestion(1);
     payRent(1);
+    redQuestion(1);
+    blueQuestion(1);
     
     Write('TURA GRACZA 3.', 2);
     pClean(2);
@@ -1726,9 +1783,9 @@ endGame.addEventListener("click", function(e) {
     }
     goToJail(2);
     move(2);
-    blueQuestion(2);
-    redQuestion(2);
     payRent(2);
+    redQuestion(2);
+    blueQuestion(2);
 
     whoOwn();
     Write('TWOJA TURA', 0);
