@@ -202,7 +202,7 @@ display: none;
     width: 83.835rem;
     background-color: lightgray;
     left: 7.5rem;
-    top: 3rem;
+    top: 5rem;
     position: relative;
     
 }
@@ -436,6 +436,9 @@ display: none;
     border-top: 0.15rem black solid;
     border-bottom: 0.15rem black solid;
     box-sizing: border-box;
+}
+.mortgageField{
+    background: crimson;
 }
 .field1, .field11, .field31{
     border-top: 0.075rem black solid;
@@ -1046,21 +1049,28 @@ color: greenyellow;
     left: 2rem;
     top: 5rem;
 }
-.buyhouse2, .buyhouse4, .buyhouse7, .buyhouse9, .buyhouse10, .buyhouse12, .buyhouse14, .buyhouse15, .buyhouse17, .buyhouse19, .buyhouse20, .buyhouse22, .buyhouse24, .buyhouse25, .buyhouse27, .buyhouse28, .buyhouse30, .buyhouse32, .buyhouse33, .buyhouse35, .buyhouse38, .buyhouse40{
+.buyhouse2, .buyhouse4, .buyhouse7, .buyhouse9, .buyhouse10, .buyhouse12, .buyhouse14, .buyhouse15, .buyhouse17, .buyhouse19, .buyhouse20, .buyhouse22, .buyhouse24, .buyhouse25, .buyhouse27, .buyhouse28, .buyhouse30, .buyhouse32, .buyhouse33, .buyhouse35, .buyhouse38, .buyhouse40, .mortgage2, .mortgage4, .mortgage6, .mortgage7, .mortgage9, .mortgage10, .mortgage12, .mortgage13, .mortgage14, .mortgage15, .mortgage16, .mortgage17, .mortgage19, .mortgage20, .mortgage22, .mortgage24, .mortgage25, .mortgage26, .mortgage27, .mortgage28, .mortgage29, .mortgage30, .mortgage32, .mortgage33, .mortgage35, .mortgage36, .mortgage38, .mortgage40{
     display: block;
     position: absolute;
     width: 100%;
     height: 2rem;
-    bottom: -2.2rem;
     font-size: 0.8rem;
     font-weight: 800;
-    background: lightgreen;
     text-align: center;
     cursor: pointer;
+}
+.mortgage2, .mortgage4, .mortgage6, .mortgage7, .mortgage9, .mortgage10, .mortgage12, .mortgage13, .mortgage14, .mortgage15, .mortgage16, .mortgage17, .mortgage19, .mortgage20, .mortgage22, .mortgage24, .mortgage25, .mortgage26, .mortgage27, .mortgage28, .mortgage29, .mortgage30, .mortgage32, .mortgage33, .mortgage35, .mortgage36, .mortgage38, .mortgage40{
+    background: crimson;
+    bottom: -2.2rem;
+}
+.buyhouse2, .buyhouse4, .buyhouse7, .buyhouse9, .buyhouse10, .buyhouse12, .buyhouse14, .buyhouse15, .buyhouse17, .buyhouse19, .buyhouse20, .buyhouse22, .buyhouse24, .buyhouse25, .buyhouse27, .buyhouse28, .buyhouse30, .buyhouse32, .buyhouse33, .buyhouse35, .buyhouse38, .buyhouse40{
+    background: lightgreen;
+    bottom: -4.2rem;
 }
 .buyHotel{
     background: lightcoral;
 }
+
 
 .hide{
     display: none;

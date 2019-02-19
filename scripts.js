@@ -93,6 +93,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p2"),
         houseStyle4: document.querySelector(".house4p2"),
         buyStyle: document.querySelector(".buyhouse2"),
+        mortgageStyle: document.querySelector(".mortgage2"),
         price: 60,
         
         rent: 2,
@@ -111,7 +112,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play3")
@@ -125,6 +127,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p4"),
         houseStyle4: document.querySelector(".house4p4"),
         buyStyle: document.querySelector(".buyhouse4"),
+        mortgageStyle: document.querySelector(".mortgage4"),
         price: 60,
         
         rent: 4,
@@ -143,7 +146,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play5")
@@ -152,6 +156,7 @@ let fields = [
         player: document.querySelector(".play6"),
         style: document.querySelector(".field6"),
         ownerstyle: document.querySelector(".owner6"),
+        mortgageStyle: document.querySelector(".mortgage6"),
         price: 200,
         
         rent: 25,
@@ -163,6 +168,7 @@ let fields = [
         mortgageRepayment: 110,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play7"),
@@ -173,6 +179,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p7"),
         houseStyle4: document.querySelector(".house4p7"),
         buyStyle: document.querySelector(".buyhouse7"),
+        mortgageStyle: document.querySelector(".mortgage7"),
         price: 100,
         
         rent: 6,
@@ -191,7 +198,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play8")
@@ -205,6 +213,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p9"),
         houseStyle4: document.querySelector(".house4p9"),
         buyStyle: document.querySelector(".buyhouse9"),
+        mortgageStyle: document.querySelector(".mortgage9"),
         price: 100,
         
         rent: 6,
@@ -223,7 +232,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play10"),
@@ -234,6 +244,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p10"),
         houseStyle4: document.querySelector(".house4p10"),
         buyStyle: document.querySelector(".buyhouse10"),
+        mortgageStyle: document.querySelector(".mortgage10"),
         price: 120,
         
         rent: 8,
@@ -252,7 +263,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play11")
@@ -266,6 +278,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p12"),
         houseStyle4: document.querySelector(".house4p12"),
         buyStyle: document.querySelector(".buyhouse12"),
+        mortgageStyle: document.querySelector(".mortgage12"),
         price: 140,
         
         rent: 10,
@@ -284,18 +297,21 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play13"),
         style: document.querySelector(".field13"),
         ownerstyle: document.querySelector(".owner13"),
+        mortgageStyle: document.querySelector(".mortgage13"),
         price: 150,
         
         mortgage: 75,
         mortgageRepayment: 83,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play14"),
@@ -306,6 +322,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p14"),
         houseStyle4: document.querySelector(".house4p14"),
         buyStyle: document.querySelector(".buyhouse14"),
+        mortgageStyle: document.querySelector(".mortgage14"),
         price: 140,
         
         rent: 10,
@@ -324,7 +341,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },   
     {
         player: document.querySelector(".play15"),
@@ -335,6 +353,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p15"),
         houseStyle4: document.querySelector(".house4p15"),
         buyStyle: document.querySelector(".buyhouse15"),
+        mortgageStyle: document.querySelector(".mortgage15"),
         price: 160,
         
         rent: 12,
@@ -353,12 +372,14 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play16"),
         style: document.querySelector(".field16"),
         ownerstyle: document.querySelector(".owner16"),
+        mortgageStyle: document.querySelector(".mortgage16"),
         price: 200,
         
         rent: 25,
@@ -370,6 +391,7 @@ let fields = [
         mortgageRepayment: 110,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {   
         player: document.querySelector(".play17"),
@@ -380,6 +402,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p17"),
         houseStyle4: document.querySelector(".house4p17"),
         buyStyle: document.querySelector(".buyhouse17"),
+        mortgageStyle: document.querySelector(".mortgage17"),
         price: 180,
         
         rent: 14,
@@ -398,7 +421,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play18")
@@ -412,6 +436,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p19"),
         houseStyle4: document.querySelector(".house4p19"),
         buyStyle: document.querySelector(".buyhouse19"),
+        mortgageStyle: document.querySelector(".mortgage19"),
         price: 180,
         
         rent: 14,
@@ -430,7 +455,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },  
     {
         player: document.querySelector(".play20"),
@@ -441,6 +467,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p20"),
         houseStyle4: document.querySelector(".house4p20"),
         buyStyle: document.querySelector(".buyhouse20"),
+        mortgageStyle: document.querySelector(".mortgage20"),
         price: 200,
         
         rent: 16,
@@ -459,7 +486,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play21")
@@ -473,6 +501,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p22"),
         houseStyle4: document.querySelector(".house4p22"),
         buyStyle: document.querySelector(".buyhouse22"),
+        mortgageStyle: document.querySelector(".mortgage22"),
         price: 220,
         
         rent: 18,
@@ -491,7 +520,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play23")
@@ -505,6 +535,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p24"),
         houseStyle4: document.querySelector(".house4p24"),
         buyStyle: document.querySelector(".buyhouse24"),
+        mortgageStyle: document.querySelector(".mortgage24"),
         price: 220,
         
         rent: 18,
@@ -523,7 +554,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play25"),
@@ -534,6 +566,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p25"),
         houseStyle4: document.querySelector(".house4p25"),
         buyStyle: document.querySelector(".buyhouse25"),
+        mortgageStyle: document.querySelector(".mortgage25"),
         price: 240,
         
         rent: 20,
@@ -552,12 +585,14 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play26"),
         style: document.querySelector(".field26"),
         ownerstyle: document.querySelector(".owner26"),
+        mortgageStyle: document.querySelector(".mortgage26"),
         price: 200,
         
         rent: 25,
@@ -569,6 +604,7 @@ let fields = [
         mortgageRepayment: 110,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play27"),
@@ -579,6 +615,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p27"),
         houseStyle4: document.querySelector(".house4p27"),
         buyStyle: document.querySelector(".buyhouse27"),
+        mortgageStyle: document.querySelector(".mortgage27"),
         price: 260,
         
         rent: 22,
@@ -597,7 +634,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play28"),
@@ -608,6 +646,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p28"),
         houseStyle4: document.querySelector(".house4p28"),
         buyStyle: document.querySelector(".buyhouse28"),
+        mortgageStyle: document.querySelector(".mortgage28"),
         price: 260,
         
         rent: 22,
@@ -626,18 +665,21 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play29"),
         style: document.querySelector(".field29"),
         ownerstyle: document.querySelector(".owner29"),
+        mortgageStyle: document.querySelector(".mortgage29"),
         price: 150,
         
         mortgage: 75,
         mortgageRepayment: 83,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play30"),
@@ -648,6 +690,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p30"),
         houseStyle4: document.querySelector(".house4p30"),
         buyStyle: document.querySelector(".buyhouse30"),
+        mortgageStyle: document.querySelector(".mortgage30"),
         price: 280,
         
         rent: 24,
@@ -666,7 +709,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play31")
@@ -680,6 +724,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p32"),
         houseStyle4: document.querySelector(".house4p32"),
         buyStyle: document.querySelector(".buyhouse32"),
+        mortgageStyle: document.querySelector(".mortgage32"),
         price: 300,
         
         rent: 26,
@@ -698,7 +743,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play33"),
@@ -709,6 +755,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p33"),
         houseStyle4: document.querySelector(".house4p33"),
         buyStyle: document.querySelector(".buyhouse33"),
+        mortgageStyle: document.querySelector(".mortgage33"),
         price: 300,
         
         rent: 26,
@@ -727,7 +774,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play34")
@@ -741,6 +789,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p35"),
         houseStyle4: document.querySelector(".house4p35"),
         buyStyle: document.querySelector(".buyhouse35"),
+        mortgageStyle: document.querySelector(".mortgage35"),
         price: 320,
         
         rent: 28,
@@ -759,12 +808,14 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play36"),
         style: document.querySelector(".field36"),
         ownerstyle: document.querySelector(".owner36"),
+        mortgageStyle: document.querySelector(".mortgage36"),
         price: 200,
         
         rent: 25,
@@ -776,6 +827,7 @@ let fields = [
         mortgageRepayment: 110,
 
         owner: -1,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play37")
@@ -789,6 +841,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p38"),
         houseStyle4: document.querySelector(".house4p38"),
         buyStyle: document.querySelector(".buyhouse38"),
+        mortgageStyle: document.querySelector(".mortgage38"),
         price: 350,
         
         rent: 35,
@@ -807,7 +860,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
     {
         player: document.querySelector(".play39")
@@ -821,6 +875,7 @@ let fields = [
         houseStyle3: document.querySelector(".house3p40"),
         houseStyle4: document.querySelector(".house4p40"),
         buyStyle: document.querySelector(".buyhouse40"),
+        mortgageStyle: document.querySelector(".mortgage40"),
         price: 400,
         
         rent: 50,
@@ -839,7 +894,8 @@ let fields = [
 
         owner: -1,
         hotel: 0,
-        house: 0
+        house: 0,
+        mortgageStatus: 0,
     },
 ];
 
@@ -1375,14 +1431,20 @@ function canIBuy() {
 }
 function whoOwn() {
     for (let i=0; i<fields.length; i++) {
+        if(fields[i].owner == -1){
+            fields[i].mortgageStyle.classList.add('hide');
+        }
         if(fields[i].owner == 0){
             fields[i].ownerstyle.classList.add('ownerp1');
+            fields[i].mortgageStyle.classList.remove('hide');
         }
         if(fields[i].owner == 1){
             fields[i].ownerstyle.classList.add('ownerp2');
+            fields[i].mortgageStyle.classList.add('hide');
         }
         if(fields[i].owner == 2){
             fields[i].ownerstyle.classList.add('ownerp3');
+            fields[i].mortgageStyle.classList.add('hide');
         }
     }
 }  
@@ -1531,161 +1593,163 @@ function houses(){
 }
 function payRent(who){
     for (let i=0; i<fields.length; i++) {
-        if (location[who] == i && fields[i].owner != who &&  fields[i].owner != -1 && location[who] != 0 && location[who] != 2 && location[who] != 4 && location[who] != 7 && location[who] != 10 && location[who] != 17 && location[who] != 20 && location[who] != 22 && location[who] != 30 && location[who] != 33 && location[who] != 36 && location[who] != 38) {
-            if(fields[i].hotel == 1){
-                money[who] = money[who] - (fields[i].rentHotel * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentHotel * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
-                }
-            }else if(fields[i].house == 4){
-                money[who] = money[who] - (fields[i].rent4house * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4house * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
-                }
-            }else if(fields[i].house == 3){
-                money[who] = money[who] - (fields[i].rent3house * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3house * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
-                }
-            }else if(fields[i].house == 2){
-                money[who] = money[who] - (fields[i].rent2house * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2house * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
-                }
-            }else if(fields[i].house == 1){
-                money[who] = money[who] - (fields[i].rent1house * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent1house * ratio);
+        if(fields[i].mortgageStatus == 0){
+            if (location[who] == i && fields[i].owner != who &&  fields[i].owner != -1 && location[who] != 0 && location[who] != 2 && location[who] != 4 && location[who] != 7 && location[who] != 10 && location[who] != 17 && location[who] != 20 && location[who] != 22 && location[who] != 30 && location[who] != 33 && location[who] != 36 && location[who] != 38) {
+                if(fields[i].hotel == 1){
+                    money[who] = money[who] - (fields[i].rentHotel * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentHotel * ratio);
                     if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
-                }
-            }else if(
-                i == 1 && fields[1].owner == fields[3].owner || 
-                i == 3 && fields[1].owner == fields[3].owner || 
-                i == 6 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
-                i == 8 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
-                i == 9 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner ||
-                i == 11 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
-                i == 13 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
-                i == 14 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
-                i == 16 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
-                i == 18 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
-                i == 19 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
-                i == 21 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
-                i == 23 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
-                i == 24 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
-                i == 26 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
-                i == 27 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
-                i == 29 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
-                i == 31 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
-                i == 32 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
-                i == 34 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
-                i == 37 && fields[37].owner == fields[39].owner || 
-                i == 39 && fields[37].owner == fields[39].owner){
-                money[who] = money[who] - (fields[i].rentAll * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentAll * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
-                }
-            }else if(i == 12 && fields[12].owner == fields[28].owner || i == 28 && fields[12].owner == fields[28].owner){
-                if(ratio == 10){
-                    money[who] = money[who] - (ratio * destyny);
-                    money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
-                    if(who == 0){
-                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
                     } else {
-                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentHotel * ratio) + '$.', who);
+                    }
+                }else if(fields[i].house == 4){
+                    money[who] = money[who] - (fields[i].rent4house * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4house * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4house * ratio) + '$.', who);
+                    }
+                }else if(fields[i].house == 3){
+                    money[who] = money[who] - (fields[i].rent3house * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3house * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3house * ratio) + '$.', who);
+                    }
+                }else if(fields[i].house == 2){
+                    money[who] = money[who] - (fields[i].rent2house * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2house * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2house * ratio) + '$.', who);
+                    }
+                }else if(fields[i].house == 1){
+                    money[who] = money[who] - (fields[i].rent1house * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent1house * ratio);
+                        if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent1house * ratio) + '$.', who);
+                    }
+                }else if(
+                    i == 1 && fields[1].owner == fields[3].owner || 
+                    i == 3 && fields[1].owner == fields[3].owner || 
+                    i == 6 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
+                    i == 8 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner || 
+                    i == 9 && fields[6].owner == fields[8].owner && fields[8].owner == fields[9].owner ||
+                    i == 11 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                    i == 13 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                    i == 14 && fields[11].owner == fields[13].owner && fields[13].owner == fields[14].owner ||
+                    i == 16 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                    i == 18 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                    i == 19 && fields[16].owner == fields[18].owner && fields[18].owner == fields[19].owner || 
+                    i == 21 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                    i == 23 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                    i == 24 && fields[21].owner == fields[23].owner && fields[23].owner == fields[24].owner || 
+                    i == 26 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                    i == 27 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                    i == 29 && fields[26].owner == fields[27].owner && fields[27].owner == fields[29].owner || 
+                    i == 31 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                    i == 32 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                    i == 34 && fields[31].owner == fields[32].owner && fields[32].owner == fields[34].owner || 
+                    i == 37 && fields[37].owner == fields[39].owner || 
+                    i == 39 && fields[37].owner == fields[39].owner){
+                    money[who] = money[who] - (fields[i].rentAll * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rentAll * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rentAll * ratio) + '$.', who);
+                    }
+                }else if(i == 12 && fields[12].owner == fields[28].owner || i == 28 && fields[12].owner == fields[28].owner){
+                    if(ratio == 10){
+                        money[who] = money[who] - (ratio * destyny);
+                        money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
+                        if(who == 0){
+                            Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        } else {
+                            Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        }
+                    }else{
+                        money[who] = money[who] - (9 * destyny);
+                        money[fields[i].owner] = money[fields[i].owner] + (9 * destyny);
+                        if(who == 0){
+                            Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                        } else {
+                            Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                        }
+                    }
+                }else if(i == 12 || i == 28){
+                    if(ratio == 10){
+                        money[who] = money[who] - (ratio * destyny);
+                        money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
+                        if(who == 0){
+                            Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        } else {
+                            Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
+                        }
+                    }else {
+                        money[who] = money[who] - (4 * destyny);
+                        money[fields[i].owner] = money[fields[i].owner] + (4 * destyny);
+                        if(who == 0){
+                            Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                        } else {
+                            Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
+                        }
+                    }
+                }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
+                    i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner ||
+                    i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner ||
+                    i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner && fields[35].owner == fields[5].owner){
+                    money[who] = money[who] - (fields[i].rent4 * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4 * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
+                    }
+                }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
+                    i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[35].owner||
+                    i == 5 && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner||
+                    i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner|| 
+                    i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[35].owner||
+                    i == 15 && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner||
+                    i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[15].owner|| 
+                    i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner||
+                    i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[35].owner||
+                    i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[15].owner|| 
+                    i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[25].owner||
+                    i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner){
+                    money[who] = money[who] - (fields[i].rent3 * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3 * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
+                    }
+                }else if(i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
+                    i == 15 && fields[15].owner == fields[5].owner || i == 15 && fields[15].owner == fields[25].owner || i == 15 && fields[15].owner == fields[35].owner ||
+                    i == 25 && fields[25].owner == fields[5].owner || i == 25 && fields[25].owner == fields[15].owner || i == 25 && fields[25].owner == fields[35].owner ||
+                    i == 35 && fields[35].owner == fields[5].owner || i == 35 && fields[35].owner == fields[15].owner || i == 35 && fields[35].owner == fields[25].owner){
+                    money[who] = money[who] - (fields[i].rent2 * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2 * ratio);
+                    if(who == 0){
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
+                    } else {
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
                     }
                 }else{
-                    money[who] = money[who] - (9 * destyny);
-                    money[fields[i].owner] = money[fields[i].owner] + (9 * destyny);
+                    money[who] = money[who] - (fields[i].rent * ratio);
+                    money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent * ratio);
                     if(who == 0){
-                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
                     } else {
-                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (9 * destyny) + '$.', who);
+                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
                     }
-                }
-            }else if(i == 12 || i == 28){
-                if(ratio == 10){
-                    money[who] = money[who] - (ratio * destyny);
-                    money[fields[i].owner] = money[fields[i].owner] + (ratio * destyny);
-                    if(who == 0){
-                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
-                    } else {
-                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (ratio * destyny) + '$.', who);
-                    }
-                }else {
-                    money[who] = money[who] - (4 * destyny);
-                    money[fields[i].owner] = money[fields[i].owner] + (4 * destyny);
-                    if(who == 0){
-                        Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
-                    } else {
-                        Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (4 * destyny) + '$.', who);
-                    }
-                }
-            }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner ||
-                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner ||
-                i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner ||
-                i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner && fields[35].owner == fields[5].owner){
-                money[who] = money[who] - (fields[i].rent4 * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent4 * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent4 * ratio) + '$.', who);
-                }
-            }else if(i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[25].owner|| 
-                i == 5 && fields[5].owner == fields[15].owner && fields[5].owner == fields[35].owner||
-                i == 5 && fields[5].owner == fields[25].owner && fields[5].owner == fields[35].owner||
-                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[25].owner|| 
-                i == 15 && fields[15].owner == fields[5].owner && fields[15].owner == fields[35].owner||
-                i == 15 && fields[15].owner == fields[25].owner && fields[15].owner == fields[35].owner||
-                i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[15].owner|| 
-                i == 25 && fields[25].owner == fields[5].owner && fields[25].owner == fields[35].owner||
-                i == 25 && fields[25].owner == fields[15].owner && fields[25].owner == fields[35].owner||
-                i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[15].owner|| 
-                i == 35 && fields[35].owner == fields[5].owner && fields[35].owner == fields[25].owner||
-                i == 35 && fields[35].owner == fields[15].owner && fields[35].owner == fields[25].owner){
-                money[who] = money[who] - (fields[i].rent3 * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent3 * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent3 * ratio) + '$.', who);
-                }
-            }else if(i == 5 && fields[5].owner == fields[15].owner || i == 5 && fields[5].owner == fields[25].owner || i == 5 && fields[5].owner == fields[35].owner || 
-                i == 15 && fields[15].owner == fields[5].owner || i == 15 && fields[15].owner == fields[25].owner || i == 15 && fields[15].owner == fields[35].owner ||
-                i == 25 && fields[25].owner == fields[5].owner || i == 25 && fields[25].owner == fields[15].owner || i == 25 && fields[25].owner == fields[35].owner ||
-                i == 35 && fields[35].owner == fields[5].owner || i == 35 && fields[35].owner == fields[15].owner || i == 35 && fields[35].owner == fields[25].owner){
-                money[who] = money[who] - (fields[i].rent2 * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent2 * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  (fields[i].rent2 * ratio) + '$.', who);
-                }
-            }else{
-                money[who] = money[who] - (fields[i].rent * ratio);
-                money[fields[i].owner] = money[fields[i].owner] + (fields[i].rent * ratio);
-                if(who == 0){
-                    Write('Płacisz czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
-                } else {
-                    Write('Gracz ' + (who + 1) + ' płaci czynasz dla gracza ' + (fields[i].owner + 1) + ' w wysokości ' +  fields[i].rent + '$.', who);
                 }
             }
         }
@@ -1713,6 +1777,7 @@ move(0);
 move(1);
 move(2);
 houses();
+whoOwn();
 
 Write('START GRY.');
 Write('TWOJA TURA.', 0);
@@ -1813,6 +1878,29 @@ for (let i=0; i<fields.length; i++) {
             }
             player1.textContent = money[0];
             houses();
+        },false);
+    }
+}
+
+for (let i=0; i<fields.length; i++) {
+    if(i == 1 || i == 3 || i == 5 || i == 6 || i == 8 || i == 9 || i == 11 || i == 12 || i == 13 || i == 14 || i == 15 || i == 16 || i == 18 || i == 19 || i == 21 || i == 23 || i == 24 || i == 25 || i == 26 || i == 27 || i == 28 || i == 29 || i == 31 || i == 32 ||i == 34 || i == 35 || i == 37 || i == 39){
+        fields[i].mortgageStyle.addEventListener("click", function(e) {
+            if(fields[i].mortgageStatus == 0){
+                fields[i].mortgageStatus = 1;
+                money[0] = money[0] + fields[i].mortgage;
+                fields[i].style.classList.add('mortgageField');
+
+                Write('Zastawiasz polę ' + (i + 1) + ' za ' + fields[i].mortgage + '.', 0);
+                player1.textContent = money[0];
+
+            } else if (fields[i].mortgageStatus == 1){
+                fields[i].mortgageStatus = 0;
+                money[0] = money[0] - fields[i].mortgageRepayment;
+                fields[i].style.classList.remove('mortgageField');
+
+                Write('Wykupujesz polę ' + (i + 1) + ' za ' + fields[i].mortgageRepayment + '.', 0);
+                player1.textContent = money[0];
+            }
         },false);
     }
 }
